@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindFriendViewController">
+            <connections>
+                <outlet property="btnOnlineCondition_all" destination="wDQ-Xk-CMU" id="eI4-K1-QnT"/>
+                <outlet property="btnOnlineCondition_offline" destination="OpD-ew-IXH" id="Gg3-N9-yxk"/>
+                <outlet property="btnOnlineCondition_online" destination="YeN-ui-09h" id="WaT-B9-vfu"/>
+                <outlet property="btnSexCondition_all" destination="cut-xy-MWc" id="roa-MW-gQh"/>
+                <outlet property="btnSexCondition_man" destination="O0w-7y-xxe" id="S37-us-gXO"/>
+                <outlet property="btnSexCondition_woman" destination="G1w-Ic-M4S" id="vws-YN-J22"/>
+                <outlet property="btnSubmit" destination="pCs-DC-8gt" id="b68-2H-whT"/>
+                <outlet property="editIdOrMail" destination="Pxc-w1-HTx" id="dS0-fS-9qE"/>
+                <outlet property="layoutPrecise" destination="06v-GD-DKm" id="Ole-sP-ute"/>
+                <outlet property="layoutRandom" destination="Wes-ab-fqj" id="srZ-Qp-BhM"/>
+                <outlet property="layoutSubmit" destination="SUO-v4-fL0" id="SIQ-Rl-Spg"/>
+                <outlet property="layoutSubmitTopConstraint" destination="vsR-8Z-feZ" id="f3a-a4-KgA"/>
+                <outlet property="sexesLayoutBg" destination="cfp-VK-R1P" id="skR-X4-8yd"/>
+                <outlet property="statusLayoutBg" destination="Kbt-O9-sfI" id="P2O-k0-BuN"/>
+                <outlet property="tabPreciseSearch" destination="a3r-1O-bm6" id="Rqg-mw-GBa"/>
+                <outlet property="tabRandomSearch" destination="S2I-yd-TsO" id="R0g-R6-T0F"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewMaxFriendHint" destination="7OY-lI-6Xl" id="RJk-In-cWq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eU-lS-Ta0" userLabel="layout-tabs">
+                    <rect key="frame" x="30" y="50" width="260" height="48"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROu-AS-QNX" userLabel="contianer-1">
+                            <rect key="frame" x="0.0" y="0.0" width="130" height="48"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleAspectFit" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2I-yd-TsO">
+                                    <rect key="frame" x="5" y="5" width="120" height="38"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <state key="normal" title="随机查找" backgroundImage="sns_add_friend_form_search_btn_nor.png">
+                                        <color key="titleColor" red="0.63137254901960782" green="0.65490196078431373" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" backgroundImage="sns_add_friend_form_search_btn_checked.png">
+                                        <color key="titleColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="sns_add_friend_form_search_btn_checked.png"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="19"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clickTab:" destination="-1" eventType="touchUpInside" id="6RT-aK-3R3"/>
+                                        <action selector="clickTab:" destination="-2" eventType="touchUpInside" id="pyr-ZU-oNL"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="S2I-yd-TsO" firstAttribute="leading" secondItem="ROu-AS-QNX" secondAttribute="leading" constant="5" id="0Nb-lg-SEv"/>
+                                <constraint firstAttribute="trailing" secondItem="S2I-yd-TsO" secondAttribute="trailing" constant="5" id="2J5-DX-Gdg"/>
+                                <constraint firstAttribute="bottom" secondItem="S2I-yd-TsO" secondAttribute="bottom" constant="5" id="OQG-Y5-2Pe"/>
+                                <constraint firstItem="S2I-yd-TsO" firstAttribute="top" secondItem="ROu-AS-QNX" secondAttribute="top" constant="5" id="dXW-T9-eCQ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hg-pv-h3Z" userLabel="contianer-2">
+                            <rect key="frame" x="130" y="0.0" width="130" height="48"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3r-1O-bm6">
+                                    <rect key="frame" x="5" y="5" width="120" height="38"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <state key="normal" title="精确查找" backgroundImage="sns_add_friend_form_search_btn_nor.png">
+                                        <color key="titleColor" red="0.63137254901960782" green="0.65490196078431373" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" backgroundImage="sns_add_friend_form_search_btn_checked.png">
+                                        <color key="titleColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="sns_add_friend_form_search_btn_checked.png"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="19"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clickTab:" destination="-1" eventType="touchUpInside" id="18a-Gy-35o"/>
+                                        <action selector="clickTab:" destination="-2" eventType="touchUpInside" id="Vgj-C4-cN2"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="a3r-1O-bm6" secondAttribute="bottom" constant="5" id="6MY-d9-SSY"/>
+                                <constraint firstAttribute="trailing" secondItem="a3r-1O-bm6" secondAttribute="trailing" constant="5" id="D7J-f0-X1T"/>
+                                <constraint firstItem="a3r-1O-bm6" firstAttribute="top" secondItem="5hg-pv-h3Z" secondAttribute="top" constant="5" id="qoN-XE-UQ8"/>
+                                <constraint firstItem="a3r-1O-bm6" firstAttribute="leading" secondItem="5hg-pv-h3Z" secondAttribute="leading" constant="5" id="tUz-hv-gBW"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="5hg-pv-h3Z" secondAttribute="trailing" id="4B4-fp-XzJ"/>
+                        <constraint firstItem="5hg-pv-h3Z" firstAttribute="top" secondItem="4eU-lS-Ta0" secondAttribute="top" id="Jqj-eC-wdT"/>
+                        <constraint firstItem="ROu-AS-QNX" firstAttribute="leading" secondItem="4eU-lS-Ta0" secondAttribute="leading" id="ZC6-i7-3MM"/>
+                        <constraint firstItem="ROu-AS-QNX" firstAttribute="width" secondItem="4eU-lS-Ta0" secondAttribute="width" multiplier="0.5" id="aZ8-vT-Tz4"/>
+                        <constraint firstAttribute="height" constant="48" id="cqo-hL-Huc"/>
+                        <constraint firstAttribute="bottom" secondItem="5hg-pv-h3Z" secondAttribute="bottom" id="or6-xi-wDX"/>
+                        <constraint firstItem="ROu-AS-QNX" firstAttribute="top" secondItem="4eU-lS-Ta0" secondAttribute="top" id="uCb-z3-BaM"/>
+                        <constraint firstAttribute="bottom" secondItem="ROu-AS-QNX" secondAttribute="bottom" id="zXd-IN-cLX"/>
+                        <constraint firstItem="5hg-pv-h3Z" firstAttribute="width" secondItem="4eU-lS-Ta0" secondAttribute="width" multiplier="0.5" id="zu4-gY-jVl"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wes-ab-fqj" userLabel="layout-随机查找">
+                    <rect key="frame" x="30" y="118" width="260" height="210"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80t-UG-7fi" userLabel="layout-status">
+                            <rect key="frame" x="0.0" y="10" width="260" height="85"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sns_add_friend_form_choices_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Kbt-O9-sfI" userLabel="layout-status-bg">
+                                    <rect key="frame" x="0.0" y="0.0" width="260" height="85"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择状态" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrW-05-niM">
+                                    <rect key="frame" x="35" y="-10" width="86" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.63137254901960782" green="0.65490196078431373" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Az2-Bc-xHl" userLabel="layout-在线条件">
+                                    <rect key="frame" x="5" y="0.0" width="250" height="85"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDQ-Xk-CMU">
+                                            <rect key="frame" x="0.0" y="37" width="80" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="全部" image="common_radio_button_choose_20dp">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40784313725490196" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="selected" image="common_radio_button_select_20dp">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40784313725490196" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="clickOnlineCondition:" destination="-2" eventType="touchUpInside" id="OEK-Ez-zcF"/>
+                                                <action selector="clickOnlineCondition:" destination="-1" eventType="touchUpInside" id="OTS-0T-ycy"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpD-ew-IXH">
+                                            <rect key="frame" x="85" y="37" width="80" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="在线" image="common_radio_button_choose_20dp">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40784313725490196" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="selected" image="common_radio_button_select_20dp"/>
+                                            <connections>
+                                                <action selector="clickOnlineCondition:" destination="-2" eventType="touchUpInside" id="UDR-a9-62S"/>
+                                                <action selector="clickOnlineCondition:" destination="-1" eventType="touchUpInside" id="ul3-gc-pw8"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeN-ui-09h">
+                                            <rect key="frame" x="170" y="37" width="80" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="离线" image="common_radio_button_choose_20dp">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40784313725490196" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="selected" image="common_radio_button_select_20dp"/>
+                                            <connections>
+                                                <action selector="clickOnlineCondition:" destination="-2" eventType="touchUpInside" id="7xp-UK-xI1"/>
+                                                <action selector="clickOnlineCondition:" destination="-1" eventType="touchUpInside" id="ts6-d9-QgS"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="250" id="J76-qS-Ylt"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Kbt-O9-sfI" firstAttribute="top" secondItem="80t-UG-7fi" secondAttribute="top" id="0sv-Sd-AMC"/>
+                                <constraint firstAttribute="bottom" secondItem="Kbt-O9-sfI" secondAttribute="bottom" id="6um-cY-uMh"/>
+                                <constraint firstItem="Az2-Bc-xHl" firstAttribute="centerX" secondItem="80t-UG-7fi" secondAttribute="centerX" id="Eym-s3-Dga"/>
+                                <constraint firstAttribute="trailing" secondItem="Kbt-O9-sfI" secondAttribute="trailing" id="JM2-ds-vEp"/>
+                                <constraint firstAttribute="bottom" secondItem="Az2-Bc-xHl" secondAttribute="bottom" id="dK1-e0-tGV"/>
+                                <constraint firstItem="Az2-Bc-xHl" firstAttribute="top" secondItem="80t-UG-7fi" secondAttribute="top" id="f8Z-Lz-dRN"/>
+                                <constraint firstItem="Kbt-O9-sfI" firstAttribute="leading" secondItem="80t-UG-7fi" secondAttribute="leading" id="lXZ-f4-Eab"/>
+                                <constraint firstAttribute="height" constant="85" id="rEb-j1-UH7"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-3l-I36" userLabel="layout-sexes">
+                            <rect key="frame" x="0.0" y="125" width="260" height="85"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sns_add_friend_form_choices_bg" translatesAutoresizingMaskIntoConstraints="NO" id="cfp-VK-R1P" userLabel="layout-sexes-bg">
+                                    <rect key="frame" x="0.0" y="0.0" width="260" height="85"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择性别" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4O-B8-MLP">
+                                    <rect key="frame" x="35" y="-10" width="86" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.63137254901960782" green="0.65490196078431373" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjM-w2-s9f" userLabel="layout-性别条件">
+                                    <rect key="frame" x="5" y="0.0" width="250" height="85"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cut-xy-MWc">
+                                            <rect key="frame" x="0.0" y="37" width="80" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="全部" image="common_radio_button_choose_20dp">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40784313725490196" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="selected" image="common_radio_button_select_20dp"/>
+                                            <connections>
+                                                <action selector="clickSexCondition:" destination="-1" eventType="touchUpInside" id="EhQ-Jj-DXu"/>
+                                                <action selector="clickSexCondition:" destination="-2" eventType="touchUpInside" id="ZjL-RU-3M3"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0w-7y-xxe" userLabel="男">
+                                            <rect key="frame" x="85" y="37" width="80" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="男" image="common_radio_button_choose_20dp">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40784313725490196" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="selected" image="common_radio_button_select_20dp"/>
+                                            <connections>
+                                                <action selector="clickSexCondition:" destination="-1" eventType="touchUpInside" id="YRW-vG-mNR"/>
+                                                <action selector="clickSexCondition:" destination="-2" eventType="touchUpInside" id="sEM-iC-GAp"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1w-Ic-M4S">
+                                            <rect key="frame" x="170" y="37" width="80" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="女" image="common_radio_button_choose_20dp">
+                                                <color key="titleColor" red="0.40000000000000002" green="0.40784313725490196" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="selected" image="common_radio_button_select_20dp"/>
+                                            <connections>
+                                                <action selector="clickSexCondition:" destination="-2" eventType="touchUpInside" id="HIG-10-AKy"/>
+                                                <action selector="clickSexCondition:" destination="-1" eventType="touchUpInside" id="KjP-Yo-w23"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="250" id="AdB-pP-LPZ"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="cfp-VK-R1P" secondAttribute="trailing" id="01J-U1-uhD"/>
+                                <constraint firstAttribute="bottom" secondItem="PjM-w2-s9f" secondAttribute="bottom" id="2hI-iF-G4F"/>
+                                <constraint firstAttribute="height" constant="85" id="Qoa-aL-cvy"/>
+                                <constraint firstItem="cfp-VK-R1P" firstAttribute="top" secondItem="ibe-3l-I36" secondAttribute="top" id="Vhw-5k-alP"/>
+                                <constraint firstAttribute="bottom" secondItem="cfp-VK-R1P" secondAttribute="bottom" id="fO5-lc-A0F"/>
+                                <constraint firstItem="cfp-VK-R1P" firstAttribute="leading" secondItem="ibe-3l-I36" secondAttribute="leading" id="g1Z-7H-voe"/>
+                                <constraint firstItem="PjM-w2-s9f" firstAttribute="centerX" secondItem="ibe-3l-I36" secondAttribute="centerX" id="nbP-mN-N6h"/>
+                                <constraint firstItem="PjM-w2-s9f" firstAttribute="top" secondItem="ibe-3l-I36" secondAttribute="top" id="x2M-bO-bMk"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ibe-3l-I36" firstAttribute="leading" secondItem="Wes-ab-fqj" secondAttribute="leading" id="FZZ-7r-O40"/>
+                        <constraint firstItem="80t-UG-7fi" firstAttribute="top" secondItem="Wes-ab-fqj" secondAttribute="top" constant="10" id="JcW-Jd-6km"/>
+                        <constraint firstAttribute="trailing" secondItem="ibe-3l-I36" secondAttribute="trailing" id="d0i-0q-rv9"/>
+                        <constraint firstItem="80t-UG-7fi" firstAttribute="leading" secondItem="Wes-ab-fqj" secondAttribute="leading" id="n2b-pF-Vw3"/>
+                        <constraint firstItem="ibe-3l-I36" firstAttribute="top" secondItem="80t-UG-7fi" secondAttribute="bottom" constant="30" id="q8a-tz-QBi"/>
+                        <constraint firstAttribute="trailing" secondItem="80t-UG-7fi" secondAttribute="trailing" id="rj5-wF-UhM"/>
+                        <constraint firstAttribute="height" constant="210" id="s2z-zB-du7"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUO-v4-fL0" userLabel="layout-底部按钮等">
+                    <rect key="frame" x="30" y="358" width="260" height="68"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCs-DC-8gt">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="40"/>
+                            <color key="backgroundColor" red="0.75686274509803919" green="0.20392156862745098" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="VMF-BU-rv4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <size key="titleShadowOffset" width="1" height="1"/>
+                            <state key="normal" title="开始查找">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickSubmit:" destination="-1" eventType="touchUpInside" id="XXc-FK-loZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OY-lI-6Xl">
+                            <rect key="frame" x="0.0" y="52" width="260" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="3Uj-Uw-yeF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="最大好友数提示" image="chatting_list_myinfo_mylovers_icon.png">
+                                <color key="titleColor" red="0.63137254901960782" green="0.65490196078431373" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="7OY-lI-6Xl" secondAttribute="trailing" id="6Rh-xM-dgb"/>
+                        <constraint firstAttribute="height" constant="68" id="Fgo-az-jkk"/>
+                        <constraint firstItem="7OY-lI-6Xl" firstAttribute="top" secondItem="pCs-DC-8gt" secondAttribute="bottom" constant="12" id="MMh-sK-Z5q"/>
+                        <constraint firstAttribute="trailing" secondItem="pCs-DC-8gt" secondAttribute="trailing" id="oqi-1f-nN9"/>
+                        <constraint firstItem="7OY-lI-6Xl" firstAttribute="leading" secondItem="SUO-v4-fL0" secondAttribute="leading" id="rxT-HT-OUh"/>
+                        <constraint firstItem="pCs-DC-8gt" firstAttribute="top" secondItem="SUO-v4-fL0" secondAttribute="top" id="uZl-6g-BOl"/>
+                        <constraint firstItem="pCs-DC-8gt" firstAttribute="leading" secondItem="SUO-v4-fL0" secondAttribute="leading" id="xIK-Ur-3FH"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06v-GD-DKm" userLabel="layout-精确查找">
+                    <rect key="frame" x="30" y="128" width="260" height="46"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sph-7q-ffm" userLabel="input-bg">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="46"/>
+                            <color key="backgroundColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cED-gu-Fd6" userLabel="icon">
+                            <rect key="frame" x="8" y="8" width="30" height="30"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_phone" translatesAutoresizingMaskIntoConstraints="NO" id="Duh-Ss-Noc" userLabel="icon">
+                                    <rect key="frame" x="7.5" y="7.5" width="15" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="THf-BD-NkY"/>
+                                <constraint firstAttribute="height" constant="30" id="ngz-VY-Mr9"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="对方的ID号或手机号" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pxc-w1-HTx" userLabel="文本框-注册邮箱">
+                            <rect key="frame" x="47" y="0.0" width="201" height="46"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="email"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="cED-gu-Fd6" secondAttribute="bottom" constant="8" id="0v3-pd-42d"/>
+                        <constraint firstItem="sph-7q-ffm" firstAttribute="top" secondItem="06v-GD-DKm" secondAttribute="top" id="2Fp-7b-MDr"/>
+                        <constraint firstItem="Pxc-w1-HTx" firstAttribute="top" secondItem="06v-GD-DKm" secondAttribute="top" id="IYm-hZ-WRV"/>
+                        <constraint firstAttribute="bottom" secondItem="Pxc-w1-HTx" secondAttribute="bottom" id="Kqx-PX-4eG"/>
+                        <constraint firstItem="sph-7q-ffm" firstAttribute="leading" secondItem="06v-GD-DKm" secondAttribute="leading" id="Xeb-kj-ZgZ"/>
+                        <constraint firstAttribute="trailing" secondItem="Pxc-w1-HTx" secondAttribute="trailing" constant="12" id="Zwb-j5-Hgk"/>
+                        <constraint firstAttribute="trailing" secondItem="sph-7q-ffm" secondAttribute="trailing" id="aNQ-dw-Ayp"/>
+                        <constraint firstItem="Pxc-w1-HTx" firstAttribute="leading" secondItem="06v-GD-DKm" secondAttribute="leading" constant="47" id="gm8-rN-ZZa"/>
+                        <constraint firstAttribute="bottom" secondItem="sph-7q-ffm" secondAttribute="bottom" id="hWg-ks-Rrz"/>
+                        <constraint firstItem="cED-gu-Fd6" firstAttribute="top" secondItem="06v-GD-DKm" secondAttribute="top" constant="8" id="kHr-2c-xqC"/>
+                        <constraint firstItem="cED-gu-Fd6" firstAttribute="leading" secondItem="06v-GD-DKm" secondAttribute="leading" constant="8" id="rVT-AT-EIF"/>
+                        <constraint firstAttribute="height" constant="46" id="slv-Zu-5IJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="uEZ-Dr-fvg"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="SUO-v4-fL0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="21P-d1-30r"/>
+                <constraint firstAttribute="trailing" secondItem="Wes-ab-fqj" secondAttribute="trailing" constant="30" id="2TU-Ot-zDf"/>
+                <constraint firstItem="Wes-ab-fqj" firstAttribute="top" secondItem="4eU-lS-Ta0" secondAttribute="bottom" constant="20" id="7SU-kq-UAh"/>
+                <constraint firstItem="4eU-lS-Ta0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="7fC-oF-Mnq"/>
+                <constraint firstItem="Wes-ab-fqj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="9ni-lj-0jC"/>
+                <constraint firstItem="06v-GD-DKm" firstAttribute="top" secondItem="4eU-lS-Ta0" secondAttribute="bottom" constant="30" id="AbQ-4J-gih"/>
+                <constraint firstAttribute="trailing" secondItem="SUO-v4-fL0" secondAttribute="trailing" constant="30" id="cVL-dH-eKu"/>
+                <constraint firstItem="06v-GD-DKm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="eP4-zp-pFe"/>
+                <constraint firstAttribute="trailing" secondItem="06v-GD-DKm" secondAttribute="trailing" constant="30" id="fwj-Tz-QIe"/>
+                <constraint firstItem="4eU-lS-Ta0" firstAttribute="top" secondItem="uEZ-Dr-fvg" secondAttribute="top" constant="30" id="iLa-Rw-vWe"/>
+                <constraint firstItem="SUO-v4-fL0" firstAttribute="top" secondItem="Wes-ab-fqj" secondAttribute="bottom" constant="30" id="vsR-8Z-feZ"/>
+                <constraint firstAttribute="trailing" secondItem="4eU-lS-Ta0" secondAttribute="trailing" constant="30" id="xV0-Cr-esJ"/>
+            </constraints>
+            <point key="canvasLocation" x="19" y="-119"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chatting_list_myinfo_mylovers_icon.png" width="14" height="14"/>
+        <image name="common_radio_button_choose_20dp" width="20" height="20"/>
+        <image name="common_radio_button_select_20dp" width="20" height="20"/>
+        <image name="login_user" width="18" height="18"/>
+        <image name="sns_add_friend_form_choices_bg" width="43.5" height="45"/>
+        <image name="sns_add_friend_form_search_btn_checked.png" width="50" height="50"/>
+        <image name="sns_add_friend_form_search_btn_nor.png" width="50" height="50"/>
+    </resources>
+</document>

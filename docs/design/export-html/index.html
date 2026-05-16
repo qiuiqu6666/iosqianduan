@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PSD Export</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background: #eef2f7;
+      color: #17202a;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    .page {
+      width: min(100%, 1152px);
+    }
+
+    .stage {
+      width: 100%;
+      aspect-ratio: 1152 / 1200;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(20, 30, 45, .18);
+    }
+
+    .stage img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .caption {
+      margin-top: 14px;
+      color: #667383;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 12px;
+        background: #fff;
+      }
+
+      .stage {
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .caption {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="stage" aria-label="PSD converted preview">
+      <img src="assets/export.png" alt="PSD converted HTML preview">
+    </section>
+    <div class="caption">Converted from export.psd · 1152 × 1200</div>
+  </main>
+</body>
+</html>

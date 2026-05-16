@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58.917" height="76.022" viewBox="0 0 58.917 76.022">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffb9b9"/>
+      <stop offset="1" stop-color="#ff6868"/>
+    </linearGradient>
+  </defs>
+  <g id="组_43268" data-name="组 43268" transform="translate(0)">
+    <path id="路径_418" data-name="路径 418" d="M191.2,5.7V35.469a37.393,37.393,0,0,1-16.544,12.125,12.832,12.832,0,0,0-24.674.4,37.332,37.332,0,0,1-17.7-12.525V5.7a5.718,5.718,0,0,1,5.7-5.7H185.5A5.718,5.718,0,0,1,191.2,5.7Z" transform="translate(-132.288 0)" fill="url(#linear-gradient)"/>
+    <path id="路径_419" data-name="路径 419" d="M191.2,554.56v29.15a5.718,5.718,0,0,1-5.7,5.7H137.99a5.718,5.718,0,0,1-5.7-5.7V554.56a37.334,37.334,0,0,0,17.471,12.449,12.829,12.829,0,0,0,25.32-.485A37.35,37.35,0,0,0,191.2,554.56Z" transform="translate(-132.288 -513.39)" fill="url(#linear-gradient)"/>
+    <path id="路径_420" data-name="路径 420" d="M434.055,578.628a8.938,8.938,0,0,1-.57,3.16,9.028,9.028,0,0,1-16.786.323,9.042,9.042,0,0,1-.4-5.792,9.028,9.028,0,0,1,17.756,2.309Z" transform="translate(-394.937 -527.313)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

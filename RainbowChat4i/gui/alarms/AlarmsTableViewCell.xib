@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="68" id="KGk-i7-Jjw" customClass="AlarmsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oji-nS-WI5" userLabel="Container-icons">
+                        <rect key="frame" x="15" y="0.0" width="61" height="68.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_alarms_system_message_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Vde-4X-roB" userLabel="icon">
+                                <rect key="frame" x="0.0" y="10.5" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="0ct-9t-LgE"/>
+                                    <constraint firstAttribute="height" constant="48" id="hDM-sa-qqy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vde-4X-roB" firstAttribute="leading" secondItem="oji-nS-WI5" secondAttribute="leading" id="3GW-lt-6Yv"/>
+                            <constraint firstAttribute="width" constant="61" id="hP5-Sv-iEl"/>
+                            <constraint firstItem="Vde-4X-roB" firstAttribute="centerY" secondItem="oji-nS-WI5" secondAttribute="centerY" id="w5n-to-Fb6"/>
+                        </constraints>
+                    </view>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsk-Gv-ZVa" userLabel="Lb Title Left Flag container-废弃自v10.2">
+                        <rect key="frame" x="76" y="17" width="19" height="16"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="陌" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAI-f8-wLf" userLabel="Lb Title Left Flag">
+                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.63921568627450975" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="zS5-38-sls"/>
+                            <constraint firstAttribute="width" constant="19" id="zoM-SO-wd3"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="这是标题文字1111122222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swN-R0-Xdw" userLabel="Lb Title">
+                        <rect key="frame" x="95" y="15" width="101.5" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="999" constant="20" id="I04-vY-m28"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.20784313725490194" green="0.21568627450980393" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrn-v1-bsg" userLabel="Lb Title Right Flag container">
+                        <rect key="frame" x="196.5" y="15" width="48" height="20"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="官方" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd7-x7-iOb" userLabel="Lb Title Left Flag">
+                                <rect key="frame" x="6" y="0.0" width="42" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.94901960784313721" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.6470588235294118" green="0.48627450980392156" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xc" translatesAutoresizingMaskIntoConstraints="NO" id="rbC-u6-3XQ" userLabel="Img Title Right Flag">
+                                <rect key="frame" x="0.0" y="0.0" width="48" height="20"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="e9k-K2-KEa"/>
+                            <constraint firstItem="rbC-u6-3XQ" firstAttribute="leading" secondItem="vrn-v1-bsg" secondAttribute="leading" id="nGL-QY-Xx2"/>
+                            <constraint firstItem="rbC-u6-3XQ" firstAttribute="top" secondItem="vrn-v1-bsg" secondAttribute="top" id="o1Q-v8-Teq"/>
+                            <constraint firstAttribute="height" constant="20" id="r7b-Tm-a8X"/>
+                            <constraint firstAttribute="trailing" secondItem="rbC-u6-3XQ" secondAttribute="trailing" id="vTt-w1-J5W"/>
+                            <constraint firstAttribute="bottom" secondItem="rbC-u6-3XQ" secondAttribute="bottom" id="xkn-T7-wfX"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晚上23:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZwM-el-93q" userLabel="Lb Date">
+                        <rect key="frame" x="249.5" y="14" width="55.5" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="999" constant="14" id="QK5-fR-Esq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.73333333333333328" green="0.74117647058823533" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <size key="shadowOffset" width="1" height="1"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[9条]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVm-h6-Pmb" userLabel="Lb Msg Prefix">
+                        <rect key="frame" x="76" y="38" width="29.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="qGa-b5-qWW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.60784313729999995" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label123456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" numberOfLines="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ofh-mM-XHE" userLabel="Lb Msg Content">
+                        <rect key="frame" x="109.5" y="38" width="179.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="t0q-fu-BzX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.60784313725490191" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_alarms_list_item_icon_notify_14dp" translatesAutoresizingMaskIntoConstraints="NO" id="DON-dr-rHP" userLabel="silent-icon">
+                        <rect key="frame" x="291" y="40" width="14" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="14" id="PBI-Pr-Uaz"/>
+                            <constraint firstAttribute="height" constant="14" id="pMd-Mo-44E"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_alarms_list_item_alwaytop" translatesAutoresizingMaskIntoConstraints="NO" id="PI0-0s-K2p" userLabel="alwaystop_icon">
+                        <rect key="frame" x="289" y="40" width="16" height="16"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIe-uB-ixR" customClass="RBBadgeView">
+                        <rect key="frame" x="286" y="38" width="14" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcm-iH-lzO">
+                        <rect key="frame" x="294" y="40" width="11" height="11"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.29803921568627451" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5.5"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bsk-Gv-ZVa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="Bxv-Cr-id1"/>
+                    <constraint firstItem="Ofh-mM-XHE" firstAttribute="top" secondItem="swN-R0-Xdw" secondAttribute="bottom" constant="3" id="Cr7-rg-2yc"/>
+                    <constraint firstItem="oji-nS-WI5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CrG-I4-qie"/>
+                    <constraint firstItem="oji-nS-WI5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="FKk-iW-s1h"/>
+                    <constraint firstItem="bsk-Gv-ZVa" firstAttribute="leading" secondItem="oji-nS-WI5" secondAttribute="trailing" id="NZG-2h-dnU"/>
+                    <constraint firstItem="swN-R0-Xdw" firstAttribute="leading" secondItem="bsk-Gv-ZVa" secondAttribute="trailing" priority="999" id="SQI-mF-W3G"/>
+                    <constraint firstItem="QVm-h6-Pmb" firstAttribute="top" secondItem="swN-R0-Xdw" secondAttribute="bottom" constant="3" id="deO-Ng-i4T"/>
+                    <constraint firstItem="vrn-v1-bsg" firstAttribute="leading" secondItem="DON-dr-rHP" secondAttribute="trailing" constant="4" id="f1T-vy-pg0"/>
+                    <constraint firstAttribute="bottom" secondItem="oji-nS-WI5" secondAttribute="bottom" constant="-0.5" id="hK7-MX-wQf"/>
+                    <constraint firstItem="Ofh-mM-XHE" firstAttribute="leading" secondItem="QVm-h6-Pmb" secondAttribute="trailing" constant="4" id="iFb-ZH-CO5"/>
+                    <constraint firstItem="vrn-v1-bsg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="jNd-pv-FyP"/>
+                    <constraint firstAttribute="trailing" secondItem="ZwM-el-93q" secondAttribute="trailing" priority="999" constant="15" id="jos-V2-yP6"/>
+                    <constraint firstItem="QVm-h6-Pmb" firstAttribute="leading" secondItem="oji-nS-WI5" secondAttribute="trailing" id="mKg-cd-Bom"/>
+                    <constraint firstItem="swN-R0-Xdw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="999" constant="15" id="nhO-P2-Amy"/>
+                    <constraint firstItem="ZwM-el-93q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vrn-v1-bsg" secondAttribute="trailing" constant="5" id="oQv-6u-TZ4"/>
+                    <constraint firstItem="DON-dr-rHP" firstAttribute="leading" secondItem="swN-R0-Xdw" secondAttribute="trailing" constant="4" id="rb-silent-after-title-lead"/>
+                    <constraint firstItem="DON-dr-rHP" firstAttribute="centerY" secondItem="swN-R0-Xdw" secondAttribute="centerY" id="rb-silent-title-centerY"/>
+                    <constraint firstItem="ZwM-el-93q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="999" constant="14" id="vjP-cm-pOp"/>
+                    <constraint firstItem="H2p-sc-9uM" firstAttribute="trailing" secondItem="Ofh-mM-XHE" secondAttribute="trailing" constant="28" id="rb-msg-content-trailing"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="viewAlwaystopIcon" destination="PI0-0s-K2p" id="0nr-M4-28d"/>
+                <outlet property="viewDate" destination="ZwM-el-93q" id="ign-gp-wf0"/>
+                <outlet property="viewFlagDot" destination="wcm-iH-lzO" id="BVV-Yi-Z0U"/>
+                <outlet property="viewFlagNum2" destination="TIe-uB-ixR" id="gDR-mS-pSX"/>
+                <outlet property="viewIcon" destination="Vde-4X-roB" id="2T2-XO-3iE"/>
+                <outlet property="viewMsgContent" destination="Ofh-mM-XHE" id="RD8-mo-VqW"/>
+                <outlet property="viewMsgContentTopFromTitleConstraint" destination="Cr7-rg-2yc" id="rb-out-msg-top"/>
+                <outlet property="viewMsgPrefix" destination="QVm-h6-Pmb" id="cyh-gc-w71"/>
+                <outlet property="viewMsgPrefixTopFromTitleConstraint" destination="deO-Ng-i4T" id="rb-out-prefix-top"/>
+                <outlet property="viewMsgPrefix_rightGapConstraint" destination="iFb-ZH-CO5" id="lRt-2Z-glv"/>
+                <outlet property="viewSilentIcon" destination="DON-dr-rHP" id="QW9-mr-Mot"/>
+                <outlet property="viewSilentIconWidthConstraint" destination="PBI-Pr-Uaz" id="rb-outlet-silent-w"/>
+                <outlet property="viewSilentIconLeadingConstraint" destination="rb-silent-after-title-lead" id="rb-outlet-silent-lead"/>
+                <outlet property="viewTitle" destination="swN-R0-Xdw" id="nbW-aC-FSw"/>
+                <outlet property="viewTitleLeftFlag" destination="YAI-f8-wLf" id="BAb-3e-C8f"/>
+                <outlet property="viewTitleLeftFlagContainer" destination="bsk-Gv-ZVa" id="iCU-ON-mZn"/>
+                <outlet property="viewTitleLeftFlagContainer_widthConstraint" destination="zoM-SO-wd3" id="Rj0-Kd-NOa"/>
+                <outlet property="viewTitleRightFlag" destination="gd7-x7-iOb" id="cxR-Ma-WP5"/>
+                <outlet property="viewTitleRightFlagImageView" destination="rbC-u6-3XQ" id="sQi-Y9-I7Y"/>
+                <outlet property="viewTitleRightFlagContainer" destination="vrn-v1-bsg" id="wZq-XQ-oEz"/>
+                <outlet property="viewTitleRightFlagContainer_widthConstraint" destination="e9k-K2-KEa" id="KcO-re-oT8"/>
+            </connections>
+            <point key="canvasLocation" x="-669" y="-381"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="main_alarms_list_item_alwaytop" width="13" height="13"/>
+        <image name="main_alarms_list_item_icon_notify_14dp" width="14" height="14"/>
+        <image name="main_alarms_system_message_icon" width="48" height="48"/>
+        <image name="xc" width="55" height="20"/>
+    </resources>
+</document>

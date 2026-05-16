@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  RainbowChat4i
+
+  Created by JackJiang on 17/3/4.
+  Copyright © 2017年 JackJiang. All rights reserved.
+*/
+
+"general_prompt"="友情提示";
+"general_are_u_sure"="確認操作";
+"general_got_it"="知道了";
+"general_ok"="確認";
+"general_cancel"="取消";
+"general_confirm_btn"="確定";
+"general_confirm"="確定";
+"general_tip"="提示";
+"general_warn"="請注意";
+"general_error"="出錯了";
+"general_http_reponse_exception"="伺服器響應異常，操作失敗";
+"general_http_faild"="網路請求失敗，可能是網路或伺服器故障！";
+
+"login_form_error_psw_message"="無效登入資訊，請確保正確輸入了您的用戶名和密碼.";
+"chat_message_send_error"="您的網路不給力，請稍後再試！";
+"request_server_failed"="請求伺服器失敗";
+
+"main_tabs_title_alarm"="消息";
+"main_tabs_title_roster"="通讯录";
+"main_tabs_title_group"="群聊";
+"main_tabs_title_discover"="發現";
+"main_tabs_title_wallet"="錢包";
+//"main_tabs_title_mall"="商城";
+"main_tabs_title_more"="我的";
+
+

@@ -1,0 +1,35 @@
+General：未分类的第3方实现库；
+AMR：AMR编解码库；
+IQAudioRecorderController：用于语音留言的录制，现已被JackJiang深度改造；
+CocoaLumberjack：日志框架；
+JSQMessagesViewController、JSQSystemSoundPlayer：聊天界面封装库，现已被JackJiang深度改造；
+TZImagePickerController：拍照、相册图片选择库，JackJiang有针对iOS 26的适配和优化；
+rbRMMapper：JSON库(Jack Jiang基于开源RMMapper库的改进版：比如20180507增加了支持父类属性的反序列化，接口完全兼容原版)；
+AFNetworking：HTTP网络框架（https://github.com/AFNetworking/AFNetworking）；
+MBProgressHUD：菊花库，版本1.0.0。此库现已被JackJiang小幅改造过；
+MobileIMSDK4iLib：MobileIMSDK iOS版；
+Toast：仿Andorid的UI提示组件；
+SDWebImage：聊天界面中的图片缓存、异步加载库，防止图片过多而使得内存溢出；
+MSSBrowse：聊天界面中点击图片查看大图的库(Jack Jiang对源码有改动：实现查看本地图片的保存、新加了“保存”图片按钮)；
+EVA.Rest4i：RainbowChat的通用http rest接口的iOS客户端封装库；
+ZWPlaceHolder：用于扩展UITextView，使之支持PlaceHolder和输入字符数限制；
+ZWLimitCounter：用于扩展UITextView，使之支持输入字符数统计和限制；
+HcdGuideView：引导页封装库(Jack Jiang对源码有改动！)；
+Masonry：著名的开源硬编码布局框架，目前主要用于聊天界面中某些需要动态编码（无法在xib中定义）的UI部分；
+fmdb：ios上著名的sqlite操作框架；
+LPActionSheet：仿微信的底部弹出菜单，用途跟UIActionController相同。此库现已被JackJiang改造过；
+XYMenu：一款仿微信的顶部弹出菜单库，来自：https://github.com/HeathHsia/XYMenu。此库现已被JackJiang改造过；
+RBBadgeView：一个借鉴自某信的未读数红点实现库。此库现已被JackJiang改造过；
+PWProgressView：一个仿微信扇形进度显示控件，来自：https://github.com/pwillsey/PWProgressView；
+
+# 高德地图相关SDK于20220902日已升级到最新版
+gaode/AMapFoundationKit.framework：高德地图"基础SDKV1.7.0(含IDFA)"，高德IDFA说明：https://lbs.amap.com/api/ios-sdk/guide/create-project/idfa-guide/
+gaode/MAMapKit.framework：高德地图"3D地图SDK V9.4.0"，https://lbs.amap.com/api/ios-sdk/download
+gaode/AMapSearchKit.framework：高德地图"搜索功能 V9.4.0"，https://lbs.amap.com/api/ios-sdk/download
+【注意】：因高德地图中使用了IFDA，在提交App store时要注意的事项，请见：https://lbs.amap.com/api/ios-location-sdk/guide/create-project/idfa-guide
+gaode/AMapLocationKit.framework：高德地图"定位功能 V2.7.0"，https://lbs.amap.com/api/ios-location-sdk/download
+
+LBXScanLib：二维码扫描库，来自：https://github.com/MxABC/LBXScan。此库封装不够优秀，除核心以外，ui界面等需要自已按需修改，现已被JackJiang改造过；
+
+FabBar（Swift Package）：iOS 26 Liquid Glass 风格底部导航栏，来自 https://github.com/ryanashcraft/FabBar。主界面在 iOS 26+ 使用 FabBar 替代系统 UITabBar，低版本仍使用系统 TabBar。因为手势返回使用系统UITabBar层级出现异常。
+

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BigFileViewerController">
+            <connections>
+                <outlet property="heightConstraintOfDownloadProgressLayout" destination="dgy-1R-w3L" id="6MM-5u-hXf"/>
+                <outlet property="mBtnOpr" destination="Ly7-fy-XNM" id="qmU-ra-Zmi"/>
+                <outlet property="mDownloadProgress" destination="u9D-cS-bam" id="yhG-eP-zpB"/>
+                <outlet property="mViewFileIcon" destination="QmS-OP-iND" id="dcX-0m-IdF"/>
+                <outlet property="mViewFileName" destination="Kh1-X1-EBP" id="nIv-ze-iNk"/>
+                <outlet property="mViewFileSize" destination="rzg-Q6-VeT" id="Swm-kQ-lsb"/>
+                <outlet property="mViewHint" destination="wsd-Pe-cbO" id="Q6z-xa-cjj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP2-1g-ckz">
+                    <rect key="frame" x="30" y="65" width="315" height="582"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="file_type_pdf_big" translatesAutoresizingMaskIntoConstraints="NO" id="QmS-OP-iND">
+                            <rect key="frame" x="112.5" y="0.0" width="90" height="90"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="90" id="acG-Qj-q7K"/>
+                                <constraint firstAttribute="height" constant="90" id="iN2-Wb-Hmi"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="16"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RainbowChat-ios版-截止20180324日实现的功能界面截图.zip" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kh1-X1-EBP">
+                            <rect key="frame" x="0.0" y="117" width="315" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Gmc-zi-fGQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <color key="textColor" red="0.20784313725490194" green="0.21568627450980393" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.1MB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzg-Q6-VeT">
+                            <rect key="frame" x="135" y="148" width="45" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="Iic-iV-CZs"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.30588235294117649" green="0.58039215686274503" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9D-h4-3HK" userLabel="layout-进度条">
+                            <rect key="frame" x="10" y="160" width="295" height="18"/>
+                            <subviews>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="u9D-cS-bam">
+                                    <rect key="frame" x="0.0" y="14.5" width="295" height="1.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="0.5" id="mSq-6k-neS"/>
+                                    </constraints>
+                                    <color key="progressTintColor" red="0.0" green="0.87058823529411766" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="trackTintColor" red="0.83137254901960778" green="0.83529411764705885" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                </progressView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="u9D-cS-bam" firstAttribute="top" secondItem="N9D-h4-3HK" secondAttribute="top" constant="14.5" id="HGI-HJ-IUc"/>
+                                <constraint firstItem="u9D-cS-bam" firstAttribute="leading" secondItem="N9D-h4-3HK" secondAttribute="leading" id="cBS-FN-4Su"/>
+                                <constraint firstAttribute="height" constant="18" id="dgy-1R-w3L"/>
+                                <constraint firstAttribute="trailing" secondItem="u9D-cS-bam" secondAttribute="trailing" id="f9P-9a-WZ3"/>
+                            </constraints>
+                        </view>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="暂时不能打开该文件，你可以用其它应用打开！" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsd-Pe-cbO">
+                            <rect key="frame" x="10" y="193" width="295" height="87"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="87" id="M4w-Hd-5hs"/>
+                            </constraints>
+                            <color key="textColor" red="0.59215686274509804" green="0.61176470588235299" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="N9D-h4-3HK" firstAttribute="top" secondItem="rzg-Q6-VeT" secondAttribute="bottom" id="1pk-Qq-weY"/>
+                        <constraint firstItem="Kh1-X1-EBP" firstAttribute="leading" secondItem="HP2-1g-ckz" secondAttribute="leading" id="CoD-6R-ohR"/>
+                        <constraint firstAttribute="trailing" secondItem="wsd-Pe-cbO" secondAttribute="trailing" constant="10" id="KXT-fd-vj5"/>
+                        <constraint firstItem="N9D-h4-3HK" firstAttribute="leading" secondItem="HP2-1g-ckz" secondAttribute="leading" constant="10" id="L53-Oz-t2k"/>
+                        <constraint firstItem="QmS-OP-iND" firstAttribute="centerX" secondItem="HP2-1g-ckz" secondAttribute="centerX" id="NSL-fD-YI7"/>
+                        <constraint firstAttribute="trailing" secondItem="Kh1-X1-EBP" secondAttribute="trailing" id="TdR-UJ-PPg"/>
+                        <constraint firstItem="rzg-Q6-VeT" firstAttribute="centerX" secondItem="HP2-1g-ckz" secondAttribute="centerX" id="VPi-N2-cNc"/>
+                        <constraint firstItem="Kh1-X1-EBP" firstAttribute="top" secondItem="QmS-OP-iND" secondAttribute="bottom" constant="27" id="WBt-Vg-Zek"/>
+                        <constraint firstItem="QmS-OP-iND" firstAttribute="top" secondItem="HP2-1g-ckz" secondAttribute="top" id="eyJ-xh-J7e"/>
+                        <constraint firstItem="wsd-Pe-cbO" firstAttribute="top" secondItem="N9D-h4-3HK" secondAttribute="bottom" constant="15" id="fI3-TF-Fb5"/>
+                        <constraint firstItem="wsd-Pe-cbO" firstAttribute="leading" secondItem="HP2-1g-ckz" secondAttribute="leading" constant="10" id="kcJ-yi-00T"/>
+                        <constraint firstAttribute="trailing" secondItem="N9D-h4-3HK" secondAttribute="trailing" constant="10" id="o8v-mF-753"/>
+                        <constraint firstItem="rzg-Q6-VeT" firstAttribute="top" secondItem="Kh1-X1-EBP" secondAttribute="bottom" constant="10" id="u6l-C9-9Fr"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ly7-fy-XNM">
+                    <rect key="frame" x="42.5" y="597" width="290" height="40"/>
+                    <color key="backgroundColor" red="0.38039215686274508" green="0.82352941176470584" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="CPn-CT-tqb"/>
+                        <constraint firstAttribute="width" constant="290" id="x0x-TJ-EZF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <color key="tintColor" red="0.30588235294117649" green="0.58039215686274503" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="开始下载">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="fireButtonClick:" destination="-1" eventType="touchUpInside" id="NOO-a5-qru"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Way-uT-ITT"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="HP2-1g-ckz" secondAttribute="bottom" constant="20" id="3nB-Lg-LG8"/>
+                <constraint firstItem="HP2-1g-ckz" firstAttribute="top" secondItem="Way-uT-ITT" secondAttribute="top" constant="45" id="87i-UN-I5S"/>
+                <constraint firstItem="Ly7-fy-XNM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CAx-He-MIk"/>
+                <constraint firstItem="HP2-1g-ckz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="I8b-ME-aFQ"/>
+                <constraint firstAttribute="trailing" secondItem="HP2-1g-ckz" secondAttribute="trailing" constant="30" id="IHd-8A-3Nt"/>
+                <constraint firstItem="Way-uT-ITT" firstAttribute="bottom" secondItem="Ly7-fy-XNM" secondAttribute="bottom" constant="30" id="WpR-r6-Uv9"/>
+            </constraints>
+            <point key="canvasLocation" x="-119" y="68"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="file_type_pdf_big" width="90" height="90"/>
+    </resources>
+</document>

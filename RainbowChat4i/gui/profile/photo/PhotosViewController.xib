@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotosViewController">
+            <connections>
+                <outlet property="btnUpload" destination="UtH-OQ-Ody" id="dcg-OY-lzG"/>
+                <outlet property="collectionView" destination="BTA-Pk-sEo" id="Ih9-d6-otl"/>
+                <outlet property="heightConstraintOfBtnContainer" destination="1Qq-3w-u3f" id="tI5-fD-Mo3"/>
+                <outlet property="layoutTableEmptyHint" destination="FBE-8z-jcS" id="AnZ-H7-Ia6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66G-ex-xkO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BTA-Pk-sEo">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2fR-50-CKJ">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-8z-jcS" userLabel="表格为空时的提示UI">
+                            <rect key="frame" x="0.0" y="179.5" width="320" height="149"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_no_data_img_50transparent_120dp" translatesAutoresizingMaskIntoConstraints="NO" id="39s-Wb-fEK" userLabel="icon">
+                                    <rect key="frame" x="100" y="0.0" width="120" height="120"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="120" id="Vlp-1c-De8"/>
+                                        <constraint firstAttribute="width" constant="120" id="mti-EU-zH3"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂未上传照片" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucv-tD-dQk">
+                                    <rect key="frame" x="112" y="128" width="96.5" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="pkm-cu-4Cd"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.79607843137254897" green="0.80392156862745101" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Ucv-tD-dQk" firstAttribute="centerX" secondItem="FBE-8z-jcS" secondAttribute="centerX" id="9uq-Ol-YxV"/>
+                                <constraint firstItem="Ucv-tD-dQk" firstAttribute="top" secondItem="39s-Wb-fEK" secondAttribute="bottom" constant="8" id="jpE-Qo-InO"/>
+                                <constraint firstItem="39s-Wb-fEK" firstAttribute="top" secondItem="FBE-8z-jcS" secondAttribute="top" id="mQe-Ir-P42"/>
+                                <constraint firstAttribute="height" constant="149" id="wLx-o2-Cms"/>
+                                <constraint firstItem="39s-Wb-fEK" firstAttribute="centerX" secondItem="FBE-8z-jcS" secondAttribute="centerX" id="y4K-rh-Lbf"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="BTA-Pk-sEo" secondAttribute="trailing" id="9ky-Bp-tqK"/>
+                        <constraint firstItem="FBE-8z-jcS" firstAttribute="centerY" secondItem="66G-ex-xkO" secondAttribute="centerY" id="Ttq-ea-ACz"/>
+                        <constraint firstItem="BTA-Pk-sEo" firstAttribute="top" secondItem="66G-ex-xkO" secondAttribute="top" id="enq-BY-7xx"/>
+                        <constraint firstItem="FBE-8z-jcS" firstAttribute="leading" secondItem="66G-ex-xkO" secondAttribute="leading" id="hIl-xf-LcY"/>
+                        <constraint firstAttribute="trailing" secondItem="FBE-8z-jcS" secondAttribute="trailing" id="qz4-RO-QwL"/>
+                        <constraint firstAttribute="bottom" secondItem="BTA-Pk-sEo" secondAttribute="bottom" id="swk-Vx-Kgv"/>
+                        <constraint firstItem="BTA-Pk-sEo" firstAttribute="leading" secondItem="66G-ex-xkO" secondAttribute="leading" id="vQl-Sb-FVb"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wl4-kl-U35" userLabel="layout-btns">
+                    <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtH-OQ-Ody">
+                            <rect key="frame" x="20" y="10" width="280" height="40"/>
+                            <color key="backgroundColor" red="0.85490196078431369" green="0.24313725490196078" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <size key="titleShadowOffset" width="1" height="1"/>
+                            <state key="normal" title="现在就上传照片！">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickUploadPhoto:" destination="-1" eventType="touchUpInside" id="mPO-Tp-QYD"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="1Qq-3w-u3f"/>
+                        <constraint firstAttribute="bottom" secondItem="UtH-OQ-Ody" secondAttribute="bottom" constant="10" id="20R-8b-OSz"/>
+                        <constraint firstAttribute="trailing" secondItem="UtH-OQ-Ody" secondAttribute="trailing" constant="20" id="DsF-gR-ygA"/>
+                        <constraint firstItem="UtH-OQ-Ody" firstAttribute="top" secondItem="Wl4-kl-U35" secondAttribute="top" constant="10" id="GBB-gP-K2e"/>
+                        <constraint firstItem="UtH-OQ-Ody" firstAttribute="leading" secondItem="Wl4-kl-U35" secondAttribute="leading" constant="20" id="fuA-Me-pIO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="zfa-09-yEr"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="66G-ex-xkO" secondAttribute="trailing" id="3rs-Zf-riD"/>
+                <constraint firstItem="zfa-09-yEr" firstAttribute="bottom" secondItem="Wl4-kl-U35" secondAttribute="bottom" id="7hn-DY-ROx"/>
+                <constraint firstItem="66G-ex-xkO" firstAttribute="top" secondItem="zfa-09-yEr" secondAttribute="top" id="97j-Eh-tjj"/>
+                <constraint firstItem="zfa-09-yEr" firstAttribute="trailing" secondItem="Wl4-kl-U35" secondAttribute="trailing" id="Mek-fX-UQV"/>
+                <constraint firstItem="Wl4-kl-U35" firstAttribute="leading" secondItem="zfa-09-yEr" secondAttribute="leading" id="kwE-da-9IO"/>
+                <constraint firstItem="Wl4-kl-U35" firstAttribute="top" secondItem="66G-ex-xkO" secondAttribute="bottom" id="o5R-GK-tlb"/>
+                <constraint firstItem="66G-ex-xkO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rSC-2n-Yp7"/>
+            </constraints>
+            <point key="canvasLocation" x="22.5" y="50.70422535211268"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="common_no_data_img_50transparent_120dp" width="120" height="120"/>
+    </resources>
+</document>

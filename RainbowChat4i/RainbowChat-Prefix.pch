@@ -1,0 +1,32 @@
+#import <Availability.h>
+
+#ifndef __IPHONE_8_0
+#warning "This project uses features only available in iOS SDK 8.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+#import "SysProcessorConst.h"
+#import "JobDispatchConst.h"
+#import "SysActionConst.h"
+
+#import "ClientCoreSDK.h"
+#import "LocalDataSender.h"
+
+#import "Default.h"
+#import "BasicTool.h"
+#import "TimeTool.h"
+
+#import "CocoaLumberjack.h"
+
+#ifdef DEBUG
+static DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+static DDLogLevel ddLogLevel = DDLogLevelVerbose;//DDLogLevelInfo;
+#endif
+
+#endif
+

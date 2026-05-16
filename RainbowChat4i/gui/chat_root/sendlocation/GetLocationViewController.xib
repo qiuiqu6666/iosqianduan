@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GetLocationViewController">
+            <connections>
+                <outlet property="btnBackMySelfLocation" destination="WqK-sc-ihO" id="Ify-tk-xTZ"/>
+                <outlet property="containerCenterPin" destination="CUJ-Uh-2h2" id="OyA-X4-2w2"/>
+                <outlet property="layoutMapContainer" destination="zR7-6x-qw8" id="S9o-Az-CzO"/>
+                <outlet property="noDataHintView" destination="Tm7-Qh-KPt" id="Hwb-Kv-DVu"/>
+                <outlet property="noDataUIContainer" destination="cBe-BL-qCR" id="bu2-Ys-eK0"/>
+                <outlet property="progressView4Loading" destination="ycQ-wq-YvR" id="tRQ-Ij-sfI"/>
+                <outlet property="tableView" destination="BCA-Cw-fF1" id="3bV-Oy-XeE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewCenterPin" destination="5jv-Rf-u37" id="aAr-9l-l5m"/>
+                <outlet property="viewTopRoundBgShadow" destination="fDA-V2-su5" id="Rlk-Wr-sfG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zR7-6x-qw8" userLabel="layout-map">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="314"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUJ-Uh-2h2" userLabel="ping-container">
+                            <rect key="frame" x="149" y="115" width="22" height="84"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chatting_location_current_pin_icon" translatesAutoresizingMaskIntoConstraints="NO" id="5jv-Rf-u37">
+                                    <rect key="frame" x="0.0" y="0.0" width="22" height="42"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="22" id="fcr-Ar-UZL"/>
+                                <constraint firstAttribute="height" constant="84" id="lKb-1Z-5Gg"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WqK-sc-ihO">
+                            <rect key="frame" x="248" y="228" width="64" height="64"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="NcF-Ai-THk"/>
+                                <constraint firstAttribute="width" constant="64" id="iMS-nK-fgk"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="chatting_location_gps_black"/>
+                            <state key="highlighted" backgroundImage="chatting_location_gps_red"/>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_top_rount_white_bg_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="fDA-V2-su5">
+                            <rect key="frame" x="0.0" y="287" width="320" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="27" id="nax-bf-hFY"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="fDA-V2-su5" secondAttribute="bottom" id="43v-9d-ara"/>
+                        <constraint firstAttribute="trailing" secondItem="WqK-sc-ihO" secondAttribute="trailing" constant="8" id="IAS-xo-AZs"/>
+                        <constraint firstItem="fDA-V2-su5" firstAttribute="leading" secondItem="zR7-6x-qw8" secondAttribute="leading" id="LAt-4M-pdE"/>
+                        <constraint firstAttribute="trailing" secondItem="fDA-V2-su5" secondAttribute="trailing" id="PZk-Wz-GKw"/>
+                        <constraint firstAttribute="bottom" secondItem="WqK-sc-ihO" secondAttribute="bottom" constant="22" id="YJ6-eL-NMw"/>
+                        <constraint firstItem="CUJ-Uh-2h2" firstAttribute="centerY" secondItem="zR7-6x-qw8" secondAttribute="centerY" id="jTt-qn-c15"/>
+                        <constraint firstItem="CUJ-Uh-2h2" firstAttribute="centerX" secondItem="zR7-6x-qw8" secondAttribute="centerX" id="vqw-Zf-8sb"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fo8-DW-6Yh" userLabel="layout-datalist">
+                    <rect key="frame" x="0.0" y="314" width="320" height="254"/>
+                    <subviews>
+                        <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BCA-Cw-fF1">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="254"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="widget_loading_progress_gray_big" translatesAutoresizingMaskIntoConstraints="NO" id="ycQ-wq-YvR">
+                            <rect key="frame" x="122" y="89" width="76" height="76"/>
+                        </imageView>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBe-BL-qCR" userLabel="layout-nodata_LL">
+                            <rect key="frame" x="50" y="18" width="220" height="218"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatting_location_addr_list_nodata_icon2" translatesAutoresizingMaskIntoConstraints="NO" id="bdt-s2-qAc">
+                                    <rect key="frame" x="35" y="0.0" width="150" height="105"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="105" id="BNZ-tS-ctK"/>
+                                        <constraint firstAttribute="width" constant="150" id="fGB-bl-uIG"/>
+                                    </constraints>
+                                </imageView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="没有合适的数据" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tm7-Qh-KPt">
+                                    <rect key="frame" x="0.0" y="105" width="220" height="113"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="bdt-s2-qAc" firstAttribute="centerX" secondItem="cBe-BL-qCR" secondAttribute="centerX" id="1J2-Sm-ssA"/>
+                                <constraint firstAttribute="bottom" secondItem="Tm7-Qh-KPt" secondAttribute="bottom" id="77i-gS-icS"/>
+                                <constraint firstItem="Tm7-Qh-KPt" firstAttribute="top" secondItem="bdt-s2-qAc" secondAttribute="bottom" id="FFP-lx-wBf"/>
+                                <constraint firstAttribute="trailing" secondItem="Tm7-Qh-KPt" secondAttribute="trailing" id="Jk4-2j-kLC"/>
+                                <constraint firstItem="bdt-s2-qAc" firstAttribute="top" secondItem="cBe-BL-qCR" secondAttribute="top" id="Omu-DJ-Ank"/>
+                                <constraint firstAttribute="height" constant="218" id="ROh-0S-aAQ"/>
+                                <constraint firstItem="Tm7-Qh-KPt" firstAttribute="leading" secondItem="cBe-BL-qCR" secondAttribute="leading" id="S7u-6e-TIe"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="cBe-BL-qCR" secondAttribute="trailing" constant="50" id="7tq-NP-1GG"/>
+                        <constraint firstItem="ycQ-wq-YvR" firstAttribute="centerX" secondItem="fo8-DW-6Yh" secondAttribute="centerX" id="FKr-UH-EvA"/>
+                        <constraint firstItem="BCA-Cw-fF1" firstAttribute="leading" secondItem="fo8-DW-6Yh" secondAttribute="leading" id="Jt2-MS-KkV"/>
+                        <constraint firstItem="cBe-BL-qCR" firstAttribute="centerY" secondItem="fo8-DW-6Yh" secondAttribute="centerY" id="OaN-xj-vDS"/>
+                        <constraint firstAttribute="trailing" secondItem="BCA-Cw-fF1" secondAttribute="trailing" id="Pk0-qO-0f4"/>
+                        <constraint firstItem="BCA-Cw-fF1" firstAttribute="top" secondItem="fo8-DW-6Yh" secondAttribute="top" id="SRR-NE-T4p"/>
+                        <constraint firstAttribute="bottom" secondItem="BCA-Cw-fF1" secondAttribute="bottom" id="VAu-WP-87A"/>
+                        <constraint firstItem="ycQ-wq-YvR" firstAttribute="centerY" secondItem="fo8-DW-6Yh" secondAttribute="centerY" id="Wew-Rf-cwc"/>
+                        <constraint firstItem="cBe-BL-qCR" firstAttribute="leading" secondItem="fo8-DW-6Yh" secondAttribute="leading" constant="50" id="y6Z-vq-Yew"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zR7-6x-qw8" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="4jo-OA-ibZ"/>
+                <constraint firstItem="zR7-6x-qw8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SSo-ol-d1R"/>
+                <constraint firstItem="zR7-6x-qw8" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Z9S-vd-IEa"/>
+                <constraint firstItem="fo8-DW-6Yh" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="c5Y-yo-nws"/>
+                <constraint firstItem="fo8-DW-6Yh" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="eCR-Yg-2Qd"/>
+                <constraint firstItem="fo8-DW-6Yh" firstAttribute="height" secondItem="zR7-6x-qw8" secondAttribute="height" constant="-60" id="kyl-6w-rVc"/>
+                <constraint firstItem="fo8-DW-6Yh" firstAttribute="top" secondItem="zR7-6x-qw8" secondAttribute="bottom" id="vXc-a6-72r"/>
+                <constraint firstItem="fo8-DW-6Yh" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="wKK-Yl-7XO"/>
+            </constraints>
+            <point key="canvasLocation" x="138.75" y="128.87323943661971"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chatting_location_addr_list_nodata_icon2" width="150" height="105"/>
+        <image name="chatting_location_current_pin_icon" width="22.5" height="42"/>
+        <image name="chatting_location_gps_black" width="64" height="64"/>
+        <image name="chatting_location_gps_red" width="64" height="64"/>
+        <image name="common_top_rount_white_bg_shadow" width="78.5" height="27"/>
+        <image name="widget_loading_progress_gray_big" width="76" height="76"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

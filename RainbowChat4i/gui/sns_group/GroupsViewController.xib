@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupsViewController">
+            <connections>
+                <outlet property="layoutTableEmptyHint" destination="Dt9-RH-Waq" id="HYc-1H-0Vg"/>
+                <outlet property="tableView" destination="tBn-A5-ZCC" id="DCk-vg-ymd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tBn-A5-ZCC">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dt9-RH-Waq" userLabel="表格为空时的提示UI">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMR-zr-4gp" userLabel="empty_container">
+                            <rect key="frame" x="0.0" y="193.5" width="320" height="181"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatgroup_groups_list_noitems" translatesAutoresizingMaskIntoConstraints="NO" id="3mu-q5-cMW" userLabel="icon">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="Q7p-zU-cyK"/>
+                                        <constraint firstAttribute="height" constant="100" id="hWJ-zV-edW"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Xs-21-s0n" userLabel="hint-container">
+                                    <rect key="frame" x="0.0" y="125" width="320" height="61"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还未创建或加入群聊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wx9-bo-jy6">
+                                            <rect key="frame" x="68.5" y="0.0" width="183.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Doo-bl-6eC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.59999999999999998" green="0.60784313725490191" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="shadowOffset" width="0.0" height="1"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击此处马上创建你的群聊!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLL-ON-BW5">
+                                            <rect key="frame" x="71.5" y="29" width="177" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="IX4-A8-uGY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="61" id="7Xx-ot-ZoC"/>
+                                        <constraint firstItem="Wx9-bo-jy6" firstAttribute="top" secondItem="9Xs-21-s0n" secondAttribute="top" id="NFr-Dd-7u1"/>
+                                        <constraint firstItem="JLL-ON-BW5" firstAttribute="centerX" secondItem="9Xs-21-s0n" secondAttribute="centerX" id="OT3-2R-IT0"/>
+                                        <constraint firstItem="Wx9-bo-jy6" firstAttribute="centerX" secondItem="9Xs-21-s0n" secondAttribute="centerX" id="TLb-b5-kQf"/>
+                                        <constraint firstItem="JLL-ON-BW5" firstAttribute="top" secondItem="Wx9-bo-jy6" secondAttribute="bottom" constant="8" id="UeS-bb-1ha"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="9Xs-21-s0n" firstAttribute="leading" secondItem="HMR-zr-4gp" secondAttribute="leading" id="FCQ-L5-qkm"/>
+                                <constraint firstItem="9Xs-21-s0n" firstAttribute="top" secondItem="3mu-q5-cMW" secondAttribute="bottom" constant="25" id="cSC-AU-VSl"/>
+                                <constraint firstItem="3mu-q5-cMW" firstAttribute="centerX" secondItem="HMR-zr-4gp" secondAttribute="centerX" id="dkl-f1-kS1"/>
+                                <constraint firstAttribute="trailing" secondItem="9Xs-21-s0n" secondAttribute="trailing" id="liZ-BG-npy"/>
+                                <constraint firstItem="3mu-q5-cMW" firstAttribute="top" secondItem="HMR-zr-4gp" secondAttribute="top" id="oNv-AR-pkZ"/>
+                                <constraint firstAttribute="height" constant="181" id="ocX-wH-SDa"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="HMR-zr-4gp" firstAttribute="leading" secondItem="Dt9-RH-Waq" secondAttribute="leading" id="Jn3-Jc-98a"/>
+                        <constraint firstItem="HMR-zr-4gp" firstAttribute="centerY" secondItem="Dt9-RH-Waq" secondAttribute="centerY" id="p1H-2U-OnE"/>
+                        <constraint firstItem="HMR-zr-4gp" firstAttribute="centerX" secondItem="Dt9-RH-Waq" secondAttribute="centerX" id="qsq-Gn-LBU"/>
+                        <constraint firstAttribute="trailing" secondItem="HMR-zr-4gp" secondAttribute="trailing" id="ued-tO-RWD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="tBn-A5-ZCC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5ck-3d-pWU"/>
+                <constraint firstAttribute="trailing" secondItem="Dt9-RH-Waq" secondAttribute="trailing" id="7ba-c5-8UR"/>
+                <constraint firstItem="Dt9-RH-Waq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FPk-QK-vai"/>
+                <constraint firstItem="tBn-A5-ZCC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Pnn-z2-ytg"/>
+                <constraint firstAttribute="bottom" secondItem="Dt9-RH-Waq" secondAttribute="bottom" id="YYO-Qh-vyB"/>
+                <constraint firstAttribute="trailing" secondItem="tBn-A5-ZCC" secondAttribute="trailing" id="fOb-aT-E6Z"/>
+                <constraint firstAttribute="bottom" secondItem="tBn-A5-ZCC" secondAttribute="bottom" id="gdq-Le-tqa"/>
+                <constraint firstItem="Dt9-RH-Waq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="n2u-ce-DgX"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="92"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chatgroup_groups_list_noitems" width="100" height="100"/>
+    </resources>
+</document>

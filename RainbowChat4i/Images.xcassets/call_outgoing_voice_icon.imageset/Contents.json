@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "call_outgoing_voice_icon.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

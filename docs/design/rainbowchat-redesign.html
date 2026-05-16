@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RainbowChat 新版移动端设计稿</title>
+  <style>
+    :root {
+      --bg: #eef2f6;
+      --canvas: #f7f9fb;
+      --ink: #17202a;
+      --muted: #6d7785;
+      --line: #e3e8ee;
+      --panel: #ffffff;
+      --brand: #246BFE;
+      --brand-2: #1746A2;
+      --warm: #ff7d4a;
+      --gold: #d89b25;
+      --danger: #d83a52;
+      --soft-green: #EAF1FF;
+      --soft-blue: #eaf1ff;
+      --soft-warm: #fff0e8;
+      --shadow: 0 18px 42px rgba(25, 35, 51, .12);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f4f7fa 0%, var(--bg) 100%);
+    }
+
+    .board {
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    .board-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      max-width: 1540px;
+      margin: 0 auto 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 8px;
+      color: #324252;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .principles span {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+
+    .screens {
+      max-width: 1540px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(260px, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .shot-label {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #536171;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .phone {
+      width: 100%;
+      max-width: 300px;
+      height: 640px;
+      margin: 0 auto;
+      border: 8px solid #111820;
+      border-radius: 32px;
+      background: #111820;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--canvas);
+    }
+
+    .status {
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #17202a;
+    }
+
+    .bars {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .battery {
+      width: 19px;
+      height: 9px;
+      border: 1.5px solid currentColor;
+      border-radius: 3px;
+      position: relative;
+    }
+
+    .battery::after {
+      content: "";
+      position: absolute;
+      right: -4px;
+      top: 2px;
+      width: 2px;
+      height: 4px;
+      background: currentColor;
+      border-radius: 1px;
+    }
+
+    .content {
+      height: calc(100% - 28px);
+      padding: 12px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .login-bg {
+      background:
+        radial-gradient(circle at 10% 8%, rgba(36,107,254,.18), transparent 28%),
+        linear-gradient(180deg, #f9fbff 0%, #eef4f7 100%);
+    }
+
+    .brand-mark {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(36,107,254,.16);
+      margin-top: 36px;
+    }
+
+    .brand-mark img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .login-title {
+      margin-top: 16px;
+      font-size: 28px;
+      line-height: 1.18;
+      font-weight: 800;
+    }
+
+    .login-copy {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .field {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid #e0e7ee;
+      border-radius: 8px;
+      padding: 0 12px;
+      font-size: 14px;
+      color: #2f3b47;
+    }
+
+    .field img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .primary-btn {
+      height: 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 750;
+      font-size: 15px;
+      margin-top: 4px;
+    }
+
+    .login-tools {
+      display: flex;
+      justify-content: space-between;
+      color: #536171;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .security-strip {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .mini-stat {
+      min-height: 52px;
+      padding: 10px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid #e4ebf2;
+      border-radius: 8px;
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .mini-stat span {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 38px;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .icon-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: #22313f;
+    }
+
+    .search {
+      height: 38px;
+      border-radius: 8px;
+      background: #edf2f6;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      color: #7d8793;
+      font-size: 13px;
+    }
+
+    .segmented {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #e8eef3;
+      border-radius: 8px;
+      padding: 3px;
+      gap: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #627080;
+    }
+
+    .segmented div {
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+    }
+
+    .segmented .active {
+      background: #fff;
+      color: var(--brand);
+      box-shadow: 0 1px 6px rgba(24,38,55,.08);
+    }
+
+    .chat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .conversation {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      min-height: 64px;
+      padding: 8px;
+      background: #fff;
+      border: 1px solid #e5ebf1;
+      border-radius: 8px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #dde5eb;
+    }
+
+    .avatar.initial {
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      background: var(--brand-2);
+    }
+
+    .conv-main {
+      min-width: 0;
+    }
+
+    .conv-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .conv-msg {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .conv-meta {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #8792a0;
+    }
+
+    .badge {
+      min-width: 19px;
+      height: 19px;
+      padding: 0 6px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: var(--danger);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .pill {
+      height: 19px;
+      display: inline-grid;
+      place-items: center;
+      padding: 0 6px;
+      border-radius: 8px;
+      font-size: 10px;
+      font-weight: 750;
+      color: var(--brand);
+      background: var(--soft-green);
+    }
+
+    .bottom-nav {
+      margin-top: auto;
+      height: 62px;
+      border-radius: 14px 14px 0 0;
+      background: #fff;
+      border-top: 1px solid #e8edf2;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      padding: 4px 0;
+    }
+
+    .nav-item {
+      display: grid;
+      justify-items: center;
+      gap: 3px;
+      color: #8a94a1;
+      font-size: 10px;
+      font-weight: 650;
+    }
+
+    .nav-item img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .nav-item.active {
+      color: var(--brand);
+    }
+
+    .chat-bg {
+      background:
+        linear-gradient(rgba(247,249,251,.94), rgba(247,249,251,.94)),
+        url("../../RainbowChat4i/Images.xcassets/chat_bg_pattern_light.imageset/chat_bg_pattern_light.png");
+      background-size: 200px;
+    }
+
+    .chat-header {
+      display: grid;
+      grid-template-columns: 30px 1fr 30px;
+      align-items: center;
+      min-height: 40px;
+    }
+
+    .chat-person {
+      display: grid;
+      justify-items: center;
+      gap: 3px;
+    }
+
+    .chat-person strong {
+      font-size: 15px;
+    }
+
+    .chat-person span {
+      color: var(--brand);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .messages {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 6px;
+      overflow: hidden;
+    }
+
+    .bubble-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .bubble-row.me {
+      justify-content: flex-end;
+    }
+
+    .small-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #ced7df;
+    }
+
+    .bubble {
+      max-width: 196px;
+      padding: 9px 11px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid #e4eaf0;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .bubble.me {
+      color: #fff;
+      background: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .quote {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px;
+      margin-bottom: 7px;
+      border-radius: 7px;
+      color: #5e6b78;
+      background: rgba(255,255,255,.16);
+      font-size: 11px;
+    }
+
+    .voice-note {
+      width: 138px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--soft-blue);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 0 11px;
+      color: #2f6eea;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .composer {
+      height: 52px;
+      display: grid;
+      grid-template-columns: 34px 1fr 34px 34px;
+      gap: 8px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #e1e7ee;
+      border-radius: 8px;
+      padding: 8px;
+    }
+
+    .composer-input {
+      height: 34px;
+      border-radius: 8px;
+      background: #f0f4f7;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      color: #7c8795;
+      font-size: 12px;
+    }
+
+    .contact-section {
+      background: #fff;
+      border: 1px solid #e4eaf0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .contact-row {
+      min-height: 52px;
+      display: grid;
+      grid-template-columns: 36px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .contact-row:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 900;
+      background: var(--brand);
+    }
+
+    .contact-row strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .contact-row span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .wallet-card {
+      min-height: 148px;
+      background: linear-gradient(135deg, #101a33 0%, #1746a2 58%, #246bfe 100%);
+      color: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 16px 32px rgba(17,33,47,.16);
+    }
+
+    .wallet-card .label {
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+    }
+
+    .wallet-card .amount {
+      font-size: 30px;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .wallet-actions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .wallet-action {
+      min-height: 70px;
+      padding: 9px 4px;
+      display: grid;
+      justify-items: center;
+      align-content: center;
+      gap: 6px;
+      background: #fff;
+      border: 1px solid #e4eaf0;
+      border-radius: 8px;
+      color: #405060;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .wallet-action .glyph {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--warm);
+      font-size: 15px;
+    }
+
+    .ledger {
+      background: #fff;
+      border: 1px solid #e4eaf0;
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+
+    .ledger-head {
+      display: flex;
+      justify-content: space-between;
+      color: #536171;
+      font-size: 12px;
+      font-weight: 750;
+      margin-bottom: 6px;
+    }
+
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 34px 1fr auto;
+      gap: 8px;
+      align-items: center;
+      min-height: 48px;
+      border-top: 1px solid #edf1f5;
+    }
+
+    .ledger-row:first-of-type {
+      border-top: 0;
+    }
+
+    .ledger-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--soft-warm);
+      color: var(--warm);
+      font-weight: 900;
+    }
+
+    .profile-head {
+      display: grid;
+      grid-template-columns: 58px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      min-height: 76px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #e4eaf0;
+      border-radius: 8px;
+    }
+
+    .profile-head .avatar {
+      width: 58px;
+      height: 58px;
+    }
+
+    .profile-head strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .profile-head span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .quick-tile {
+      min-height: 74px;
+      background: #fff;
+      border: 1px solid #e4eaf0;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quick-tile strong {
+      font-size: 13px;
+    }
+
+    .quick-tile span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .settings-list {
+      background: #fff;
+      border: 1px solid #e4eaf0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .settings-row {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      border-bottom: 1px solid #edf1f5;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .settings-row:last-child {
+      border-bottom: 0;
+    }
+
+    .arrow {
+      color: #9aa4af;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    @media (max-width: 1300px) {
+      .screens { grid-template-columns: repeat(3, minmax(260px, 1fr)); }
+      .board-head { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 860px) {
+      .board { padding: 24px 14px; }
+      .screens { grid-template-columns: 1fr; }
+      .principles { grid-template-columns: 1fr; white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <main class="board">
+    <header class="board-head">
+      <div>
+        <h1>RainbowChat 新版移动端设计稿</h1>
+        <p class="subtitle">面向现有 iOS IM 项目的视觉重构方向：消息优先、业务入口清晰、钱包能力保留，整体从重装饰转向更稳定的工具型沟通体验。</p>
+      </div>
+      <div class="principles">
+        <span>高频沟通优先</span>
+        <span>状态与未读更清楚</span>
+        <span>钱包入口轻量化</span>
+      </div>
+    </header>
+
+    <section class="screens">
+      <div>
+        <div class="shot-label">01 登录</div>
+        <div class="phone">
+          <div class="screen login-bg">
+            <div class="status"><span>9:41</span><div class="bars"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="battery"></span></div></div>
+            <div class="content">
+              <div class="brand-mark"><img src="../../RainbowChat4i/Images.xcassets/n_rainbowchat_login_logo_v9_2.imageset/60.png" alt=""></div>
+              <div class="login-title">安全地进入<br>你的聊天空间</div>
+              <div class="login-copy">保留手机号、验证码、自动登录能力，界面更聚焦账号输入与服务状态。</div>
+              <div class="field"><img src="../../RainbowChat4i/Images.xcassets/login_phone.imageset/login_phone@2x.png" alt="">+855 请输入手机号</div>
+              <div class="field"><img src="../../RainbowChat4i/Images.xcassets/login_lock_icon.imageset/login_lock_icon@2x.png" alt="">请输入密码</div>
+              <div class="primary-btn">登录</div>
+              <div class="login-tools"><span>验证码登录</span><span>忘记密码</span></div>
+              <div class="security-strip">
+                <div class="mini-stat"><strong>IM</strong><span>长连接</span></div>
+                <div class="mini-stat"><strong>APNs</strong><span>推送</span></div>
+                <div class="mini-stat"><strong>Sync</strong><span>多端同步</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="shot-label">02 消息列表</div>
+        <div class="phone">
+          <div class="screen">
+            <div class="status"><span>9:41</span><div class="bars"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="battery"></span></div></div>
+            <div class="content">
+              <div class="topbar">
+                <div class="title">消息</div>
+                <div class="icon-row">
+                  <div class="icon-btn" title="搜索"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></div>
+                  <div class="icon-btn" title="添加"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></div>
+                </div>
+              </div>
+              <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>搜索联系人、群聊、文件</div>
+              <div class="segmented"><div class="active">私聊</div><div>群聊</div><div>归档</div></div>
+              <div class="chat-list">
+                <div class="conversation">
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_50.imageset/default_avatar_yuan_50@2x.png" alt="">
+                  <div class="conv-main"><div class="conv-title">运营群 <span class="pill">@我</span></div><div class="conv-msg">今晚的版本包先走 TestFlight 验证</div></div>
+                  <div class="conv-meta"><span>09:28</span><span class="badge">3</span></div>
+                </div>
+                <div class="conversation">
+                  <div class="avatar initial">A</div>
+                  <div class="conv-main"><div class="conv-title">Annie</div><div class="conv-msg">语音通话已结束 02:18</div></div>
+                  <div class="conv-meta"><span>昨天</span></div>
+                </div>
+                <div class="conversation">
+                  <div class="avatar initial" style="background:#ff7d4a">R</div>
+                  <div class="conv-main"><div class="conv-title">红包助手</div><div class="conv-msg">你收到一个新红包</div></div>
+                  <div class="conv-meta"><span>周二</span><span class="badge">1</span></div>
+                </div>
+                <div class="conversation">
+                  <div class="avatar initial" style="background:#d89b25">F</div>
+                  <div class="conv-main"><div class="conv-title">文件传输</div><div class="conv-msg">proposal-final.pdf 上传完成</div></div>
+                  <div class="conv-meta"><span>周一</span></div>
+                </div>
+              </div>
+              <div class="bottom-nav">
+                <div class="nav-item active"><img src="../../RainbowChat4i/Images.xcassets/main_portal_message_select.imageset/main_portal_message_select@2x.png" alt="">消息</div>
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_group.imageset/main_portal_group@2x.png" alt="">群聊</div>
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_chat.imageset/main_portal_chat@2x.png" alt="">通讯录</div>
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_shopping.imageset/main_portal_shopping@2x.png" alt="">钱包</div>
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_settings.imageset/main_portal_settings@2x.png" alt="">我的</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="shot-label">03 聊天页</div>
+        <div class="phone">
+          <div class="screen chat-bg">
+            <div class="status"><span>9:41</span><div class="bars"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="battery"></span></div></div>
+            <div class="content">
+              <div class="chat-header">
+                <div class="icon-btn"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></div>
+                <div class="chat-person"><strong>Annie</strong><span>在线</span></div>
+                <div class="icon-btn"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 6h16M4 18h16"></path></svg></div>
+              </div>
+              <div class="messages">
+                <div class="bubble-row">
+                  <img class="small-avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_for_chattingui_40.imageset/default_avatar_for_chattingui_40@2x.png" alt="">
+                  <div class="bubble">我把群通知的 MT47、MT50、MT51 都看完了，前端处理要分开走。</div>
+                </div>
+                <div class="bubble-row me">
+                  <div class="bubble me">
+                    <div class="quote"><svg viewBox="0 0 24 24"><path d="M7 8h10M7 12h7"></path><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg>群通知协议</div>
+                    收到，我会先把状态写进本地摘要，避免首页未读跳动。
+                  </div>
+                </div>
+                <div class="bubble-row">
+                  <img class="small-avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_for_chattingui_40.imageset/default_avatar_for_chattingui_40@2x.png" alt="">
+                  <div class="voice-note"><svg viewBox="0 0 24 24"><path d="M12 3v18M8 8v8M16 7v10M4 10v4M20 10v4"></path></svg>00:12</div>
+                </div>
+              </div>
+              <div class="composer">
+                <div class="icon-btn"><svg viewBox="0 0 24 24"><path d="M12 3v18M8 8v8M16 7v10M4 10v4M20 10v4"></path></svg></div>
+                <div class="composer-input">输入消息</div>
+                <div class="icon-btn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"></path></svg></div>
+                <div class="icon-btn"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="shot-label">04 通讯录</div>
+        <div class="phone">
+          <div class="screen">
+            <div class="status"><span>9:41</span><div class="bars"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="battery"></span></div></div>
+            <div class="content">
+              <div class="topbar"><div class="title">通讯录</div><div class="icon-btn"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></div></div>
+              <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>搜索好友、群组、手机号</div>
+              <div class="contact-section">
+                <div class="contact-row"><div class="contact-icon">+</div><div><strong>新的朋友</strong><span>2 个待处理申请</span></div><span class="badge">2</span></div>
+                <div class="contact-row"><div class="contact-icon" style="background:#2f6eea">G</div><div><strong>我的群组</strong><span>32 个群聊</span></div><span class="arrow">›</span></div>
+                <div class="contact-row"><div class="contact-icon" style="background:#ff7d4a">Q</div><div><strong>扫一扫</strong><span>二维码加好友或进群</span></div><span class="arrow">›</span></div>
+              </div>
+              <div class="contact-section">
+                <div class="contact-row"><img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_40.imageset/default_avatar_yuan_40@2x.png" alt=""><div><strong>Aaron Chen</strong><span>最近在线 5 分钟前</span></div><span class="pill">常聊</span></div>
+                <div class="contact-row"><div class="avatar initial">M</div><div><strong>Mika</strong><span>产品设计</span></div><span class="arrow">›</span></div>
+                <div class="contact-row"><div class="avatar initial" style="background:#d89b25">T</div><div><strong>Tom</strong><span>已设置备注</span></div><span class="arrow">›</span></div>
+              </div>
+              <div class="bottom-nav">
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_message.imageset/main_portal_message@2x.png" alt="">消息</div>
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_group.imageset/main_portal_group@2x.png" alt="">群聊</div>
+                <div class="nav-item active"><img src="../../RainbowChat4i/Images.xcassets/main_portal_chat_select.imageset/main_portal_chat_select@2x.png" alt="">通讯录</div>
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_shopping.imageset/main_portal_shopping@2x.png" alt="">钱包</div>
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_settings.imageset/main_portal_settings@2x.png" alt="">我的</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="shot-label">05 钱包 / 我的</div>
+        <div class="phone">
+          <div class="screen">
+            <div class="status"><span>9:41</span><div class="bars"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="battery"></span></div></div>
+            <div class="content">
+              <div class="topbar"><div class="title">钱包</div><div class="icon-btn"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg></div></div>
+              <div class="wallet-card">
+                <div><div class="label">可用余额</div><div class="amount">$ 2,480.50</div></div>
+                <div class="label">银行卡 3 张 · TRX 已启用 · 安全等级高</div>
+              </div>
+              <div class="wallet-actions">
+                <div class="wallet-action"><div class="glyph">↑</div>转账</div>
+                <div class="wallet-action"><div class="glyph" style="background:#246BFE">+</div>充值</div>
+                <div class="wallet-action"><div class="glyph" style="background:#2f6eea">↓</div>提现</div>
+                <div class="wallet-action"><div class="glyph" style="background:#d89b25">¥</div>红包</div>
+              </div>
+              <div class="ledger">
+                <div class="ledger-head"><span>最近账单</span><span>全部</span></div>
+                <div class="ledger-row"><div class="ledger-icon">R</div><div><strong>群红包</strong><br><span style="color:#6d7785;font-size:11px">运营群</span></div><strong style="color:#246BFE">+18.00</strong></div>
+                <div class="ledger-row"><div class="ledger-icon" style="background:#eaf1ff;color:#2f6eea">T</div><div><strong>转账</strong><br><span style="color:#6d7785;font-size:11px">Annie</span></div><strong>-42.00</strong></div>
+              </div>
+              <div class="profile-head">
+                <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_60.imageset/default_avatar_yuan_60@2x.png" alt="">
+                <div><strong>Maneki</strong><span>ID 85324 · 已认证</span></div>
+                <span class="arrow">›</span>
+              </div>
+              <div class="bottom-nav">
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_message.imageset/main_portal_message@2x.png" alt="">消息</div>
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_group.imageset/main_portal_group@2x.png" alt="">群聊</div>
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_chat.imageset/main_portal_chat@2x.png" alt="">通讯录</div>
+                <div class="nav-item active"><img src="../../RainbowChat4i/Images.xcassets/main_portal_shopping_select.imageset/main_portal_shopping_select@2x.png" alt="">钱包</div>
+                <div class="nav-item"><img src="../../RainbowChat4i/Images.xcassets/main_portal_settings.imageset/main_portal_settings@2x.png" alt="">我的</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

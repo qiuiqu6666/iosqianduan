@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InviteFriendViewController">
+            <connections>
+                <outlet property="btnInvite" destination="zdS-ex-IxH" id="Ia8-sv-0Rb"/>
+                <outlet property="editSendToMail" destination="Uij-fd-cfM" id="szC-yw-iUZ"/>
+                <outlet property="view" destination="wW2-Z1-Xuq" id="wCW-E4-GSO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wW2-Z1-Xuq">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invite_friend_icon2" translatesAutoresizingMaskIntoConstraints="NO" id="rXP-f3-rV2" userLabel="icon">
+                    <rect key="frame" x="137.5" y="60" width="100" height="99"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Wst-Bh-F2y"/>
+                        <constraint firstAttribute="height" constant="99" id="sPs-7h-hpz"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="点击“发送邮件”后，被邀请人将收到一封邮件，内容包括APP下载地址及您的UID等。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QDz-px-PCg">
+                    <rect key="frame" x="40" y="179" width="295" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="G49-52-zwy"/>
+                    </constraints>
+                    <color key="textColor" red="0.59215686270000001" green="0.61176470589999998" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6F-XY-sR1" userLabel="layout-input-邮箱">
+                    <rect key="frame" x="30" y="242" width="315" height="46"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QzG-UJ-IfR" userLabel="input-bg">
+                            <rect key="frame" x="0.0" y="0.0" width="315" height="46"/>
+                            <color key="backgroundColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNI-LU-wzP" userLabel="icon">
+                            <rect key="frame" x="8" y="8" width="30" height="30"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_user" translatesAutoresizingMaskIntoConstraints="NO" id="NEn-dO-odq" userLabel="icon">
+                                    <rect key="frame" x="7.5" y="7.5" width="15" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="QqC-8r-gL8"/>
+                                <constraint firstAttribute="height" constant="30" id="l2T-Ut-0sB"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="朋友的电子邮箱 *" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Uij-fd-cfM" userLabel="文本框-注册邮箱">
+                            <rect key="frame" x="47" y="0.0" width="256" height="46"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="email"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="QzG-UJ-IfR" secondAttribute="bottom" id="Gg8-fm-cup"/>
+                        <constraint firstAttribute="bottom" secondItem="Uij-fd-cfM" secondAttribute="bottom" id="Tsm-S5-2u4"/>
+                        <constraint firstItem="sNI-LU-wzP" firstAttribute="top" secondItem="l6F-XY-sR1" secondAttribute="top" constant="8" id="VY2-v3-8Is"/>
+                        <constraint firstAttribute="trailing" secondItem="QzG-UJ-IfR" secondAttribute="trailing" id="WcF-fA-CFj"/>
+                        <constraint firstAttribute="trailing" secondItem="Uij-fd-cfM" secondAttribute="trailing" constant="12" id="atA-Ze-I8W"/>
+                        <constraint firstItem="QzG-UJ-IfR" firstAttribute="leading" secondItem="l6F-XY-sR1" secondAttribute="leading" id="cnD-xn-iJy"/>
+                        <constraint firstItem="Uij-fd-cfM" firstAttribute="leading" secondItem="l6F-XY-sR1" secondAttribute="leading" constant="47" id="g0T-Qq-bnC"/>
+                        <constraint firstItem="QzG-UJ-IfR" firstAttribute="top" secondItem="l6F-XY-sR1" secondAttribute="top" id="h2X-si-MFm"/>
+                        <constraint firstItem="Uij-fd-cfM" firstAttribute="top" secondItem="l6F-XY-sR1" secondAttribute="top" id="n65-aM-Qy9"/>
+                        <constraint firstItem="sNI-LU-wzP" firstAttribute="leading" secondItem="l6F-XY-sR1" secondAttribute="leading" constant="8" id="njo-4Y-cJm"/>
+                        <constraint firstAttribute="height" constant="46" id="uMU-h6-i2j"/>
+                        <constraint firstAttribute="bottom" secondItem="sNI-LU-wzP" secondAttribute="bottom" constant="8" id="zFZ-EN-Gru"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdS-ex-IxH">
+                    <rect key="frame" x="30" y="308" width="315" height="40"/>
+                    <color key="backgroundColor" red="0.75686274509999996" green="0.20392156859999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="YvJ-CJ-tvg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="发送邮件">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clickSendMail:" destination="-1" eventType="touchUpInside" id="t0U-O7-Jjb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="eFP-xB-y6i"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="QDz-px-PCg" firstAttribute="leading" secondItem="wW2-Z1-Xuq" secondAttribute="leading" constant="40" id="3Kp-Xd-U6g"/>
+                <constraint firstItem="l6F-XY-sR1" firstAttribute="leading" secondItem="wW2-Z1-Xuq" secondAttribute="leading" constant="30" id="61G-BJ-0th"/>
+                <constraint firstItem="rXP-f3-rV2" firstAttribute="top" secondItem="eFP-xB-y6i" secondAttribute="top" constant="40" id="D2g-aj-yha"/>
+                <constraint firstItem="zdS-ex-IxH" firstAttribute="leading" secondItem="wW2-Z1-Xuq" secondAttribute="leading" constant="30" id="LBi-ty-9tN"/>
+                <constraint firstItem="zdS-ex-IxH" firstAttribute="top" secondItem="l6F-XY-sR1" secondAttribute="bottom" constant="20" id="MSX-Ue-HnX"/>
+                <constraint firstAttribute="trailing" secondItem="zdS-ex-IxH" secondAttribute="trailing" constant="30" id="NdL-CB-cvg"/>
+                <constraint firstAttribute="trailing" secondItem="QDz-px-PCg" secondAttribute="trailing" constant="40" id="Z8e-43-yW0"/>
+                <constraint firstItem="rXP-f3-rV2" firstAttribute="centerX" secondItem="wW2-Z1-Xuq" secondAttribute="centerX" id="atE-ge-Oq0"/>
+                <constraint firstAttribute="trailing" secondItem="l6F-XY-sR1" secondAttribute="trailing" constant="30" id="g2V-tX-c66"/>
+                <constraint firstItem="l6F-XY-sR1" firstAttribute="top" secondItem="QDz-px-PCg" secondAttribute="bottom" constant="15" id="nTp-aa-MZe"/>
+                <constraint firstItem="QDz-px-PCg" firstAttribute="top" secondItem="rXP-f3-rV2" secondAttribute="bottom" constant="20" id="yOF-Sj-HsG"/>
+            </constraints>
+            <point key="canvasLocation" x="33.75" y="689.78873239436621"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="invite_friend_icon2" width="100" height="99"/>
+        <image name="login_user" width="18" height="18"/>
+    </resources>
+</document>

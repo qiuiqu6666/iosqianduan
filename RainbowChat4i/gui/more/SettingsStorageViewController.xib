@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsStorageViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="cacheSizeLabel" destination="cache-size-label" id="cache-size-label-outlet"/>
+                <outlet property="chatSizeLabel" destination="chat-size-label" id="chat-size-label-outlet"/>
+                <outlet property="resourceSizeLabel" destination="resource-size-label" id="resource-size-label-outlet"/>
+                <outlet property="essentialSizeLabel" destination="essential-size-label" id="essential-size-label-outlet"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="storage-section" userLabel="存储空间">
+                    <rect key="frame" x="17" y="20" width="341" height="200"/>
+                    <subviews>
+                        <!-- 缓存 -->
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cache-item">
+                            <rect key="frame" x="0.0" y="0.0" width="341" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cache-btn">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="50"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                    <connections>
+                                        <action selector="clearCacheClicked:" destination="-1" eventType="touchUpInside" id="cache-action"/>
+                                    </connections>
+                                </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="huancun" translatesAutoresizingMaskIntoConstraints="NO" id="cache-icon">
+                                    <rect key="frame" x="19" y="16.5" width="17" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="cache-icon-h"/>
+                                        <constraint firstAttribute="width" constant="17" id="cache-icon-w"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="缓存" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cache-title-label">
+                                    <rect key="frame" x="50" y="15" width="150" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <color key="textColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cache-sep" userLabel="灰色分隔线">
+                                    <rect key="frame" x="19" y="49.5" width="303" height="0.5"/>
+                                    <color key="backgroundColor" red="0.90980392156862744" green="0.91764705882352937" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="0.5" id="cache-sep-h"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="250" verticalHuggingPriority="251" horizontalCompressionResistancePriority="750" translatesAutoresizingMaskIntoConstraints="NO" text="计算中..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cache-size-label">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.59215686274509804" green="0.61176470588235299" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clear-cache-btn">
+                                    <rect key="frame" x="270" y="12" width="56" height="26"/>
+                                    <color key="backgroundColor" red="1" green="0.23" blue="0.19" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="56" id="clear-cache-btn-w"/>
+                                        <constraint firstAttribute="height" constant="26" id="clear-cache-btn-h"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                    <state key="normal" title="清理">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="13"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clearCacheClicked:" destination="-1" eventType="touchUpInside" id="clear-cache-action"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="cache-btn" firstAttribute="leading" secondItem="cache-item" secondAttribute="leading" id="cache-btn-l"/>
+                                <constraint firstAttribute="trailing" secondItem="cache-btn" secondAttribute="trailing" id="cache-btn-r"/>
+                                <constraint firstItem="cache-btn" firstAttribute="top" secondItem="cache-item" secondAttribute="top" id="cache-btn-t"/>
+                                <constraint firstAttribute="bottom" secondItem="cache-btn" secondAttribute="bottom" id="cache-btn-b"/>
+                                <constraint firstItem="cache-icon" firstAttribute="leading" secondItem="cache-item" secondAttribute="leading" constant="19" id="cache-icon-l"/>
+                                <constraint firstItem="cache-icon" firstAttribute="centerY" secondItem="cache-item" secondAttribute="centerY" id="cache-icon-y"/>
+                                <constraint firstItem="cache-title-label" firstAttribute="leading" secondItem="cache-item" secondAttribute="leading" constant="50" id="cache-title-l"/>
+                                <constraint firstItem="cache-title-label" firstAttribute="top" secondItem="cache-item" secondAttribute="top" constant="15" id="cache-title-t"/>
+                                <constraint firstItem="cache-sep" firstAttribute="leading" secondItem="cache-item" secondAttribute="leading" constant="19" id="cache-sep-l"/>
+                                <constraint firstAttribute="trailing" secondItem="cache-sep" secondAttribute="trailing" constant="19" id="cache-sep-r"/>
+                                <constraint firstAttribute="bottom" secondItem="cache-sep" secondAttribute="bottom" id="cache-sep-b"/>
+                                <constraint firstAttribute="trailing" secondItem="clear-cache-btn" secondAttribute="trailing" constant="15" id="clear-cache-btn-r"/>
+                                <constraint firstItem="clear-cache-btn" firstAttribute="centerY" secondItem="cache-item" secondAttribute="centerY" id="clear-cache-btn-y"/>
+                                <constraint firstItem="cache-size-label" firstAttribute="trailing" secondItem="clear-cache-btn" secondAttribute="leading" constant="0" id="cache-size-to-btn"/>
+                                <constraint firstItem="cache-size-label" firstAttribute="centerY" secondItem="cache-item" secondAttribute="centerY" id="cache-size-y"/>
+                                <constraint firstItem="cache-size-label" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cache-title-label" secondAttribute="trailing" constant="12" id="cache-title-to-size"/>
+                                <constraint firstItem="cache-size-label" firstAttribute="width" relation="lessThanOrEqual" constant="80" id="cache-size-max-w"/>
+                                <constraint firstAttribute="height" constant="50" id="cache-h"/>
+                            </constraints>
+                        </view>
+                        <!-- 聊天记录 -->
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chat-item">
+                            <rect key="frame" x="0.0" y="50" width="341" height="50"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liaotianji" translatesAutoresizingMaskIntoConstraints="NO" id="chat-icon">
+                                    <rect key="frame" x="19" y="16.5" width="17" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="chat-icon-h"/>
+                                        <constraint firstAttribute="width" constant="17" id="chat-icon-w"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="聊天记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chat-title-label">
+                                    <rect key="frame" x="50" y="15" width="150" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <color key="textColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chat-sep" userLabel="灰色分隔线">
+                                    <rect key="frame" x="19" y="49.5" width="303" height="0.5"/>
+                                    <color key="backgroundColor" red="0.90980392156862744" green="0.91764705882352937" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="0.5" id="chat-sep-h"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" text="计算中..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="chat-size-label">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.59215686274509804" green="0.61176470588235299" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="chat-icon" firstAttribute="leading" secondItem="chat-item" secondAttribute="leading" constant="19" id="chat-icon-l"/>
+                                <constraint firstItem="chat-icon" firstAttribute="centerY" secondItem="chat-item" secondAttribute="centerY" id="chat-icon-y"/>
+                                <constraint firstItem="chat-title-label" firstAttribute="leading" secondItem="chat-item" secondAttribute="leading" constant="50" id="chat-title-l"/>
+                                <constraint firstItem="chat-title-label" firstAttribute="top" secondItem="chat-item" secondAttribute="top" constant="15" id="chat-title-t"/>
+                                <constraint firstItem="chat-sep" firstAttribute="leading" secondItem="chat-item" secondAttribute="leading" constant="19" id="chat-sep-l"/>
+                                <constraint firstAttribute="trailing" secondItem="chat-sep" secondAttribute="trailing" constant="19" id="chat-sep-r"/>
+                                <constraint firstAttribute="bottom" secondItem="chat-sep" secondAttribute="bottom" id="chat-sep-b"/>
+                                <constraint firstAttribute="trailing" secondItem="chat-size-label" secondAttribute="trailing" constant="19" id="chat-size-r"/>
+                                <constraint firstItem="chat-size-label" firstAttribute="centerY" secondItem="chat-item" secondAttribute="centerY" id="chat-size-y"/>
+                                <constraint firstItem="chat-size-label" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="chat-title-label" secondAttribute="trailing" constant="8" id="chat-title-to-size"/>
+                                <constraint firstAttribute="height" constant="50" id="chat-h"/>
+                            </constraints>
+                        </view>
+                        <!-- 资源文件 -->
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resource-item">
+                            <rect key="frame" x="0.0" y="100" width="341" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="resource-btn">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="50"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                    <connections>
+                                        <action selector="clearResourceClicked:" destination="-1" eventType="touchUpInside" id="resource-action"/>
+                                    </connections>
+                                </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ziyuan" translatesAutoresizingMaskIntoConstraints="NO" id="resource-icon">
+                                    <rect key="frame" x="19" y="16.5" width="17" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="resource-icon-h"/>
+                                        <constraint firstAttribute="width" constant="17" id="resource-icon-w"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="资源文件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="resource-title-label">
+                                    <rect key="frame" x="50" y="15" width="150" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <color key="textColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resource-sep" userLabel="灰色分隔线">
+                                    <rect key="frame" x="19" y="49.5" width="303" height="0.5"/>
+                                    <color key="backgroundColor" red="0.90980392156862744" green="0.91764705882352937" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="0.5" id="resource-sep-h"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="250" verticalHuggingPriority="251" horizontalCompressionResistancePriority="750" translatesAutoresizingMaskIntoConstraints="NO" text="计算中..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="resource-size-label">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.59215686274509804" green="0.61176470588235299" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clear-resource-btn">
+                                    <rect key="frame" x="270" y="12" width="56" height="26"/>
+                                    <color key="backgroundColor" red="1" green="0.23" blue="0.19" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="56" id="clear-resource-btn-w"/>
+                                        <constraint firstAttribute="height" constant="26" id="clear-resource-btn-h"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                    <state key="normal" title="清理">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="13"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clearResourceClicked:" destination="-1" eventType="touchUpInside" id="clear-resource-action"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="resource-btn" firstAttribute="leading" secondItem="resource-item" secondAttribute="leading" id="resource-btn-l"/>
+                                <constraint firstAttribute="trailing" secondItem="resource-btn" secondAttribute="trailing" id="resource-btn-r"/>
+                                <constraint firstItem="resource-btn" firstAttribute="top" secondItem="resource-item" secondAttribute="top" id="resource-btn-t"/>
+                                <constraint firstAttribute="bottom" secondItem="resource-btn" secondAttribute="bottom" id="resource-btn-b"/>
+                                <constraint firstItem="resource-icon" firstAttribute="leading" secondItem="resource-item" secondAttribute="leading" constant="19" id="resource-icon-l"/>
+                                <constraint firstItem="resource-icon" firstAttribute="centerY" secondItem="resource-item" secondAttribute="centerY" id="resource-icon-y"/>
+                                <constraint firstItem="resource-title-label" firstAttribute="leading" secondItem="resource-item" secondAttribute="leading" constant="50" id="resource-title-l"/>
+                                <constraint firstItem="resource-title-label" firstAttribute="top" secondItem="resource-item" secondAttribute="top" constant="15" id="resource-title-t"/>
+                                <constraint firstItem="resource-sep" firstAttribute="leading" secondItem="resource-item" secondAttribute="leading" constant="19" id="resource-sep-l"/>
+                                <constraint firstAttribute="trailing" secondItem="resource-sep" secondAttribute="trailing" constant="19" id="resource-sep-r"/>
+                                <constraint firstAttribute="bottom" secondItem="resource-sep" secondAttribute="bottom" id="resource-sep-b"/>
+                                <constraint firstAttribute="trailing" secondItem="clear-resource-btn" secondAttribute="trailing" constant="15" id="clear-resource-btn-r"/>
+                                <constraint firstItem="clear-resource-btn" firstAttribute="centerY" secondItem="resource-item" secondAttribute="centerY" id="clear-resource-btn-y"/>
+                                <constraint firstItem="resource-size-label" firstAttribute="trailing" secondItem="clear-resource-btn" secondAttribute="leading" constant="0" id="resource-size-to-btn"/>
+                                <constraint firstItem="resource-size-label" firstAttribute="centerY" secondItem="resource-item" secondAttribute="centerY" id="resource-size-y"/>
+                                <constraint firstItem="resource-size-label" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="resource-title-label" secondAttribute="trailing" constant="12" id="resource-title-to-size"/>
+                                <constraint firstItem="resource-size-label" firstAttribute="width" relation="lessThanOrEqual" constant="80" id="resource-size-max-w"/>
+                                <constraint firstAttribute="height" constant="50" id="resource-h"/>
+                            </constraints>
+                        </view>
+                        <!-- 必要文件 -->
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="essential-item">
+                            <rect key="frame" x="0.0" y="150" width="341" height="50"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biyaowenjain" translatesAutoresizingMaskIntoConstraints="NO" id="essential-icon">
+                                    <rect key="frame" x="19" y="16.5" width="17" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="essential-icon-h"/>
+                                        <constraint firstAttribute="width" constant="17" id="essential-icon-w"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="必要文件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="essential-title-label">
+                                    <rect key="frame" x="50" y="15" width="150" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <color key="textColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" text="0 B" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="essential-size-label">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.59215686274509804" green="0.61176470588235299" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="essential-icon" firstAttribute="leading" secondItem="essential-item" secondAttribute="leading" constant="19" id="essential-icon-l"/>
+                                <constraint firstItem="essential-icon" firstAttribute="centerY" secondItem="essential-item" secondAttribute="centerY" id="essential-icon-y"/>
+                                <constraint firstItem="essential-title-label" firstAttribute="leading" secondItem="essential-item" secondAttribute="leading" constant="50" id="essential-title-l"/>
+                                <constraint firstItem="essential-title-label" firstAttribute="top" secondItem="essential-item" secondAttribute="top" constant="15" id="essential-title-t"/>
+                                <constraint firstAttribute="trailing" secondItem="essential-size-label" secondAttribute="trailing" constant="19" id="essential-size-r"/>
+                                <constraint firstItem="essential-size-label" firstAttribute="centerY" secondItem="essential-item" secondAttribute="centerY" id="essential-size-y"/>
+                                <constraint firstItem="essential-size-label" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="essential-title-label" secondAttribute="trailing" constant="8" id="essential-title-to-size"/>
+                                <constraint firstAttribute="height" constant="50" id="essential-h"/>
+                            </constraints>
+                        </view>
+                        <!-- 按时间清理 -->
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="time-clear-item">
+                            <rect key="frame" x="0.0" y="200" width="341" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="time-clear-btn">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="50"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                    <connections>
+                                        <action selector="clearByTimeClicked:" destination="-1" eventType="touchUpInside" id="time-clear-action"/>
+                                    </connections>
+                                </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timiss" translatesAutoresizingMaskIntoConstraints="NO" id="time-clear-icon">
+                                    <rect key="frame" x="19" y="16.5" width="17" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="time-clear-icon-h"/>
+                                        <constraint firstAttribute="width" constant="17" id="time-clear-icon-w"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="按时间清理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="time-clear-title-label">
+                                    <rect key="frame" x="50" y="15" width="150" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <color key="textColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_view_right_arrow_small" translatesAutoresizingMaskIntoConstraints="NO" id="time-clear-arrow">
+                                    <rect key="frame" x="314.5" y="18" width="7.5" height="14"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="7.5" id="time-clear-arrow-w"/>
+                                        <constraint firstAttribute="height" constant="14" id="time-clear-arrow-h"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="time-clear-btn" firstAttribute="leading" secondItem="time-clear-item" secondAttribute="leading" id="time-clear-btn-l"/>
+                                <constraint firstAttribute="trailing" secondItem="time-clear-btn" secondAttribute="trailing" id="time-clear-btn-r"/>
+                                <constraint firstItem="time-clear-btn" firstAttribute="top" secondItem="time-clear-item" secondAttribute="top" id="time-clear-btn-t"/>
+                                <constraint firstAttribute="bottom" secondItem="time-clear-btn" secondAttribute="bottom" id="time-clear-btn-b"/>
+                                <constraint firstItem="time-clear-icon" firstAttribute="leading" secondItem="time-clear-item" secondAttribute="leading" constant="19" id="time-clear-icon-l"/>
+                                <constraint firstItem="time-clear-icon" firstAttribute="centerY" secondItem="time-clear-item" secondAttribute="centerY" id="time-clear-icon-y"/>
+                                <constraint firstItem="time-clear-title-label" firstAttribute="leading" secondItem="time-clear-item" secondAttribute="leading" constant="50" id="time-clear-title-l"/>
+                                <constraint firstItem="time-clear-title-label" firstAttribute="top" secondItem="time-clear-item" secondAttribute="top" constant="15" id="time-clear-title-t"/>
+                                <constraint firstAttribute="trailing" secondItem="time-clear-arrow" secondAttribute="trailing" constant="19" id="time-clear-arrow-r"/>
+                                <constraint firstItem="time-clear-arrow" firstAttribute="centerY" secondItem="time-clear-item" secondAttribute="centerY" id="time-clear-arrow-y"/>
+                                <constraint firstAttribute="height" constant="50" id="time-clear-h"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="cache-item" firstAttribute="leading" secondItem="storage-section" secondAttribute="leading" id="cache-l"/>
+                        <constraint firstAttribute="trailing" secondItem="cache-item" secondAttribute="trailing" id="cache-r"/>
+                        <constraint firstItem="cache-item" firstAttribute="top" secondItem="storage-section" secondAttribute="top" id="cache-t"/>
+                        <constraint firstItem="chat-item" firstAttribute="top" secondItem="cache-item" secondAttribute="bottom" id="chat-t"/>
+                        <constraint firstItem="chat-item" firstAttribute="leading" secondItem="storage-section" secondAttribute="leading" id="chat-l"/>
+                        <constraint firstAttribute="trailing" secondItem="chat-item" secondAttribute="trailing" id="chat-r"/>
+                        <constraint firstItem="resource-item" firstAttribute="top" secondItem="chat-item" secondAttribute="bottom" id="resource-t"/>
+                        <constraint firstItem="resource-item" firstAttribute="leading" secondItem="storage-section" secondAttribute="leading" id="resource-l"/>
+                        <constraint firstAttribute="trailing" secondItem="resource-item" secondAttribute="trailing" id="resource-r"/>
+                        <constraint firstItem="essential-item" firstAttribute="top" secondItem="resource-item" secondAttribute="bottom" id="essential-t"/>
+                        <constraint firstItem="essential-item" firstAttribute="leading" secondItem="storage-section" secondAttribute="leading" id="essential-l"/>
+                        <constraint firstAttribute="trailing" secondItem="essential-item" secondAttribute="trailing" id="essential-r"/>
+                        <constraint firstItem="time-clear-item" firstAttribute="top" secondItem="essential-item" secondAttribute="bottom" id="time-clear-t"/>
+                        <constraint firstItem="time-clear-item" firstAttribute="leading" secondItem="storage-section" secondAttribute="leading" id="time-clear-l"/>
+                        <constraint firstAttribute="trailing" secondItem="time-clear-item" secondAttribute="trailing" id="time-clear-r"/>
+                        <constraint firstAttribute="bottom" secondItem="time-clear-item" secondAttribute="bottom" id="time-clear-b"/>
+                        <constraint firstAttribute="height" constant="250" id="storage-section-h"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="16"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="2f8-5K-zcA"/>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="storage-section" firstAttribute="leading" secondItem="2f8-5K-zcA" secondAttribute="leading" constant="17" id="storage-section-l"/>
+                <constraint firstItem="storage-section" firstAttribute="top" secondItem="2f8-5K-zcA" secondAttribute="top" constant="20" id="storage-section-t"/>
+                <constraint firstItem="2f8-5K-zcA" firstAttribute="trailing" secondItem="storage-section" secondAttribute="trailing" constant="17" id="storage-section-r"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="0" y="0"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="common_btn_hilight_bg.png" width="5" height="5"/>
+        <image name="common_list_view_right_arrow_small" width="7.5" height="14"/>
+        <image name="huancun" width="17" height="17"/>
+        <image name="liaotianji" width="17" height="17"/>
+        <image name="ziyuan" width="17" height="17"/>
+        <image name="biyaowenjain" width="17" height="17"/>
+        <image name="timiss" width="17" height="17"/>
+    </resources>
+</document>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupMemberViewController">
+            <connections>
+                <outlet property="layoutTableEmptyHint" destination="SvG-ui-Lhv" id="pZ1-0B-XBa"/>
+                <outlet property="tableView" destination="KUH-0v-i8M" id="N2w-sk-8NU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KUH-0v-i8M">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SvG-ui-Lhv" userLabel="表格为空时的提示UI">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeK-WJ-A2S" userLabel="empty_container">
+                            <rect key="frame" x="0.0" y="193.5" width="320" height="181"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatting_list_no_lover_icon" translatesAutoresizingMaskIntoConstraints="NO" id="dNw-cK-4qx" userLabel="icon">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="B6n-rp-Nso"/>
+                                        <constraint firstAttribute="height" constant="100" id="DnY-rN-3Hj"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yR7-XU-laX" userLabel="hint-container">
+                                    <rect key="frame" x="0.0" y="125" width="320" height="61"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无好友数据" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6c-Qz-JJt">
+                                            <rect key="frame" x="98.5" y="0.0" width="123" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="OfU-eD-N9G"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.59999999999999998" green="0.60784313725490191" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="shadowOffset" width="0.0" height="1"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请回到主界面添加好友" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cje-Z1-jlP">
+                                            <rect key="frame" x="88" y="29" width="144" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="fvF-ik-pHb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="cje-Z1-jlP" firstAttribute="centerX" secondItem="yR7-XU-laX" secondAttribute="centerX" id="7LD-8s-mMI"/>
+                                        <constraint firstItem="U6c-Qz-JJt" firstAttribute="centerX" secondItem="yR7-XU-laX" secondAttribute="centerX" id="SkG-bD-k8u"/>
+                                        <constraint firstItem="U6c-Qz-JJt" firstAttribute="top" secondItem="yR7-XU-laX" secondAttribute="top" id="b8q-Kc-HaZ"/>
+                                        <constraint firstAttribute="height" constant="61" id="dLl-LK-AiX"/>
+                                        <constraint firstItem="cje-Z1-jlP" firstAttribute="top" secondItem="U6c-Qz-JJt" secondAttribute="bottom" constant="8" id="lum-O2-RuA"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="181" id="75v-X3-4ud"/>
+                                <constraint firstItem="yR7-XU-laX" firstAttribute="leading" secondItem="aeK-WJ-A2S" secondAttribute="leading" id="fJr-ZV-Rr1"/>
+                                <constraint firstAttribute="trailing" secondItem="yR7-XU-laX" secondAttribute="trailing" id="jbt-fd-lR6"/>
+                                <constraint firstItem="dNw-cK-4qx" firstAttribute="top" secondItem="aeK-WJ-A2S" secondAttribute="top" id="luU-Dy-lVP"/>
+                                <constraint firstItem="dNw-cK-4qx" firstAttribute="centerX" secondItem="aeK-WJ-A2S" secondAttribute="centerX" id="tvj-LD-lSq"/>
+                                <constraint firstItem="yR7-XU-laX" firstAttribute="top" secondItem="dNw-cK-4qx" secondAttribute="bottom" constant="25" id="yac-LZ-4fG"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="aeK-WJ-A2S" firstAttribute="centerX" secondItem="SvG-ui-Lhv" secondAttribute="centerX" id="Jp6-SH-Xhq"/>
+                        <constraint firstAttribute="trailing" secondItem="aeK-WJ-A2S" secondAttribute="trailing" id="UmT-Kc-bhV"/>
+                        <constraint firstItem="aeK-WJ-A2S" firstAttribute="leading" secondItem="SvG-ui-Lhv" secondAttribute="leading" id="b3E-xT-Xoo"/>
+                        <constraint firstItem="aeK-WJ-A2S" firstAttribute="centerY" secondItem="SvG-ui-Lhv" secondAttribute="centerY" id="eyP-Bj-8No"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KUH-0v-i8M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2Uo-lU-irl"/>
+                <constraint firstAttribute="bottom" secondItem="KUH-0v-i8M" secondAttribute="bottom" id="7BP-45-hsu"/>
+                <constraint firstAttribute="trailing" secondItem="SvG-ui-Lhv" secondAttribute="trailing" id="GOe-hq-ZFu"/>
+                <constraint firstItem="SvG-ui-Lhv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Hbu-qo-dk0"/>
+                <constraint firstAttribute="trailing" secondItem="KUH-0v-i8M" secondAttribute="trailing" id="OX2-RL-ca2"/>
+                <constraint firstItem="KUH-0v-i8M" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Y37-KP-rz2"/>
+                <constraint firstAttribute="bottom" secondItem="SvG-ui-Lhv" secondAttribute="bottom" id="m6w-QO-CRk"/>
+                <constraint firstItem="SvG-ui-Lhv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ruh-98-UPF"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="124"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chatting_list_no_lover_icon" width="100" height="100"/>
+    </resources>
+</document>

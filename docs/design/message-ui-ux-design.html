@@ -1,0 +1,992 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>消息页面 UI/UX 设计图</title>
+  <style>
+    :root {
+      --page: #eef2f7;
+      --surface: #ffffff;
+      --surface-2: #f7f9fc;
+      --ink: #101828;
+      --text: #263445;
+      --muted: #667085;
+      --subtle: #98a2b3;
+      --line: #e6eaf0;
+      --blue: #246bfe;
+      --blue-deep: #1746a2;
+      --blue-soft: #eaf1ff;
+      --red: #ff3b30;
+      --gray-action: #aeb4bf;
+      --shadow: 0 28px 70px rgba(25, 35, 52, .16);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+    }
+
+    .board {
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    .hero {
+      max-width: 1520px;
+      margin: 0 auto 26px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      margin: 10px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .tokens {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .token {
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.7);
+      color: #405064;
+      font-size: 12px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      background: var(--blue);
+    }
+
+    .layout {
+      max-width: 1520px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .mockups {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(330px, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .shot-title {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #516074;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .phone {
+      width: 100%;
+      max-width: 393px;
+      height: 852px;
+      margin: 0 auto;
+      border: 9px solid #0f1720;
+      border-radius: 34px;
+      overflow: hidden;
+      background: #0f1720;
+      box-shadow: var(--shadow);
+    }
+
+    .screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 25px;
+      background: #fbfcfe;
+    }
+
+    .status {
+      height: 38px;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 800;
+      color: #0f1720;
+    }
+
+    .status-icons {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #0f1720;
+    }
+
+    .signal {
+      display: flex;
+      align-items: end;
+      gap: 2px;
+      height: 12px;
+    }
+
+    .signal i {
+      display: block;
+      width: 3px;
+      border-radius: 2px;
+      background: currentColor;
+    }
+
+    .signal i:nth-child(1) { height: 4px; }
+    .signal i:nth-child(2) { height: 7px; }
+    .signal i:nth-child(3) { height: 10px; }
+    .signal i:nth-child(4) { height: 12px; }
+
+    .battery {
+      width: 24px;
+      height: 14px;
+      display: grid;
+      place-items: center;
+      border-radius: 4px;
+      background: #111820;
+      color: #fff;
+      font-size: 8px;
+      font-weight: 800;
+    }
+
+    .top {
+      padding: 14px 16px 0;
+    }
+
+    .nav {
+      min-height: 42px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav.selection {
+      grid-template-columns: 58px 1fr 58px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .center-title {
+      text-align: center;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .nav-link {
+      color: var(--blue);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .nav-link.muted {
+      color: #697586;
+      font-weight: 600;
+    }
+
+    .icon-buttons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #2d3748;
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .search {
+      height: 40px;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 0 12px;
+      border-radius: 8px;
+      background: #f0f3f8;
+      color: #858f9c;
+      font-size: 14px;
+    }
+
+    .archive-entry {
+      height: 46px;
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 28px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: #596575;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .list {
+      padding-top: 18px;
+    }
+
+    .row {
+      position: relative;
+      min-height: 74px;
+      display: grid;
+      grid-template-columns: 56px 1fr 44px;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      background: #fbfcfe;
+    }
+
+    .row::after {
+      content: "";
+      position: absolute;
+      left: 82px;
+      right: 16px;
+      bottom: 0;
+      height: 1px;
+      background: var(--line);
+      transform: scaleY(.7);
+    }
+
+    .row.swiped {
+      grid-template-columns: 56px 1fr 44px 162px;
+      padding-right: 0;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #dce3ea;
+    }
+
+    .avatar.square {
+      border-radius: 11px;
+    }
+
+    .group-avatar {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      overflow: hidden;
+      border-radius: 11px;
+      background: #edf1f6;
+      padding: 2px;
+    }
+
+    .group-avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+
+    .bot-avatar {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1b76ff, #246bfe);
+      color: #fff;
+    }
+
+    .message {
+      min-width: 0;
+    }
+
+    .name-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: 820;
+      color: #1f2937;
+    }
+
+    .name-line strong {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .preview {
+      margin-top: 6px;
+      color: #737f8e;
+      font-size: 13px;
+      line-height: 1.35;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .tag {
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 5px;
+      border-radius: 5px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .pin {
+      color: var(--blue);
+      transform: rotate(16deg);
+    }
+
+    .meta {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 5px 0;
+      color: #7c8794;
+      font-size: 12px;
+    }
+
+    .badge {
+      min-width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      padding: 0 6px;
+      border-radius: 999px;
+      background: var(--red);
+      color: #fff;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .moon {
+      color: #8a94a3;
+    }
+
+    .swipe-actions {
+      height: 74px;
+      display: grid;
+      grid-template-columns: repeat(3, 54px);
+      align-self: stretch;
+    }
+
+    .swipe-action {
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 5px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .swipe-action.pin-action { background: var(--blue); }
+    .swipe-action.mute-action { background: var(--gray-action); }
+    .swipe-action.delete-action { background: var(--red); }
+
+    .archive-swipe {
+      height: 74px;
+      display: grid;
+      grid-template-columns: 58px 1fr 44px;
+      align-items: center;
+      gap: 10px;
+      background: #fbfcfe;
+    }
+
+    .archive-swipe .archive-blue {
+      align-self: stretch;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 5px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .tabbar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 78px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      padding-bottom: 12px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+    }
+
+    .tab {
+      display: grid;
+      justify-items: center;
+      gap: 4px;
+      color: #7d8794;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .tab.active {
+      color: var(--blue);
+    }
+
+    .select-row {
+      min-height: 74px;
+      display: grid;
+      grid-template-columns: 36px 50px 1fr 44px;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px 8px 10px;
+      position: relative;
+      background: #fbfcfe;
+    }
+
+    .select-row::after {
+      content: "";
+      position: absolute;
+      left: 118px;
+      right: 16px;
+      bottom: 0;
+      height: 1px;
+      background: var(--line);
+      transform: scaleY(.7);
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1.8px solid #b8c0cc;
+      display: grid;
+      place-items: center;
+      color: transparent;
+    }
+
+    .check.checked {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .bulkbar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 78px;
+      display: grid;
+      grid-template-columns: 82px 82px 1fr 82px;
+      align-items: center;
+      padding: 0 12px 12px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.98);
+    }
+
+    .bulk-action {
+      display: grid;
+      justify-items: center;
+      gap: 5px;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .bulk-action.danger {
+      color: var(--red);
+    }
+
+    .selected-count {
+      color: #7c8794;
+      font-size: 13px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.84);
+      padding: 18px;
+      box-shadow: 0 12px 36px rgba(25, 35, 52, .07);
+    }
+
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .spec-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .spec-list li {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .spec-list strong {
+      color: #344054;
+      font-size: 12px;
+    }
+
+    .flow {
+      display: grid;
+      gap: 10px;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .flow-step b {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 12px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 9px;
+      border-radius: 8px;
+      background: var(--surface-2);
+      color: #526174;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .image-ref {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .image-ref img {
+      display: block;
+      width: 100%;
+    }
+
+    @media (max-width: 1220px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+      }
+    }
+
+    @media (max-width: 820px) {
+      .board {
+        padding: 20px 12px;
+      }
+
+      .hero {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .tokens {
+        justify-content: flex-start;
+      }
+
+      .mockups,
+      .side {
+        grid-template-columns: 1fr;
+      }
+
+      .phone {
+        height: 812px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="board">
+    <header class="hero">
+      <div>
+        <h1>消息页面 UI/UX 设计图</h1>
+        <p>基于 `export.psd` 重新整理为可交付的设计看板：包含默认消息列表、批量选择状态、滑动操作、底部操作区和开发标注。</p>
+      </div>
+      <div class="tokens" aria-label="design tokens">
+        <span class="token"><i class="swatch"></i>#246BFE</span>
+        <span class="token"><i class="swatch" style="background:#EAF1FF"></i>浅蓝状态</span>
+        <span class="token"><i class="swatch" style="background:#FF3B30"></i>未读/删除</span>
+      </div>
+    </header>
+
+    <section class="layout">
+      <div class="mockups">
+        <div>
+          <div class="shot-title">A. 默认消息列表 / 滑动操作态</div>
+          <div class="phone">
+            <div class="screen">
+              <div class="status">
+                <span>9:41</span>
+                <div class="status-icons">
+                  <span class="signal"><i></i><i></i><i></i><i></i></span>
+                  <svg viewBox="0 0 24 24" style="width:17px;height:17px"><path d="M5 12.5a10 10 0 0 1 14 0"></path><path d="M8.5 16a5 5 0 0 1 7 0"></path><path d="M12 19h.01"></path></svg>
+                  <span class="battery">100</span>
+                </div>
+              </div>
+
+              <div class="top">
+                <div class="nav">
+                  <h2 class="title">消息</h2>
+                  <div class="icon-buttons">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg>
+                  </div>
+                </div>
+                <div class="search">
+                  <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                  搜索联系人、群聊、文件
+                </div>
+                <div class="archive-entry">
+                  <svg viewBox="0 0 24 24"><path d="M3 8h18v12H3z"></path><path d="M5 8V5h14v3"></path></svg>
+                  归档
+                  <span style="font-size:22px;color:#98a2b3">›</span>
+                </div>
+              </div>
+
+              <div class="list">
+                <div class="row">
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_50.imageset/default_avatar_yuan_50@2x.png" alt="">
+                  <div class="message">
+                    <div class="name-line">
+                      <svg class="pin" viewBox="0 0 24 24" style="width:17px;height:17px"><path d="m14 4 6 6-4 1-4 7-2-2 7-4z"></path><path d="m5 19 5-5"></path></svg>
+                      <strong>张雨晴</strong>
+                    </div>
+                    <div class="preview">好的，我会尽快处理这个问题。</div>
+                  </div>
+                  <div class="meta"><span>09:41</span><span class="badge">2</span></div>
+                </div>
+
+                <div class="row">
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_50.imageset/default_avatar_50@2x.png" alt="">
+                  <div class="message">
+                    <div class="name-line"><strong>陈宇轩</strong></div>
+                    <div class="preview">昨天的会议记录我整理好了，已发给你。</div>
+                  </div>
+                  <div class="meta"><span>09:32</span></div>
+                </div>
+
+                <div class="row swiped">
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_40.imageset/default_avatar_yuan_40@2x.png" alt="">
+                  <div class="message">
+                    <div class="name-line"><strong>李思涵</strong><span class="tag">@我</span></div>
+                    <div class="preview">可以帮我看一下这份方案吗？</div>
+                  </div>
+                  <div class="meta"></div>
+                  <div class="swipe-actions">
+                    <div class="swipe-action pin-action"><svg viewBox="0 0 24 24"><path d="m14 4 6 6-4 1-4 7-2-2 7-4z"></path><path d="m5 19 5-5"></path></svg>置顶</div>
+                    <div class="swipe-action mute-action"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>免打扰</div>
+                    <div class="swipe-action delete-action"><svg viewBox="0 0 24 24"><path d="M3 6h18"></path><path d="M8 6V4h8v2"></path><path d="M6 6l1 15h10l1-15"></path></svg>删除</div>
+                  </div>
+                </div>
+
+                <div class="archive-swipe">
+                  <div class="archive-blue"><svg viewBox="0 0 24 24"><path d="M3 8h18v12H3z"></path><path d="M5 8V5h14v3"></path></svg>归档</div>
+                  <div class="message">
+                    <div class="name-line"><img class="avatar" style="width:50px;height:50px;margin-right:8px" src="../../RainbowChat4i/Images.xcassets/default_avatar_70.imageset/default_avatar_70@2x.png" alt=""><strong>王一帆</strong></div>
+                    <div class="preview" style="padding-left:58px;margin-top:-15px">稍后我给你电话确认一下细节。</div>
+                  </div>
+                  <div class="meta"><span>昨天</span><svg class="moon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 3a7 7 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></div>
+                </div>
+
+                <div class="row">
+                  <div class="group-avatar">
+                    <img src="../../RainbowChat4i/Images.xcassets/default_avatar_40.imageset/default_avatar_40@2x.png" alt="">
+                    <img src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_40.imageset/default_avatar_yuan_40@2x.png" alt="">
+                    <img src="../../RainbowChat4i/Images.xcassets/default_avatar_50.imageset/default_avatar_50@2x.png" alt="">
+                    <img src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_50.imageset/default_avatar_yuan_50@2x.png" alt="">
+                  </div>
+                  <div class="message">
+                    <div class="name-line"><strong>产品设计交流群</strong><span class="tag">群聊</span></div>
+                    <div class="preview">刘佳：新版的设计稿已更新在云盘</div>
+                  </div>
+                  <div class="meta"><span>昨天</span><span class="badge">8</span></div>
+                </div>
+
+                <div class="row">
+                  <div class="bot-avatar">
+                    <svg viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="10" rx="4"></rect><path d="M12 8V5"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle></svg>
+                  </div>
+                  <div class="message">
+                    <div class="name-line"><strong>系统通知</strong></div>
+                    <div class="preview">你的登录地点有变更</div>
+                  </div>
+                  <div class="meta"><span>昨天</span></div>
+                </div>
+
+                <div class="row">
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_60.imageset/default_avatar_yuan_60@2x.png" alt="">
+                  <div class="message">
+                    <div class="name-line"><strong>赵雅琪</strong><span class="tag">置顶</span></div>
+                    <div class="preview">谢谢你的帮助，问题已经解决了！</div>
+                  </div>
+                  <div class="meta"><span>星期二</span><svg class="moon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 3a7 7 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></div>
+                </div>
+              </div>
+
+              <div class="tabbar">
+                <div class="tab active"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg>消息</div>
+                <div class="tab"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.9"></path><path d="M16 3.1a4 4 0 0 1 0 7.8"></path></svg>群聊</div>
+                <div class="tab"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>通讯录</div>
+                <div class="tab"><svg viewBox="0 0 24 24"><path d="M3 7h18v13H3z"></path><path d="M16 7V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v2"></path><path d="M16 13h5"></path></svg>钱包</div>
+                <div class="tab"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M6 21v-2a6 6 0 0 1 12 0v2"></path></svg>我的</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="shot-title">B. 批量选择 / 底部操作态</div>
+          <div class="phone">
+            <div class="screen">
+              <div class="status">
+                <span>9:41</span>
+                <div class="status-icons">
+                  <span class="signal"><i></i><i></i><i></i><i></i></span>
+                  <svg viewBox="0 0 24 24" style="width:17px;height:17px"><path d="M5 12.5a10 10 0 0 1 14 0"></path><path d="M8.5 16a5 5 0 0 1 7 0"></path><path d="M12 19h.01"></path></svg>
+                  <span class="battery">100</span>
+                </div>
+              </div>
+
+              <div class="top">
+                <div class="nav selection">
+                  <span class="nav-link muted">取消</span>
+                  <div class="center-title">选择消息</div>
+                  <span class="nav-link" style="text-align:right">全选</span>
+                </div>
+                <div class="search">
+                  <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                  搜索联系人、群聊、文件
+                </div>
+                <div class="archive-entry">
+                  <svg viewBox="0 0 24 24"><path d="M3 8h18v12H3z"></path><path d="M5 8V5h14v3"></path></svg>
+                  归档
+                  <span style="font-size:22px;color:#98a2b3">›</span>
+                </div>
+              </div>
+
+              <div class="list">
+                <div class="select-row">
+                  <div class="check"></div>
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_50.imageset/default_avatar_yuan_50@2x.png" alt="">
+                  <div class="message"><div class="name-line"><strong>张雨晴</strong></div><div class="preview">好的，我会尽快处理这个问题。</div></div>
+                  <div class="meta"><span>09:41</span><span class="badge">2</span></div>
+                </div>
+                <div class="select-row">
+                  <div class="check checked"><svg viewBox="0 0 24 24" style="width:16px;height:16px"><path d="m5 12 4 4L19 6"></path></svg></div>
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_50.imageset/default_avatar_50@2x.png" alt="">
+                  <div class="message"><div class="name-line"><strong>陈宇轩</strong></div><div class="preview">昨天的会议记录我整理好了，已发给你。</div></div>
+                  <div class="meta"><span>09:32</span></div>
+                </div>
+                <div class="select-row">
+                  <div class="check"></div>
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_40.imageset/default_avatar_yuan_40@2x.png" alt="">
+                  <div class="message"><div class="name-line"><strong>李思涵</strong><span class="tag">@我</span></div><div class="preview">可以帮我看一下这份方案吗？</div></div>
+                  <div class="meta"></div>
+                </div>
+                <div class="select-row">
+                  <div class="check checked"><svg viewBox="0 0 24 24" style="width:16px;height:16px"><path d="m5 12 4 4L19 6"></path></svg></div>
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_70.imageset/default_avatar_70@2x.png" alt="">
+                  <div class="message"><div class="name-line"><strong>王一帆</strong></div><div class="preview">稍后我给你电话确认一下细节。</div></div>
+                  <div class="meta"><span>昨天</span><svg class="moon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 3a7 7 0 0 0 9 9 9 0 1 1-9-9Z"></path></svg></div>
+                </div>
+                <div class="select-row">
+                  <div class="check"></div>
+                  <div class="group-avatar"><img src="../../RainbowChat4i/Images.xcassets/default_avatar_40.imageset/default_avatar_40@2x.png" alt=""><img src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_40.imageset/default_avatar_yuan_40@2x.png" alt=""><img src="../../RainbowChat4i/Images.xcassets/default_avatar_50.imageset/default_avatar_50@2x.png" alt=""><img src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_50.imageset/default_avatar_yuan_50@2x.png" alt=""></div>
+                  <div class="message"><div class="name-line"><strong>产品设计交流群</strong><span class="tag">群聊</span></div><div class="preview">刘佳：新版的设计稿已更新在云盘</div></div>
+                  <div class="meta"><span>昨天</span><span class="badge">8</span></div>
+                </div>
+                <div class="select-row">
+                  <div class="check checked"><svg viewBox="0 0 24 24" style="width:16px;height:16px"><path d="m5 12 4 4L19 6"></path></svg></div>
+                  <div class="bot-avatar"><svg viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="10" rx="4"></rect><path d="M12 8V5"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle></svg></div>
+                  <div class="message"><div class="name-line"><strong>系统通知</strong></div><div class="preview">你的登录地点有变更</div></div>
+                  <div class="meta"><span>昨天</span></div>
+                </div>
+                <div class="select-row">
+                  <div class="check"></div>
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_yuan_60.imageset/default_avatar_yuan_60@2x.png" alt="">
+                  <div class="message"><div class="name-line"><strong>赵雅琪</strong><span class="tag">置顶</span></div><div class="preview">谢谢你的帮助，问题已经解决了！</div></div>
+                  <div class="meta"><span>星期二</span><svg class="moon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 3a7 7 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></div>
+                </div>
+                <div class="select-row">
+                  <div class="check"></div>
+                  <img class="avatar" src="../../RainbowChat4i/Images.xcassets/default_avatar_60.imageset/default_avatar_60@2x.png" alt="">
+                  <div class="message"><div class="name-line"><strong>周明远</strong></div><div class="preview">周五的分享会你有时间参加吗？</div></div>
+                  <div class="meta"><span>星期二</span><span class="badge">1</span></div>
+                </div>
+              </div>
+
+              <div class="bulkbar">
+                <div class="bulk-action"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>标记已读</div>
+                <div class="bulk-action"><svg viewBox="0 0 24 24"><path d="M3 8h18v12H3z"></path><path d="M5 8V5h14v3"></path></svg>归档</div>
+                <div class="selected-count">已选 3 项</div>
+                <div class="bulk-action danger"><svg viewBox="0 0 24 24"><path d="M3 6h18"></path><path d="M8 6V4h8v2"></path><path d="M6 6l1 15h10l1-15"></path></svg>删除</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side">
+        <section class="panel">
+          <h2>UX 状态流</h2>
+          <div class="flow">
+            <div class="flow-step"><b>1</b><span>进入消息页后，优先展示搜索、归档入口和会话列表，底部 Tab 固定。</span></div>
+            <div class="flow-step"><b>2</b><span>左滑会话，露出置顶、免打扰、删除；右滑会话，露出归档。</span></div>
+            <div class="flow-step"><b>3</b><span>进入选择模式后，导航切换为取消、标题、全选；每行出现选择圆点。</span></div>
+            <div class="flow-step"><b>4</b><span>底部操作栏根据选择数量显示已读、归档、删除，并实时更新“已选 N 项”。</span></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>组件拆解</h2>
+          <div class="chips">
+            <span class="chip">StatusBar</span>
+            <span class="chip">MessageHeader</span>
+            <span class="chip">SearchBar</span>
+            <span class="chip">ArchiveEntry</span>
+            <span class="chip">ConversationCell</span>
+            <span class="chip">SwipeActions</span>
+            <span class="chip">SelectionCell</span>
+            <span class="chip">BulkActionBar</span>
+            <span class="chip">BottomTabBar</span>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>开发标注</h2>
+          <ul class="spec-list">
+            <li><strong>画布</strong><span>iPhone 393 × 852，可适配安全区。</span></li>
+            <li><strong>列表行高</strong><span>默认 74px，头像 50px，左边距 16px。</span></li>
+            <li><strong>搜索框</strong><span>高度 40px，圆角 8px，背景 #F0F3F8。</span></li>
+            <li><strong>分隔线</strong><span>#E6EAF0，左侧从文本区开始对齐。</span></li>
+            <li><strong>未读徽标</strong><span>最小 20 × 20，红色 #FF3B30。</span></li>
+            <li><strong>主色</strong><span>#246BFE，用于选中、操作和重点状态。</span></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>原 PSD 参考</h2>
+          <div class="image-ref">
+            <img src="export-html/assets/export.png" alt="export.psd reference">
+          </div>
+        </section>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

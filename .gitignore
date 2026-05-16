@@ -1,0 +1,12 @@
+.DS_Store
+.cursor/
+.trae_build_verify/
+build/
+_build.log
+
+*.xcuserstate
+xcuserdata/
+DerivedData/
+
+# GitHub blocks files over 100 MB. Keep the framework folder metadata, but do not commit this binary without Git LFS.
+Thirdpart/gaode/MAMapKit.framework/MAMapKit

@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="versionValueLabel" destination="version-value-label" id="version-value-outlet"/>
+                <outlet property="contentView" destination="content-view" id="content-view-outlet"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scroll-view">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="content-view">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="696"/>
+                            <subviews>
+
+                                <!-- ========== 分组1: 账号（个人资料 / 账号安全 / 朋友权限） ========== -->
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="account-section">
+                                    <rect key="frame" x="0" y="0" width="393" height="168"/>
+                                    <subviews>
+                                        <!-- 行1: 个人资料 -->
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="profile-btn">
+                                            <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="profile-btn-h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="0" maxX="0" maxY="0"/>
+                                            <state key="normal" title="个人资料">
+                                                <color key="titleColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="common_btn_hilight_bg"/>
+                                            <connections>
+                                                <action selector="clickProfile:" destination="-1" eventType="touchUpInside" id="profile-action"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="profile-arrow">
+                                            <rect key="frame" x="369" y="21" width="8" height="14"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="profile-sep">
+                                            <rect key="frame" x="20" y="55.5" width="373" height="0.5"/>
+                                            <color key="backgroundColor" red="0.90" green="0.90" blue="0.90" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="profile-sep-h"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行2: 账号安全 -->
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="account-security-btn">
+                                            <rect key="frame" x="0" y="56" width="393" height="56"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="as-btn-h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="0" maxX="0" maxY="0"/>
+                                            <state key="normal" title="账号安全">
+                                                <color key="titleColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="common_btn_hilight_bg"/>
+                                            <connections>
+                                                <action selector="clickAccountSecurity:" destination="-1" eventType="touchUpInside" id="as-action"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="as-arrow">
+                                            <rect key="frame" x="369" y="77" width="8" height="14"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="as-sep">
+                                            <rect key="frame" x="20" y="111.5" width="373" height="0.5"/>
+                                            <color key="backgroundColor" red="0.90" green="0.90" blue="0.90" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="as-sep-h"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行3: 朋友权限（最后一行，无分隔线） -->
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="friend-permission-btn">
+                                            <rect key="frame" x="0" y="112" width="393" height="56"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="fp-btn-h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="0" maxX="0" maxY="0"/>
+                                            <state key="normal" title="朋友权限">
+                                                <color key="titleColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="common_btn_hilight_bg"/>
+                                            <connections>
+                                                <action selector="clickFriendPermission:" destination="-1" eventType="touchUpInside" id="fp-action"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="fp-arrow">
+                                            <rect key="frame" x="369" y="133" width="8" height="14"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="168" id="s1-h"/>
+                                        <!-- 行1: 个人资料 -->
+                                        <constraint firstItem="profile-btn" firstAttribute="leading" secondItem="account-section" secondAttribute="leading" id="p-btn-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="profile-btn" secondAttribute="trailing" id="p-btn-r"/>
+                                        <constraint firstItem="profile-btn" firstAttribute="top" secondItem="account-section" secondAttribute="top" id="p-btn-t"/>
+                                        <constraint firstAttribute="trailing" secondItem="profile-arrow" secondAttribute="trailing" constant="16" id="p-arrow-r"/>
+                                        <constraint firstItem="profile-arrow" firstAttribute="centerY" secondItem="profile-btn" secondAttribute="centerY" id="p-arrow-cy"/>
+                                        <constraint firstItem="profile-sep" firstAttribute="leading" secondItem="account-section" secondAttribute="leading" constant="20" id="p-sep-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="profile-sep" secondAttribute="trailing" id="p-sep-r"/>
+                                        <constraint firstItem="profile-sep" firstAttribute="top" secondItem="profile-btn" secondAttribute="bottom" constant="-0.5" id="p-sep-t"/>
+                                        <!-- 行2: 账号安全 -->
+                                        <constraint firstItem="account-security-btn" firstAttribute="leading" secondItem="account-section" secondAttribute="leading" id="as-btn-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="account-security-btn" secondAttribute="trailing" id="as-btn-r"/>
+                                        <constraint firstItem="account-security-btn" firstAttribute="top" secondItem="profile-btn" secondAttribute="bottom" id="as-btn-t"/>
+                                        <constraint firstAttribute="trailing" secondItem="as-arrow" secondAttribute="trailing" constant="16" id="as-arrow-r"/>
+                                        <constraint firstItem="as-arrow" firstAttribute="centerY" secondItem="account-security-btn" secondAttribute="centerY" id="as-arrow-cy"/>
+                                        <constraint firstItem="as-sep" firstAttribute="leading" secondItem="account-section" secondAttribute="leading" constant="20" id="as-sep-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="as-sep" secondAttribute="trailing" id="as-sep-r"/>
+                                        <constraint firstItem="as-sep" firstAttribute="top" secondItem="account-security-btn" secondAttribute="bottom" constant="-0.5" id="as-sep-t"/>
+                                        <!-- 行3: 朋友权限 -->
+                                        <constraint firstItem="friend-permission-btn" firstAttribute="leading" secondItem="account-section" secondAttribute="leading" id="fp-btn-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="friend-permission-btn" secondAttribute="trailing" id="fp-btn-r"/>
+                                        <constraint firstItem="friend-permission-btn" firstAttribute="top" secondItem="account-security-btn" secondAttribute="bottom" id="fp-btn-t"/>
+                                        <constraint firstAttribute="trailing" secondItem="fp-arrow" secondAttribute="trailing" constant="16" id="fp-arrow-r"/>
+                                        <constraint firstItem="fp-arrow" firstAttribute="centerY" secondItem="friend-permission-btn" secondAttribute="centerY" id="fp-arrow-cy"/>
+                                    </constraints>
+                                </view>
+
+                                <!-- ========== 分组2: 通用（相册 / 语音介绍 / 界面与显示 / 储存空间） ========== -->
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="general-section">
+                                    <rect key="frame" x="0" y="178" width="393" height="226"/>
+                                    <subviews>
+                                        <!-- 行1: 相册 -->
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="photos-btn">
+                                            <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="photos-btn-h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="0" maxX="0" maxY="0"/>
+                                            <state key="normal" title="相册">
+                                                <color key="titleColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="common_btn_hilight_bg"/>
+                                            <connections>
+                                                <action selector="clickPhotos:" destination="-1" eventType="touchUpInside" id="photos-action"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="photos-arrow">
+                                            <rect key="frame" x="369" y="21" width="8" height="14"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="photos-sep">
+                                            <rect key="frame" x="20" y="55.5" width="373" height="0.5"/>
+                                            <color key="backgroundColor" red="0.90" green="0.90" blue="0.90" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="photos-sep-h"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行2: 语音介绍 -->
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voices-btn">
+                                            <rect key="frame" x="0" y="112" width="393" height="56"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="voices-btn-h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="0" maxX="0" maxY="0"/>
+                                            <state key="normal" title="语音介绍">
+                                                <color key="titleColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="common_btn_hilight_bg"/>
+                                            <connections>
+                                                <action selector="clickVoices:" destination="-1" eventType="touchUpInside" id="voices-action"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="voices-arrow">
+                                            <rect key="frame" x="369" y="133" width="8" height="14"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voices-sep">
+                                            <rect key="frame" x="20" y="167.5" width="373" height="0.5"/>
+                                            <color key="backgroundColor" red="0.90" green="0.90" blue="0.90" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="voices-sep-h"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行4: 界面与显示 -->
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="display-btn">
+                                            <rect key="frame" x="0" y="168" width="393" height="56"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="disp-btn-h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="0" maxX="0" maxY="0"/>
+                                            <state key="normal" title="界面与显示">
+                                                <color key="titleColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="common_btn_hilight_bg"/>
+                                            <connections>
+                                                <action selector="clickDisplay:" destination="-1" eventType="touchUpInside" id="disp-action"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="disp-arrow">
+                                            <rect key="frame" x="369" y="189" width="8" height="14"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="disp-sep">
+                                            <rect key="frame" x="20" y="223.5" width="373" height="0.5"/>
+                                            <color key="backgroundColor" red="0.90" green="0.90" blue="0.90" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="disp-sep-h"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行5: 储存空间（最后一行，无分隔线） -->
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="storage-btn">
+                                            <rect key="frame" x="0" y="224" width="393" height="56"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="stor-btn-h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="0" maxX="0" maxY="0"/>
+                                            <state key="normal" title="储存空间">
+                                                <color key="titleColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="common_btn_hilight_bg"/>
+                                            <connections>
+                                                <action selector="clickStorage:" destination="-1" eventType="touchUpInside" id="stor-action"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="stor-arrow">
+                                            <rect key="frame" x="369" y="245" width="8" height="14"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="226" id="s2-h"/>
+                                        <!-- 行1: 相册 -->
+                                        <constraint firstItem="photos-btn" firstAttribute="leading" secondItem="general-section" secondAttribute="leading" id="photos-btn-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="photos-btn" secondAttribute="trailing" id="photos-btn-r"/>
+                                        <constraint firstItem="photos-btn" firstAttribute="top" secondItem="general-section" secondAttribute="top" id="photos-btn-t"/>
+                                        <constraint firstAttribute="trailing" secondItem="photos-arrow" secondAttribute="trailing" constant="16" id="photos-arrow-r"/>
+                                        <constraint firstItem="photos-arrow" firstAttribute="centerY" secondItem="photos-btn" secondAttribute="centerY" id="photos-arrow-cy"/>
+                                        <constraint firstItem="photos-sep" firstAttribute="leading" secondItem="general-section" secondAttribute="leading" constant="20" id="photos-sep-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="photos-sep" secondAttribute="trailing" id="photos-sep-r"/>
+                                        <constraint firstItem="photos-sep" firstAttribute="top" secondItem="photos-btn" secondAttribute="bottom" constant="-0.5" id="photos-sep-t"/>
+                                        <!-- 行2: 语音介绍 -->
+                                        <constraint firstItem="voices-btn" firstAttribute="leading" secondItem="general-section" secondAttribute="leading" id="voices-btn-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="voices-btn" secondAttribute="trailing" id="voices-btn-r"/>
+                                        <constraint firstItem="voices-btn" firstAttribute="top" secondItem="photos-sep" secondAttribute="bottom" id="voices-btn-t"/>
+                                        <constraint firstAttribute="trailing" secondItem="voices-arrow" secondAttribute="trailing" constant="16" id="voices-arrow-r"/>
+                                        <constraint firstItem="voices-arrow" firstAttribute="centerY" secondItem="voices-btn" secondAttribute="centerY" id="voices-arrow-cy"/>
+                                        <constraint firstItem="voices-sep" firstAttribute="leading" secondItem="general-section" secondAttribute="leading" constant="20" id="voices-sep-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="voices-sep" secondAttribute="trailing" id="voices-sep-r"/>
+                                        <constraint firstItem="voices-sep" firstAttribute="top" secondItem="voices-btn" secondAttribute="bottom" constant="-0.5" id="voices-sep-t"/>
+                                        <!-- 行4: 界面与显示 -->
+                                        <constraint firstItem="display-btn" firstAttribute="leading" secondItem="general-section" secondAttribute="leading" id="disp-btn-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="display-btn" secondAttribute="trailing" id="disp-btn-r"/>
+                                        <constraint firstItem="display-btn" firstAttribute="top" secondItem="voices-btn" secondAttribute="bottom" id="disp-btn-t"/>
+                                        <constraint firstAttribute="trailing" secondItem="disp-arrow" secondAttribute="trailing" constant="16" id="disp-arrow-r"/>
+                                        <constraint firstItem="disp-arrow" firstAttribute="centerY" secondItem="display-btn" secondAttribute="centerY" id="disp-arrow-cy"/>
+                                        <constraint firstItem="disp-sep" firstAttribute="leading" secondItem="general-section" secondAttribute="leading" constant="20" id="disp-sep-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="disp-sep" secondAttribute="trailing" id="disp-sep-r"/>
+                                        <constraint firstItem="disp-sep" firstAttribute="top" secondItem="display-btn" secondAttribute="bottom" constant="-0.5" id="disp-sep-t"/>
+                                        <!-- 行5: 储存空间 -->
+                                        <constraint firstItem="storage-btn" firstAttribute="leading" secondItem="general-section" secondAttribute="leading" id="stor-btn-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="storage-btn" secondAttribute="trailing" id="stor-btn-r"/>
+                                        <constraint firstItem="storage-btn" firstAttribute="top" secondItem="display-btn" secondAttribute="bottom" id="stor-btn-t"/>
+                                        <constraint firstAttribute="trailing" secondItem="stor-arrow" secondAttribute="trailing" constant="16" id="stor-arrow-r"/>
+                                        <constraint firstItem="stor-arrow" firstAttribute="centerY" secondItem="storage-btn" secondAttribute="centerY" id="stor-arrow-cy"/>
+                                    </constraints>
+                                </view>
+
+                                <!-- ========== 分组3: 帮助与关于（关于我们 / 帮助中心 / 当前版本） ========== -->
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="help-section">
+                                    <rect key="frame" x="0" y="356" width="393" height="168"/>
+                                    <subviews>
+                                        <!-- 行1: 关于我们 -->
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="about-btn">
+                                            <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="about-btn-h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="0" maxX="0" maxY="0"/>
+                                            <state key="normal" title="关于我们">
+                                                <color key="titleColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="common_btn_hilight_bg"/>
+                                            <connections>
+                                                <action selector="clickAbout:" destination="-1" eventType="touchUpInside" id="about-action"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="about-arrow">
+                                            <rect key="frame" x="369" y="21" width="8" height="14"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="about-sep">
+                                            <rect key="frame" x="20" y="55.5" width="373" height="0.5"/>
+                                            <color key="backgroundColor" red="0.90" green="0.90" blue="0.90" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="about-sep-h"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行2: 帮助中心 -->
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="help-btn">
+                                            <rect key="frame" x="0" y="56" width="393" height="56"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="help-btn-h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="0" maxX="0" maxY="0"/>
+                                            <state key="normal" title="帮助中心">
+                                                <color key="titleColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="common_btn_hilight_bg"/>
+                                            <connections>
+                                                <action selector="clickHelp:" destination="-1" eventType="touchUpInside" id="help-action"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="help-arrow">
+                                            <rect key="frame" x="369" y="77" width="8" height="14"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="help-sep">
+                                            <rect key="frame" x="20" y="111.5" width="373" height="0.5"/>
+                                            <color key="backgroundColor" red="0.90" green="0.90" blue="0.90" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="help-sep-h"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行3: 当前版本（右侧显示版本号，无箭头） -->
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="version-item">
+                                            <rect key="frame" x="0" y="112" width="393" height="56"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前版本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ver-label">
+                                                    <rect key="frame" x="20" y="17" width="150" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                                    <color key="textColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0(1)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="version-value-label">
+                                                    <rect key="frame" x="250" y="17" width="127" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.6" green="0.61" blue="0.63" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="ver-h"/>
+                                                <constraint firstItem="ver-label" firstAttribute="leading" secondItem="version-item" secondAttribute="leading" constant="20" id="ver-label-l"/>
+                                                <constraint firstItem="ver-label" firstAttribute="centerY" secondItem="version-item" secondAttribute="centerY" id="ver-label-cy"/>
+                                                <constraint firstAttribute="trailing" secondItem="version-value-label" secondAttribute="trailing" constant="16" id="ver-val-r"/>
+                                                <constraint firstItem="version-value-label" firstAttribute="centerY" secondItem="version-item" secondAttribute="centerY" id="ver-val-cy"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="168" id="s3-h"/>
+                                        <!-- 行1: 关于我们 -->
+                                        <constraint firstItem="about-btn" firstAttribute="leading" secondItem="help-section" secondAttribute="leading" id="about-btn-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="about-btn" secondAttribute="trailing" id="about-btn-r"/>
+                                        <constraint firstItem="about-btn" firstAttribute="top" secondItem="help-section" secondAttribute="top" id="about-btn-t"/>
+                                        <constraint firstAttribute="trailing" secondItem="about-arrow" secondAttribute="trailing" constant="16" id="about-arrow-r"/>
+                                        <constraint firstItem="about-arrow" firstAttribute="centerY" secondItem="about-btn" secondAttribute="centerY" id="about-arrow-cy"/>
+                                        <constraint firstItem="about-sep" firstAttribute="leading" secondItem="help-section" secondAttribute="leading" constant="20" id="about-sep-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="about-sep" secondAttribute="trailing" id="about-sep-r"/>
+                                        <constraint firstItem="about-sep" firstAttribute="top" secondItem="about-btn" secondAttribute="bottom" constant="-0.5" id="about-sep-t"/>
+                                        <!-- 行2: 帮助中心 -->
+                                        <constraint firstItem="help-btn" firstAttribute="leading" secondItem="help-section" secondAttribute="leading" id="help-btn-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="help-btn" secondAttribute="trailing" id="help-btn-r"/>
+                                        <constraint firstItem="help-btn" firstAttribute="top" secondItem="about-btn" secondAttribute="bottom" id="help-btn-t"/>
+                                        <constraint firstAttribute="trailing" secondItem="help-arrow" secondAttribute="trailing" constant="16" id="help-arrow-r"/>
+                                        <constraint firstItem="help-arrow" firstAttribute="centerY" secondItem="help-btn" secondAttribute="centerY" id="help-arrow-cy"/>
+                                        <constraint firstItem="help-sep" firstAttribute="leading" secondItem="help-section" secondAttribute="leading" constant="20" id="help-sep-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="help-sep" secondAttribute="trailing" id="help-sep-r"/>
+                                        <constraint firstItem="help-sep" firstAttribute="top" secondItem="help-btn" secondAttribute="bottom" constant="-0.5" id="help-sep-t"/>
+                                        <!-- 行3: 当前版本 -->
+                                        <constraint firstItem="version-item" firstAttribute="leading" secondItem="help-section" secondAttribute="leading" id="ver-item-l"/>
+                                        <constraint firstAttribute="trailing" secondItem="version-item" secondAttribute="trailing" id="ver-item-r"/>
+                                        <constraint firstItem="version-item" firstAttribute="top" secondItem="help-btn" secondAttribute="bottom" id="ver-item-t"/>
+                                    </constraints>
+                                </view>
+
+                                <!-- ========== 退出登录按钮（全宽白色条带） ========== -->
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="logout-btn">
+                                    <rect key="frame" x="0" y="544" width="393" height="56"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="56" id="logout-btn-h"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <state key="normal" title="退出登录">
+                                        <color key="titleColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg">
+                                        <color key="titleColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clickLogout:" destination="-1" eventType="touchUpInside" id="logout-action"/>
+                                    </connections>
+                                </button>
+
+                            </subviews>
+                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="scroll-view" secondAttribute="width" id="content-w"/>
+                                <constraint firstAttribute="height" constant="732" id="content-h"/>
+                                <!-- 分组1: 账号 -->
+                                <constraint firstItem="account-section" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" id="s1-l"/>
+                                <constraint firstAttribute="trailing" secondItem="account-section" secondAttribute="trailing" id="s1-r"/>
+                                <constraint firstItem="account-section" firstAttribute="top" secondItem="content-view" secondAttribute="top" id="s1-t"/>
+                                <!-- 分组2: 通用 -->
+                                <constraint firstItem="general-section" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" id="s2-l"/>
+                                <constraint firstAttribute="trailing" secondItem="general-section" secondAttribute="trailing" id="s2-r"/>
+                                <constraint firstItem="general-section" firstAttribute="top" secondItem="account-section" secondAttribute="bottom" constant="10" id="s2-t"/>
+                                <!-- 分组3: 帮助与关于 -->
+                                <constraint firstItem="help-section" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" id="s3-l"/>
+                                <constraint firstAttribute="trailing" secondItem="help-section" secondAttribute="trailing" id="s3-r"/>
+                                <constraint firstItem="help-section" firstAttribute="top" secondItem="general-section" secondAttribute="bottom" constant="10" id="s3-t"/>
+                                <!-- 退出登录 -->
+                                <constraint firstItem="logout-btn" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" id="logout-l"/>
+                                <constraint firstAttribute="trailing" secondItem="logout-btn" secondAttribute="trailing" id="logout-r"/>
+                                <constraint firstItem="logout-btn" firstAttribute="top" secondItem="help-section" secondAttribute="bottom" constant="10" id="logout-t"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="content-view" firstAttribute="leading" secondItem="scroll-view" secondAttribute="leading" id="content-leading"/>
+                        <constraint firstItem="content-view" firstAttribute="top" secondItem="scroll-view" secondAttribute="top" id="content-top"/>
+                        <constraint firstAttribute="trailing" secondItem="content-view" secondAttribute="trailing" id="content-trailing"/>
+                        <constraint firstAttribute="bottom" secondItem="content-view" secondAttribute="bottom" id="content-bottom"/>
+                        <constraint firstItem="content-view" firstAttribute="width" secondItem="scroll-view" secondAttribute="width" id="content-width-equal"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="2f8-5K-zcA"/>
+            <color key="backgroundColor" red="0.941" green="0.941" blue="0.941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="scroll-view" firstAttribute="leading" secondItem="2f8-5K-zcA" secondAttribute="leading" id="scroll-leading"/>
+                <constraint firstItem="scroll-view" firstAttribute="top" secondItem="2f8-5K-zcA" secondAttribute="top" id="scroll-top"/>
+                <constraint firstItem="2f8-5K-zcA" firstAttribute="trailing" secondItem="scroll-view" secondAttribute="trailing" id="scroll-trailing"/>
+                <constraint firstItem="2f8-5K-zcA" firstAttribute="bottom" secondItem="scroll-view" secondAttribute="bottom" id="scroll-bottom"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="0" y="0"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="common_btn_hilight_bg" width="5" height="5"/>
+        <image name="common_list_rightarrow_icon_nor" width="8" height="14"/>
+    </resources>
+</document>

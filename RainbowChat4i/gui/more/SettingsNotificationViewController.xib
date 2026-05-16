@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsNotificationViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="imgMessageNotification" destination="switch-sys-noti" id="outlet-sys-noti"/>
+                <outlet property="imgVoiceVideoNotification" destination="switch-vv-noti" id="outlet-vv-noti"/>
+                <outlet property="imgVoiceVideoPopup" destination="switch-vv-popup" id="outlet-vv-popup"/>
+                <outlet property="imgMessageBanner" destination="switch-msg-banner" id="outlet-msg-banner"/>
+                <outlet property="imgSound" destination="switch-sound" id="outlet-sound"/>
+                <outlet property="imgAudioVideoCall" destination="switch-ringtone" id="outlet-ringtone"/>
+                <outlet property="imgVibration" destination="switch-vibration" id="outlet-vibration"/>
+                <outlet property="lblNotificationContentDesc" destination="noti-content-desc" id="outlet-noti-desc"/>
+                <outlet property="lblBannerContentDesc" destination="banner-content-desc" id="outlet-banner-desc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scroll-view">
+                    <rect key="frame" x="0" y="0" width="393" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="content-view">
+                            <rect key="frame" x="0" y="0" width="393" height="640"/>
+                            <subviews>
+                                <!-- ========== 分组1标题: 未打开时 ========== -->
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未打开时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="header1-label">
+                                    <rect key="frame" x="20" y="10" width="100" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="13"/>
+                                    <color key="textColor" red="0.6" green="0.6" blue="0.6" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+
+                                <!-- ========== 分组1容器 ========== -->
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="section1">
+                                    <rect key="frame" x="0" y="36" width="393" height="240"/>
+                                    <subviews>
+                                        <!-- 行1: 系统消息通知 -->
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sys-noti-item">
+                                            <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sys-noti-btn">
+                                                    <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal"><color key="titleColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/></state>
+                                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                                    <connections><action selector="switchMessageNotificationClicked:" destination="-1" eventType="touchUpInside" id="sys-noti-action"/></connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="系统消息通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sys-noti-label">
+                                                    <rect key="frame" x="20" y="17.5" width="200" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                                    <color key="textColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sys-noti-sep">
+                                                    <rect key="frame" x="20" y="55.5" width="373" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.91" green="0.918" blue="0.933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints><constraint firstAttribute="height" constant="0.5" id="sys-noti-sep-h"/></constraints>
+                                                </view>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="switch-sys-noti">
+                                                    <rect key="frame" x="328" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.204" green="0.78" blue="0.349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="sys-noti-btn" firstAttribute="leading" secondItem="sys-noti-item" secondAttribute="leading" id="c1"/>
+                                                <constraint firstAttribute="trailing" secondItem="sys-noti-btn" secondAttribute="trailing" id="c2"/>
+                                                <constraint firstItem="sys-noti-btn" firstAttribute="top" secondItem="sys-noti-item" secondAttribute="top" id="c3"/>
+                                                <constraint firstAttribute="bottom" secondItem="sys-noti-btn" secondAttribute="bottom" id="c4"/>
+                                                <constraint firstItem="sys-noti-label" firstAttribute="leading" secondItem="sys-noti-item" secondAttribute="leading" constant="20" id="c5"/>
+                                                <constraint firstItem="sys-noti-label" firstAttribute="centerY" secondItem="sys-noti-item" secondAttribute="centerY" id="c6"/>
+                                                <constraint firstItem="sys-noti-sep" firstAttribute="leading" secondItem="sys-noti-item" secondAttribute="leading" constant="20" id="c7"/>
+                                                <constraint firstAttribute="trailing" secondItem="sys-noti-sep" secondAttribute="trailing" id="c8"/>
+                                                <constraint firstAttribute="bottom" secondItem="sys-noti-sep" secondAttribute="bottom" id="c9"/>
+                                                <constraint firstAttribute="trailing" secondItem="switch-sys-noti" secondAttribute="trailing" constant="16" id="c10"/>
+                                                <constraint firstItem="switch-sys-noti" firstAttribute="centerY" secondItem="sys-noti-item" secondAttribute="centerY" id="c11"/>
+                                                <constraint firstAttribute="height" constant="56" id="c12"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行2: 语音和视频通话通知 -->
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vv-noti-item">
+                                            <rect key="frame" x="0" y="56" width="393" height="56"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vv-noti-btn">
+                                                    <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal"><color key="titleColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/></state>
+                                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                                    <connections><action selector="switchVoiceVideoNotificationClicked:" destination="-1" eventType="touchUpInside" id="vv-noti-action"/></connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="语音和视频通话通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vv-noti-label">
+                                                    <rect key="frame" x="20" y="17.5" width="200" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                                    <color key="textColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vv-noti-sep">
+                                                    <rect key="frame" x="20" y="55.5" width="373" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.91" green="0.918" blue="0.933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints><constraint firstAttribute="height" constant="0.5" id="vv-noti-sep-h"/></constraints>
+                                                </view>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="switch-vv-noti">
+                                                    <rect key="frame" x="328" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.204" green="0.78" blue="0.349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="vv-noti-btn" firstAttribute="leading" secondItem="vv-noti-item" secondAttribute="leading" id="d1"/>
+                                                <constraint firstAttribute="trailing" secondItem="vv-noti-btn" secondAttribute="trailing" id="d2"/>
+                                                <constraint firstItem="vv-noti-btn" firstAttribute="top" secondItem="vv-noti-item" secondAttribute="top" id="d3"/>
+                                                <constraint firstAttribute="bottom" secondItem="vv-noti-btn" secondAttribute="bottom" id="d4"/>
+                                                <constraint firstItem="vv-noti-label" firstAttribute="leading" secondItem="vv-noti-item" secondAttribute="leading" constant="20" id="d5"/>
+                                                <constraint firstItem="vv-noti-label" firstAttribute="centerY" secondItem="vv-noti-item" secondAttribute="centerY" id="d6"/>
+                                                <constraint firstItem="vv-noti-sep" firstAttribute="leading" secondItem="vv-noti-item" secondAttribute="leading" constant="20" id="d7"/>
+                                                <constraint firstAttribute="trailing" secondItem="vv-noti-sep" secondAttribute="trailing" id="d8"/>
+                                                <constraint firstAttribute="bottom" secondItem="vv-noti-sep" secondAttribute="bottom" id="d9"/>
+                                                <constraint firstAttribute="trailing" secondItem="switch-vv-noti" secondAttribute="trailing" constant="16" id="d10"/>
+                                                <constraint firstItem="switch-vv-noti" firstAttribute="centerY" secondItem="vv-noti-item" secondAttribute="centerY" id="d11"/>
+                                                <constraint firstAttribute="height" constant="56" id="d12"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行3: - 语音和视频通话用弹窗快捷接听 (子项) -->
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vv-popup-item">
+                                            <rect key="frame" x="0" y="112" width="393" height="56"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vv-popup-btn">
+                                                    <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal"><color key="titleColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/></state>
+                                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                                    <connections><action selector="switchVoiceVideoPopupClicked:" destination="-1" eventType="touchUpInside" id="vv-popup-action"/></connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 语音和视频通话用弹窗快捷接听" numberOfLines="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vv-popup-label">
+                                                    <rect key="frame" x="20" y="8" width="260" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                                    <color key="textColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vv-popup-sep">
+                                                    <rect key="frame" x="20" y="55.5" width="373" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.91" green="0.918" blue="0.933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints><constraint firstAttribute="height" constant="0.5" id="vv-popup-sep-h"/></constraints>
+                                                </view>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="switch-vv-popup">
+                                                    <rect key="frame" x="328" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.204" green="0.78" blue="0.349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="vv-popup-btn" firstAttribute="leading" secondItem="vv-popup-item" secondAttribute="leading" id="e1"/>
+                                                <constraint firstAttribute="trailing" secondItem="vv-popup-btn" secondAttribute="trailing" id="e2"/>
+                                                <constraint firstItem="vv-popup-btn" firstAttribute="top" secondItem="vv-popup-item" secondAttribute="top" id="e3"/>
+                                                <constraint firstAttribute="bottom" secondItem="vv-popup-btn" secondAttribute="bottom" id="e4"/>
+                                                <constraint firstItem="vv-popup-label" firstAttribute="leading" secondItem="vv-popup-item" secondAttribute="leading" constant="20" id="e5"/>
+                                                <constraint firstItem="vv-popup-label" firstAttribute="centerY" secondItem="vv-popup-item" secondAttribute="centerY" id="e6"/>
+                                                <constraint firstItem="switch-vv-popup" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vv-popup-label" secondAttribute="trailing" constant="10" id="e6b"/>
+                                                <constraint firstItem="vv-popup-sep" firstAttribute="leading" secondItem="vv-popup-item" secondAttribute="leading" constant="20" id="e7"/>
+                                                <constraint firstAttribute="trailing" secondItem="vv-popup-sep" secondAttribute="trailing" id="e8"/>
+                                                <constraint firstAttribute="bottom" secondItem="vv-popup-sep" secondAttribute="bottom" id="e9"/>
+                                                <constraint firstAttribute="trailing" secondItem="switch-vv-popup" secondAttribute="trailing" constant="16" id="e10"/>
+                                                <constraint firstItem="switch-vv-popup" firstAttribute="centerY" secondItem="vv-popup-item" secondAttribute="centerY" id="e11"/>
+                                                <constraint firstAttribute="height" constant="56" id="e12"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行4: 通知显示内容 (可导航) -->
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noti-content-item">
+                                            <rect key="frame" x="0" y="168" width="393" height="72"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noti-content-btn">
+                                                    <rect key="frame" x="0" y="0" width="393" height="72"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal"><color key="titleColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/></state>
+                                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                                    <connections><action selector="clickNotificationContent:" destination="-1" eventType="touchUpInside" id="noti-content-action"/></connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="通知显示内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noti-content-label">
+                                                    <rect key="frame" x="20" y="25.5" width="110" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                                    <color key="textColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示朋友名称、群聊名及消息内容" numberOfLines="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noti-content-desc">
+                                                    <rect key="frame" x="140" y="18" width="220" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="15"/>
+                                                    <color key="textColor" red="0.6" green="0.6" blue="0.6" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="noti-content-arrow">
+                                                    <rect key="frame" x="369" y="29" width="8" height="14"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="noti-content-btn" firstAttribute="leading" secondItem="noti-content-item" secondAttribute="leading" id="f1"/>
+                                                <constraint firstAttribute="trailing" secondItem="noti-content-btn" secondAttribute="trailing" id="f2"/>
+                                                <constraint firstItem="noti-content-btn" firstAttribute="top" secondItem="noti-content-item" secondAttribute="top" id="f3"/>
+                                                <constraint firstAttribute="bottom" secondItem="noti-content-btn" secondAttribute="bottom" id="f4"/>
+                                                <constraint firstItem="noti-content-label" firstAttribute="leading" secondItem="noti-content-item" secondAttribute="leading" constant="20" id="f5"/>
+                                                <constraint firstItem="noti-content-label" firstAttribute="centerY" secondItem="noti-content-item" secondAttribute="centerY" id="f6"/>
+                                                <constraint firstItem="noti-content-desc" firstAttribute="leading" secondItem="noti-content-label" secondAttribute="trailing" constant="12" id="f7"/>
+                                                <constraint firstAttribute="trailing" secondItem="noti-content-desc" secondAttribute="trailing" constant="32" id="f8"/>
+                                                <constraint firstItem="noti-content-desc" firstAttribute="centerY" secondItem="noti-content-item" secondAttribute="centerY" id="f9"/>
+                                                <constraint firstAttribute="trailing" secondItem="noti-content-arrow" secondAttribute="trailing" constant="16" id="f10"/>
+                                                <constraint firstItem="noti-content-arrow" firstAttribute="centerY" secondItem="noti-content-item" secondAttribute="centerY" id="f11"/>
+                                                <constraint firstAttribute="height" constant="72" id="f12"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="sys-noti-item" firstAttribute="leading" secondItem="section1" secondAttribute="leading" id="s1-c1"/>
+                                        <constraint firstAttribute="trailing" secondItem="sys-noti-item" secondAttribute="trailing" id="s1-c2"/>
+                                        <constraint firstItem="sys-noti-item" firstAttribute="top" secondItem="section1" secondAttribute="top" id="s1-c3"/>
+                                        <constraint firstItem="vv-noti-item" firstAttribute="top" secondItem="sys-noti-item" secondAttribute="bottom" id="s1-c4"/>
+                                        <constraint firstItem="vv-noti-item" firstAttribute="leading" secondItem="section1" secondAttribute="leading" id="s1-c5"/>
+                                        <constraint firstAttribute="trailing" secondItem="vv-noti-item" secondAttribute="trailing" id="s1-c6"/>
+                                        <constraint firstItem="vv-popup-item" firstAttribute="top" secondItem="vv-noti-item" secondAttribute="bottom" id="s1-c7"/>
+                                        <constraint firstItem="vv-popup-item" firstAttribute="leading" secondItem="section1" secondAttribute="leading" id="s1-c8"/>
+                                        <constraint firstAttribute="trailing" secondItem="vv-popup-item" secondAttribute="trailing" id="s1-c9"/>
+                                        <constraint firstItem="noti-content-item" firstAttribute="top" secondItem="vv-popup-item" secondAttribute="bottom" id="s1-c10"/>
+                                        <constraint firstItem="noti-content-item" firstAttribute="leading" secondItem="section1" secondAttribute="leading" id="s1-c11"/>
+                                        <constraint firstAttribute="trailing" secondItem="noti-content-item" secondAttribute="trailing" id="s1-c12"/>
+                                        <constraint firstAttribute="bottom" secondItem="noti-content-item" secondAttribute="bottom" id="s1-c13"/>
+                                    </constraints>
+                                </view>
+
+                                <!-- ========== 分组2标题: 打开时 ========== -->
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打开时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="header2-label">
+                                    <rect key="frame" x="20" y="286" width="100" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="13"/>
+                                    <color key="textColor" red="0.6" green="0.6" blue="0.6" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+
+                                <!-- ========== 分组2容器 ========== -->
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="section2">
+                                    <rect key="frame" x="0" y="312" width="393" height="296"/>
+                                    <subviews>
+                                        <!-- 行1: 消息横幅 -->
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="msg-banner-item">
+                                            <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msg-banner-btn">
+                                                    <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal"><color key="titleColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/></state>
+                                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                                    <connections><action selector="switchMessageBannerClicked:" destination="-1" eventType="touchUpInside" id="msg-banner-action"/></connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息横幅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msg-banner-label">
+                                                    <rect key="frame" x="20" y="17.5" width="200" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                                    <color key="textColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="msg-banner-sep">
+                                                    <rect key="frame" x="20" y="55.5" width="373" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.91" green="0.918" blue="0.933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints><constraint firstAttribute="height" constant="0.5" id="msg-banner-sep-h"/></constraints>
+                                                </view>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="switch-msg-banner">
+                                                    <rect key="frame" x="328" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.204" green="0.78" blue="0.349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="msg-banner-btn" firstAttribute="leading" secondItem="msg-banner-item" secondAttribute="leading" id="g1"/>
+                                                <constraint firstAttribute="trailing" secondItem="msg-banner-btn" secondAttribute="trailing" id="g2"/>
+                                                <constraint firstItem="msg-banner-btn" firstAttribute="top" secondItem="msg-banner-item" secondAttribute="top" id="g3"/>
+                                                <constraint firstAttribute="bottom" secondItem="msg-banner-btn" secondAttribute="bottom" id="g4"/>
+                                                <constraint firstItem="msg-banner-label" firstAttribute="leading" secondItem="msg-banner-item" secondAttribute="leading" constant="20" id="g5"/>
+                                                <constraint firstItem="msg-banner-label" firstAttribute="centerY" secondItem="msg-banner-item" secondAttribute="centerY" id="g6"/>
+                                                <constraint firstItem="msg-banner-sep" firstAttribute="leading" secondItem="msg-banner-item" secondAttribute="leading" constant="20" id="g7"/>
+                                                <constraint firstAttribute="trailing" secondItem="msg-banner-sep" secondAttribute="trailing" id="g8"/>
+                                                <constraint firstAttribute="bottom" secondItem="msg-banner-sep" secondAttribute="bottom" id="g9"/>
+                                                <constraint firstAttribute="trailing" secondItem="switch-msg-banner" secondAttribute="trailing" constant="16" id="g10"/>
+                                                <constraint firstItem="switch-msg-banner" firstAttribute="centerY" secondItem="msg-banner-item" secondAttribute="centerY" id="g11"/>
+                                                <constraint firstAttribute="height" constant="56" id="g12"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行2: - 横幅显示内容 (可导航子项) -->
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="banner-content-item">
+                                            <rect key="frame" x="0" y="56" width="393" height="72"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="banner-content-btn">
+                                                    <rect key="frame" x="0" y="0" width="393" height="72"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal"><color key="titleColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/></state>
+                                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                                    <connections><action selector="clickBannerContent:" destination="-1" eventType="touchUpInside" id="banner-content-action"/></connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="- 横幅显示内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="banner-content-label">
+                                                    <rect key="frame" x="20" y="25.5" width="120" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                                    <color key="textColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示朋友名称、群聊名及消息内容" numberOfLines="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="banner-content-desc">
+                                                    <rect key="frame" x="155" y="18" width="205" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="15"/>
+                                                    <color key="textColor" red="0.6" green="0.6" blue="0.6" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_list_rightarrow_icon_nor" translatesAutoresizingMaskIntoConstraints="NO" id="banner-content-arrow">
+                                                    <rect key="frame" x="369" y="29" width="8" height="14"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="banner-content-sep">
+                                                    <rect key="frame" x="20" y="71.5" width="373" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.91" green="0.918" blue="0.933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints><constraint firstAttribute="height" constant="0.5" id="banner-content-sep-h"/></constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="banner-content-btn" firstAttribute="leading" secondItem="banner-content-item" secondAttribute="leading" id="h1"/>
+                                                <constraint firstAttribute="trailing" secondItem="banner-content-btn" secondAttribute="trailing" id="h2"/>
+                                                <constraint firstItem="banner-content-btn" firstAttribute="top" secondItem="banner-content-item" secondAttribute="top" id="h3"/>
+                                                <constraint firstAttribute="bottom" secondItem="banner-content-btn" secondAttribute="bottom" id="h4"/>
+                                                <constraint firstItem="banner-content-label" firstAttribute="leading" secondItem="banner-content-item" secondAttribute="leading" constant="20" id="h5"/>
+                                                <constraint firstItem="banner-content-label" firstAttribute="centerY" secondItem="banner-content-item" secondAttribute="centerY" id="h6"/>
+                                                <constraint firstItem="banner-content-desc" firstAttribute="leading" secondItem="banner-content-label" secondAttribute="trailing" constant="12" id="h7"/>
+                                                <constraint firstAttribute="trailing" secondItem="banner-content-desc" secondAttribute="trailing" constant="32" id="h8"/>
+                                                <constraint firstItem="banner-content-desc" firstAttribute="centerY" secondItem="banner-content-item" secondAttribute="centerY" id="h9"/>
+                                                <constraint firstAttribute="trailing" secondItem="banner-content-arrow" secondAttribute="trailing" constant="16" id="h10"/>
+                                                <constraint firstItem="banner-content-arrow" firstAttribute="centerY" secondItem="banner-content-item" secondAttribute="centerY" id="h11"/>
+                                                <constraint firstItem="banner-content-sep" firstAttribute="leading" secondItem="banner-content-item" secondAttribute="leading" constant="20" id="h12"/>
+                                                <constraint firstAttribute="trailing" secondItem="banner-content-sep" secondAttribute="trailing" id="h13"/>
+                                                <constraint firstAttribute="bottom" secondItem="banner-content-sep" secondAttribute="bottom" id="h14"/>
+                                                <constraint firstAttribute="height" constant="72" id="h15"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行3: 消息提示音 -->
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sound-item">
+                                            <rect key="frame" x="0" y="128" width="393" height="56"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sound-btn">
+                                                    <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal"><color key="titleColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/></state>
+                                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                                    <connections><action selector="switchSoundClicked:" destination="-1" eventType="touchUpInside" id="sound-action"/></connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息提示音" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sound-label">
+                                                    <rect key="frame" x="20" y="17.5" width="200" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                                    <color key="textColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sound-sep">
+                                                    <rect key="frame" x="20" y="55.5" width="373" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.91" green="0.918" blue="0.933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints><constraint firstAttribute="height" constant="0.5" id="sound-sep-h"/></constraints>
+                                                </view>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="NO" translatesAutoresizingMaskIntoConstraints="NO" id="switch-sound">
+                                                    <rect key="frame" x="328" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.204" green="0.78" blue="0.349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="sound-btn" firstAttribute="leading" secondItem="sound-item" secondAttribute="leading" id="i1"/>
+                                                <constraint firstAttribute="trailing" secondItem="sound-btn" secondAttribute="trailing" id="i2"/>
+                                                <constraint firstItem="sound-btn" firstAttribute="top" secondItem="sound-item" secondAttribute="top" id="i3"/>
+                                                <constraint firstAttribute="bottom" secondItem="sound-btn" secondAttribute="bottom" id="i4"/>
+                                                <constraint firstItem="sound-label" firstAttribute="leading" secondItem="sound-item" secondAttribute="leading" constant="20" id="i5"/>
+                                                <constraint firstItem="sound-label" firstAttribute="centerY" secondItem="sound-item" secondAttribute="centerY" id="i6"/>
+                                                <constraint firstItem="sound-sep" firstAttribute="leading" secondItem="sound-item" secondAttribute="leading" constant="20" id="i7"/>
+                                                <constraint firstAttribute="trailing" secondItem="sound-sep" secondAttribute="trailing" id="i8"/>
+                                                <constraint firstAttribute="bottom" secondItem="sound-sep" secondAttribute="bottom" id="i9"/>
+                                                <constraint firstAttribute="trailing" secondItem="switch-sound" secondAttribute="trailing" constant="16" id="i10"/>
+                                                <constraint firstItem="switch-sound" firstAttribute="centerY" secondItem="sound-item" secondAttribute="centerY" id="i11"/>
+                                                <constraint firstAttribute="height" constant="56" id="i12"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行4: 语音和视频通话来电铃声 -->
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ringtone-item">
+                                            <rect key="frame" x="0" y="184" width="393" height="56"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ringtone-btn">
+                                                    <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal"><color key="titleColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/></state>
+                                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                                    <connections><action selector="switchRingtoneClicked:" destination="-1" eventType="touchUpInside" id="ringtone-action"/></connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="语音和视频通话来电铃声" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ringtone-label">
+                                                    <rect key="frame" x="20" y="17.5" width="250" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                                    <color key="textColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ringtone-sep">
+                                                    <rect key="frame" x="20" y="55.5" width="373" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.91" green="0.918" blue="0.933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints><constraint firstAttribute="height" constant="0.5" id="ringtone-sep-h"/></constraints>
+                                                </view>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="switch-ringtone">
+                                                    <rect key="frame" x="328" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.204" green="0.78" blue="0.349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="ringtone-btn" firstAttribute="leading" secondItem="ringtone-item" secondAttribute="leading" id="j1"/>
+                                                <constraint firstAttribute="trailing" secondItem="ringtone-btn" secondAttribute="trailing" id="j2"/>
+                                                <constraint firstItem="ringtone-btn" firstAttribute="top" secondItem="ringtone-item" secondAttribute="top" id="j3"/>
+                                                <constraint firstAttribute="bottom" secondItem="ringtone-btn" secondAttribute="bottom" id="j4"/>
+                                                <constraint firstItem="ringtone-label" firstAttribute="leading" secondItem="ringtone-item" secondAttribute="leading" constant="20" id="j5"/>
+                                                <constraint firstItem="ringtone-label" firstAttribute="centerY" secondItem="ringtone-item" secondAttribute="centerY" id="j6"/>
+                                                <constraint firstItem="ringtone-sep" firstAttribute="leading" secondItem="ringtone-item" secondAttribute="leading" constant="20" id="j7"/>
+                                                <constraint firstAttribute="trailing" secondItem="ringtone-sep" secondAttribute="trailing" id="j8"/>
+                                                <constraint firstAttribute="bottom" secondItem="ringtone-sep" secondAttribute="bottom" id="j9"/>
+                                                <constraint firstAttribute="trailing" secondItem="switch-ringtone" secondAttribute="trailing" constant="16" id="j10"/>
+                                                <constraint firstItem="switch-ringtone" firstAttribute="centerY" secondItem="ringtone-item" secondAttribute="centerY" id="j11"/>
+                                                <constraint firstAttribute="height" constant="56" id="j12"/>
+                                            </constraints>
+                                        </view>
+
+                                        <!-- 行5: 振动 (最后一项，无分隔线) -->
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vibration-item">
+                                            <rect key="frame" x="0" y="240" width="393" height="56"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vibration-btn">
+                                                    <rect key="frame" x="0" y="0" width="393" height="56"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal"><color key="titleColor" red="0" green="0" blue="0" alpha="0" colorSpace="custom" customColorSpace="sRGB"/></state>
+                                                    <state key="highlighted" backgroundImage="common_btn_hilight_bg.png"/>
+                                                    <connections><action selector="switchVibrationClicked:" destination="-1" eventType="touchUpInside" id="vibration-action"/></connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="振动" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vibration-label">
+                                                    <rect key="frame" x="20" y="17.5" width="200" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="regular" pointSize="17"/>
+                                                    <color key="textColor" red="0.1" green="0.1" blue="0.1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="switch-vibration">
+                                                    <rect key="frame" x="328" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.204" green="0.78" blue="0.349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="vibration-btn" firstAttribute="leading" secondItem="vibration-item" secondAttribute="leading" id="k1"/>
+                                                <constraint firstAttribute="trailing" secondItem="vibration-btn" secondAttribute="trailing" id="k2"/>
+                                                <constraint firstItem="vibration-btn" firstAttribute="top" secondItem="vibration-item" secondAttribute="top" id="k3"/>
+                                                <constraint firstAttribute="bottom" secondItem="vibration-btn" secondAttribute="bottom" id="k4"/>
+                                                <constraint firstItem="vibration-label" firstAttribute="leading" secondItem="vibration-item" secondAttribute="leading" constant="20" id="k5"/>
+                                                <constraint firstItem="vibration-label" firstAttribute="centerY" secondItem="vibration-item" secondAttribute="centerY" id="k6"/>
+                                                <constraint firstAttribute="trailing" secondItem="switch-vibration" secondAttribute="trailing" constant="16" id="k10"/>
+                                                <constraint firstItem="switch-vibration" firstAttribute="centerY" secondItem="vibration-item" secondAttribute="centerY" id="k11"/>
+                                                <constraint firstAttribute="height" constant="56" id="k12"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="msg-banner-item" firstAttribute="leading" secondItem="section2" secondAttribute="leading" id="s2-c1"/>
+                                        <constraint firstAttribute="trailing" secondItem="msg-banner-item" secondAttribute="trailing" id="s2-c2"/>
+                                        <constraint firstItem="msg-banner-item" firstAttribute="top" secondItem="section2" secondAttribute="top" id="s2-c3"/>
+                                        <constraint firstItem="banner-content-item" firstAttribute="top" secondItem="msg-banner-item" secondAttribute="bottom" id="s2-c4"/>
+                                        <constraint firstItem="banner-content-item" firstAttribute="leading" secondItem="section2" secondAttribute="leading" id="s2-c5"/>
+                                        <constraint firstAttribute="trailing" secondItem="banner-content-item" secondAttribute="trailing" id="s2-c6"/>
+                                        <constraint firstItem="sound-item" firstAttribute="top" secondItem="banner-content-item" secondAttribute="bottom" id="s2-c7"/>
+                                        <constraint firstItem="sound-item" firstAttribute="leading" secondItem="section2" secondAttribute="leading" id="s2-c8"/>
+                                        <constraint firstAttribute="trailing" secondItem="sound-item" secondAttribute="trailing" id="s2-c9"/>
+                                        <constraint firstItem="ringtone-item" firstAttribute="top" secondItem="sound-item" secondAttribute="bottom" id="s2-c10"/>
+                                        <constraint firstItem="ringtone-item" firstAttribute="leading" secondItem="section2" secondAttribute="leading" id="s2-c11"/>
+                                        <constraint firstAttribute="trailing" secondItem="ringtone-item" secondAttribute="trailing" id="s2-c12"/>
+                                        <constraint firstItem="vibration-item" firstAttribute="top" secondItem="ringtone-item" secondAttribute="bottom" id="s2-c13"/>
+                                        <constraint firstItem="vibration-item" firstAttribute="leading" secondItem="section2" secondAttribute="leading" id="s2-c14"/>
+                                        <constraint firstAttribute="trailing" secondItem="vibration-item" secondAttribute="trailing" id="s2-c15"/>
+                                        <constraint firstAttribute="bottom" secondItem="vibration-item" secondAttribute="bottom" id="s2-c16"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <!-- Header1 -->
+                                <constraint firstItem="header1-label" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="20" id="cv-c1"/>
+                                <constraint firstItem="header1-label" firstAttribute="top" secondItem="content-view" secondAttribute="top" constant="10" id="cv-c2"/>
+                                <!-- Section1 -->
+                                <constraint firstItem="section1" firstAttribute="top" secondItem="header1-label" secondAttribute="bottom" constant="6" id="cv-c3"/>
+                                <constraint firstItem="section1" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" id="cv-c4"/>
+                                <constraint firstAttribute="trailing" secondItem="section1" secondAttribute="trailing" id="cv-c5"/>
+                                <!-- Header2 -->
+                                <constraint firstItem="header2-label" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" constant="20" id="cv-c6"/>
+                                <constraint firstItem="header2-label" firstAttribute="top" secondItem="section1" secondAttribute="bottom" constant="10" id="cv-c7"/>
+                                <!-- Section2 -->
+                                <constraint firstItem="section2" firstAttribute="top" secondItem="header2-label" secondAttribute="bottom" constant="6" id="cv-c8"/>
+                                <constraint firstItem="section2" firstAttribute="leading" secondItem="content-view" secondAttribute="leading" id="cv-c9"/>
+                                <constraint firstAttribute="trailing" secondItem="section2" secondAttribute="trailing" id="cv-c10"/>
+                                <!-- Bottom -->
+                                <constraint firstAttribute="bottom" secondItem="section2" secondAttribute="bottom" constant="20" id="cv-c11"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="content-view" firstAttribute="top" secondItem="scroll-view" secondAttribute="top" id="sv-cv-top"/>
+                        <constraint firstItem="content-view" firstAttribute="bottom" secondItem="scroll-view" secondAttribute="bottom" id="sv-cv-bot"/>
+                        <constraint firstItem="content-view" firstAttribute="leading" secondItem="scroll-view" secondAttribute="leading" id="sv-cv-lead"/>
+                        <constraint firstItem="content-view" firstAttribute="trailing" secondItem="scroll-view" secondAttribute="trailing" id="sv-cv-trail"/>
+                        <constraint firstItem="content-view" firstAttribute="width" secondItem="scroll-view" secondAttribute="width" id="sv-cv-width"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="2f8-5K-zcA"/>
+            <color key="backgroundColor" red="0.941" green="0.941" blue="0.941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="scroll-view" firstAttribute="top" secondItem="2f8-5K-zcA" secondAttribute="top" id="sv-top"/>
+                <constraint firstItem="scroll-view" firstAttribute="leading" secondItem="2f8-5K-zcA" secondAttribute="leading" id="sv-lead"/>
+                <constraint firstItem="2f8-5K-zcA" firstAttribute="trailing" secondItem="scroll-view" secondAttribute="trailing" id="sv-trail"/>
+                <constraint firstItem="scroll-view" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="sv-bot"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="0" y="0"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="common_btn_hilight_bg.png" width="5" height="5"/>
+        <image name="common_list_rightarrow_icon_nor" width="8" height="14"/>
+    </resources>
+</document>

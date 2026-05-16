@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MomentViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nji-ZD-mtQ">
+                    <rect key="frame" x="70" y="150" width="235" height="260"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moment_page_not_support" translatesAutoresizingMaskIntoConstraints="NO" id="75t-P1-aUA">
+                            <rect key="frame" x="17.5" y="0.0" width="200" height="146"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="146" id="I0m-Dd-dRH"/>
+                                <constraint firstAttribute="width" constant="200" id="TqP-ev-bPD"/>
+                            </constraints>
+                        </imageView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="“朋友圈”功能将在新版本中发布，敬请期待。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i01-b9-v6y" userLabel="hint">
+                            <rect key="frame" x="0.0" y="170" width="235" height="54"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="lhb-7M-dg0"/>
+                            </constraints>
+                            <color key="textColor" red="0.6470588235294118" green="0.65490196078431373" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="i01-b9-v6y" secondAttribute="trailing" id="DYA-ce-IAy"/>
+                        <constraint firstItem="i01-b9-v6y" firstAttribute="leading" secondItem="nji-ZD-mtQ" secondAttribute="leading" id="HJ9-qi-lu9"/>
+                        <constraint firstItem="75t-P1-aUA" firstAttribute="top" secondItem="nji-ZD-mtQ" secondAttribute="top" id="Uf5-Dc-VA2"/>
+                        <constraint firstItem="i01-b9-v6y" firstAttribute="top" secondItem="75t-P1-aUA" secondAttribute="bottom" constant="24" id="VCu-ea-TYP"/>
+                        <constraint firstAttribute="height" constant="260" id="vW7-2C-E76"/>
+                        <constraint firstItem="75t-P1-aUA" firstAttribute="centerX" secondItem="nji-ZD-mtQ" secondAttribute="centerX" id="yGn-fd-M9S"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nji-ZD-mtQ" secondAttribute="trailing" constant="70" id="IoX-fT-ciE"/>
+                <constraint firstItem="nji-ZD-mtQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="mgg-JE-N0g"/>
+                <constraint firstItem="nji-ZD-mtQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="vm7-dE-08D"/>
+            </constraints>
+            <point key="canvasLocation" x="69.599999999999994" y="20.239880059970016"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="moment_page_not_support" width="200" height="146.33332824707031"/>
+    </resources>
+</document>

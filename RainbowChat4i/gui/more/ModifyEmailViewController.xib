@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ModifyEmailViewController">
+            <connections>
+                <outlet property="btnGetNewEmailCode" destination="btn-get-new-email-code" id="btn-get-new-email-code-outlet"/>
+                <outlet property="btnGetOldEmailCode" destination="btn-get-old-email-code" id="btn-get-old-email-code-outlet"/>
+                <outlet property="btnSubmit" destination="btn-submit" id="btn-submit-outlet"/>
+                <outlet property="layoutOldEmail" destination="layout-old-email" id="layout-old-email-outlet"/>
+                <outlet property="txtNewEmail" destination="txt-new-email" id="txt-new-email-outlet"/>
+                <outlet property="txtNewEmailCode" destination="txt-new-email-code" id="txt-new-email-code-outlet"/>
+                <outlet property="txtOldEmailCode" destination="txt-old-email-code" id="txt-old-email-code-outlet"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgot_password_icon2" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-3n-pEU" userLabel="icon">
+                    <rect key="frame" x="121" y="60" width="78" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="78" id="iUQ-eP-LQl"/>
+                        <constraint firstAttribute="height" constant="100" id="xo5-Vc-4k3"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="请输入新邮箱地址，获取验证码后完成修改/绑定。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cog-Di-Zvk">
+                    <rect key="frame" x="40" y="180" width="240" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="2Ox-LF-vjb"/>
+                    </constraints>
+                    <color key="textColor" red="0.59215686270000001" green="0.61176470589999998" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <!-- 旧邮箱验证码部分（如果用户已有邮箱） -->
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="layout-old-email" userLabel="layout-input-旧邮箱验证码" hidden="YES">
+                    <rect key="frame" x="30" y="243" width="260" height="46"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="old-phone-bg" userLabel="input-bg">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="46"/>
+                            <color key="backgroundColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="old-phone-icon" userLabel="icon">
+                            <rect key="frame" x="8" y="8" width="30" height="30"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_smscode" translatesAutoresizingMaskIntoConstraints="NO" id="old-phone-icon-img">
+                                    <rect key="frame" x="7.5" y="7.5" width="15" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="old-phone-icon-h"/>
+                                <constraint firstAttribute="width" constant="30" id="old-phone-icon-w"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="旧邮箱验证码 *" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="txt-old-email-code" userLabel="文本框-旧邮箱验证码">
+                            <rect key="frame" x="47" y="0.0" width="130" height="46"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="default"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-get-old-email-code">
+                            <rect key="frame" x="185" y="6" width="69" height="34"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="69" id="btn-old-sms-w"/>
+                                <constraint firstAttribute="height" constant="34" id="btn-old-sms-h"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="获取验证码">
+                                <color key="titleColor" red="0.80784313725490198" green="0.28627450980392155" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="disabled">
+                                <color key="titleColor" red="0.5568627451" green="0.5568627451" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="0.80784313725490198" green="0.28627450980392155" blue="0.23137254901960785" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickGetOldEmailCode:" destination="-1" eventType="touchUpInside" id="btn-get-old-email-code-action"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="old-email-layout-h"/>
+                        <constraint firstItem="old-phone-bg" firstAttribute="top" secondItem="layout-old-email" secondAttribute="top" id="old-email-bg-t"/>
+                        <constraint firstItem="old-phone-bg" firstAttribute="leading" secondItem="layout-old-email" secondAttribute="leading" id="old-email-bg-l"/>
+                        <constraint firstAttribute="trailing" secondItem="old-phone-bg" secondAttribute="trailing" id="old-email-bg-r"/>
+                        <constraint firstAttribute="bottom" secondItem="old-phone-bg" secondAttribute="bottom" id="old-email-bg-b"/>
+                        <constraint firstItem="old-phone-icon" firstAttribute="top" secondItem="layout-old-email" secondAttribute="top" constant="8" id="old-email-icon-t"/>
+                        <constraint firstItem="old-phone-icon" firstAttribute="leading" secondItem="layout-old-email" secondAttribute="leading" constant="8" id="old-email-icon-l"/>
+                        <constraint firstAttribute="bottom" secondItem="old-phone-icon" secondAttribute="bottom" constant="8" id="old-email-icon-b"/>
+                        <constraint firstItem="txt-old-email-code" firstAttribute="top" secondItem="layout-old-email" secondAttribute="top" id="old-email-tf-t"/>
+                        <constraint firstItem="txt-old-email-code" firstAttribute="leading" secondItem="layout-old-email" secondAttribute="leading" constant="47" id="old-email-tf-l"/>
+                        <constraint firstAttribute="bottom" secondItem="txt-old-email-code" secondAttribute="bottom" id="old-email-tf-b"/>
+                        <constraint firstItem="btn-get-old-email-code" firstAttribute="centerY" secondItem="layout-old-email" secondAttribute="centerY" id="old-email-btn-cy"/>
+                        <constraint firstItem="btn-get-old-email-code" firstAttribute="leading" secondItem="txt-old-email-code" secondAttribute="trailing" constant="8" id="old-email-btn-l"/>
+                        <constraint firstAttribute="trailing" secondItem="btn-get-old-email-code" secondAttribute="trailing" constant="8" id="old-email-btn-r"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="layout-email" userLabel="layout-input-新邮箱">
+                    <rect key="frame" x="30" y="243" width="260" height="46"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="email-bg" userLabel="input-bg">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="46"/>
+                            <color key="backgroundColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="email-icon" userLabel="icon">
+                            <rect key="frame" x="8" y="8" width="30" height="30"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_user" translatesAutoresizingMaskIntoConstraints="NO" id="email-icon-img">
+                                    <rect key="frame" x="7.5" y="7.5" width="15" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="email-icon-h"/>
+                                <constraint firstAttribute="width" constant="30" id="email-icon-w"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入新邮箱地址 *" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="txt-new-email" userLabel="文本框-新邮箱">
+                            <rect key="frame" x="47" y="0.0" width="201" height="46"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="emailAddress" textContentType="emailAddress"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="email-layout-h"/>
+                        <constraint firstItem="email-bg" firstAttribute="top" secondItem="layout-email" secondAttribute="top" id="email-bg-t"/>
+                        <constraint firstItem="email-bg" firstAttribute="leading" secondItem="layout-email" secondAttribute="leading" id="email-bg-l"/>
+                        <constraint firstAttribute="trailing" secondItem="email-bg" secondAttribute="trailing" id="email-bg-r"/>
+                        <constraint firstAttribute="bottom" secondItem="email-bg" secondAttribute="bottom" id="email-bg-b"/>
+                        <constraint firstItem="email-icon" firstAttribute="top" secondItem="layout-email" secondAttribute="top" constant="8" id="email-icon-t"/>
+                        <constraint firstItem="email-icon" firstAttribute="leading" secondItem="layout-email" secondAttribute="leading" constant="8" id="email-icon-l"/>
+                        <constraint firstAttribute="bottom" secondItem="email-icon" secondAttribute="bottom" constant="8" id="email-icon-b"/>
+                        <constraint firstItem="txt-new-email" firstAttribute="top" secondItem="layout-email" secondAttribute="top" id="email-tf-t"/>
+                        <constraint firstItem="txt-new-email" firstAttribute="leading" secondItem="layout-email" secondAttribute="leading" constant="47" id="email-tf-l"/>
+                        <constraint firstAttribute="trailing" secondItem="txt-new-email" secondAttribute="trailing" constant="12" id="email-tf-r"/>
+                        <constraint firstAttribute="bottom" secondItem="txt-new-email" secondAttribute="bottom" id="email-tf-b"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="layout-code" userLabel="layout-input-验证码">
+                    <rect key="frame" x="30" y="304" width="260" height="46"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="code-bg" userLabel="input-bg">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="46"/>
+                            <color key="backgroundColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="code-icon" userLabel="icon">
+                            <rect key="frame" x="8" y="8" width="30" height="30"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_smscode" translatesAutoresizingMaskIntoConstraints="NO" id="code-icon-img">
+                                    <rect key="frame" x="7.5" y="7.5" width="15" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="code-icon-w"/>
+                                <constraint firstAttribute="height" constant="30" id="code-icon-h"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="新邮箱验证码 *" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="txt-new-email-code" userLabel="文本框-新邮箱验证码">
+                            <rect key="frame" x="47" y="0.0" width="130" height="46"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="default"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-get-new-email-code">
+                            <rect key="frame" x="185" y="6" width="69" height="34"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="69" id="btn-sms-w"/>
+                                <constraint firstAttribute="height" constant="34" id="btn-sms-h"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="获取验证码">
+                                <color key="titleColor" red="0.80784313725490198" green="0.28627450980392155" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="disabled">
+                                <color key="titleColor" red="0.5568627451" green="0.5568627451" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="0.80784313725490198" green="0.28627450980392155" blue="0.23137254901960785" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickGetNewEmailCode:" destination="-1" eventType="touchUpInside" id="btn-get-new-email-code-action"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="code-layout-h"/>
+                        <constraint firstItem="code-bg" firstAttribute="top" secondItem="layout-code" secondAttribute="top" id="code-bg-t"/>
+                        <constraint firstItem="code-bg" firstAttribute="leading" secondItem="layout-code" secondAttribute="leading" id="code-bg-l"/>
+                        <constraint firstAttribute="trailing" secondItem="code-bg" secondAttribute="trailing" id="code-bg-r"/>
+                        <constraint firstAttribute="bottom" secondItem="code-bg" secondAttribute="bottom" id="code-bg-b"/>
+                        <constraint firstItem="code-icon" firstAttribute="top" secondItem="layout-code" secondAttribute="top" constant="8" id="code-icon-t"/>
+                        <constraint firstItem="code-icon" firstAttribute="leading" secondItem="layout-code" secondAttribute="leading" constant="8" id="code-icon-l"/>
+                        <constraint firstAttribute="bottom" secondItem="code-icon" secondAttribute="bottom" constant="8" id="code-icon-b"/>
+                        <constraint firstItem="txt-new-email-code" firstAttribute="top" secondItem="layout-code" secondAttribute="top" id="code-tf-t"/>
+                        <constraint firstItem="txt-new-email-code" firstAttribute="leading" secondItem="layout-code" secondAttribute="leading" constant="47" id="code-tf-l"/>
+                        <constraint firstAttribute="bottom" secondItem="txt-new-email-code" secondAttribute="bottom" id="code-tf-b"/>
+                        <constraint firstItem="btn-get-new-email-code" firstAttribute="centerY" secondItem="layout-code" secondAttribute="centerY" id="code-btn-cy"/>
+                        <constraint firstItem="btn-get-new-email-code" firstAttribute="leading" secondItem="txt-new-email-code" secondAttribute="trailing" constant="8" id="code-btn-l"/>
+                        <constraint firstAttribute="trailing" secondItem="btn-get-new-email-code" secondAttribute="trailing" constant="8" id="code-btn-r"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-submit">
+                    <rect key="frame" x="30" y="365" width="260" height="40"/>
+                    <color key="backgroundColor" red="0.75686274509999996" green="0.20392156859999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="btn-submit-h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="提交">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clickSubmit:" destination="-1" eventType="touchUpInside" id="btn-submit-action"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="wWP-lc-Ypp"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Cog-Di-Zvk" firstAttribute="top" secondItem="Tb2-3n-pEU" secondAttribute="bottom" constant="20" id="55C-kq-6cP"/>
+                <constraint firstItem="Tb2-3n-pEU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5wy-ro-mEU"/>
+                <constraint firstAttribute="trailing" secondItem="Cog-Di-Zvk" secondAttribute="trailing" constant="40" id="Ksu-Iw-9v7"/>
+                <constraint firstItem="layout-old-email" firstAttribute="top" secondItem="Cog-Di-Zvk" secondAttribute="bottom" constant="15" id="old-email-top"/>
+                <constraint firstItem="layout-old-email" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="old-email-leading"/>
+                <constraint firstAttribute="trailing" secondItem="layout-old-email" secondAttribute="trailing" constant="30" id="old-email-trailing"/>
+                <constraint firstItem="layout-email" firstAttribute="top" secondItem="layout-old-email" secondAttribute="bottom" constant="15" id="email-top-old"/>
+                <constraint firstItem="layout-email" firstAttribute="top" secondItem="Cog-Di-Zvk" secondAttribute="bottom" constant="15" id="email-top-no-old" priority="250" active="NO"/>
+                <constraint firstItem="layout-email" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="email-leading"/>
+                <constraint firstAttribute="trailing" secondItem="layout-email" secondAttribute="trailing" constant="30" id="email-trailing"/>
+                <constraint firstItem="layout-code" firstAttribute="top" secondItem="layout-email" secondAttribute="bottom" constant="15" id="code-top"/>
+                <constraint firstItem="layout-code" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="code-leading"/>
+                <constraint firstAttribute="trailing" secondItem="layout-code" secondAttribute="trailing" constant="30" id="code-trailing"/>
+                <constraint firstItem="btn-submit" firstAttribute="top" secondItem="layout-code" secondAttribute="bottom" constant="15" id="btn-submit-top"/>
+                <constraint firstAttribute="trailing" secondItem="btn-submit" secondAttribute="trailing" constant="30" id="btn-submit-trailing"/>
+                <constraint firstItem="btn-submit" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="btn-submit-leading"/>
+                <constraint firstItem="Cog-Di-Zvk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="bJu-Vl-neu"/>
+                <constraint firstItem="Tb2-3n-pEU" firstAttribute="top" secondItem="wWP-lc-Ypp" secondAttribute="top" constant="40" id="zzE-HQ-vyL"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="124"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="forgot_password_icon2" width="78.5" height="100"/>
+        <image name="login_user" width="18" height="18"/>
+        <image name="login_lock_icon" width="18" height="18"/>
+        <image name="login_smscode" width="18" height="18"/>
+    </resources>
+</document>

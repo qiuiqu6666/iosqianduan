@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  RainbowChat4i
+
+  Created by JackJiang on 17/3/4.
+  Copyright © 2017年 JackJiang. All rights reserved.
+*/
+
+"general_prompt"="Friendly Reminder";
+"general_are_u_sure"="Confirm Operation";
+"general_got_it"="Got it";
+"general_ok"="Confirm";
+"general_cancel"="Cancel";
+"general_confirm_btn"="OK";
+"general_confirm"="OK";
+"general_tip"="Tip";
+"general_warn"="Please Note";
+"general_error"="Error";
+"general_http_reponse_exception"="Server response exception, operation failed";
+"general_http_faild"="Network request failed, may be network or server failure!";
+
+"login_form_error_psw_message"="Invalid login information, please make sure you have entered your username and password correctly.";
+"chat_message_send_error"="Your network is not strong enough, please try again later!";
+"request_server_failed"="Request server failed";
+
+"main_tabs_title_alarm"="Messages";
+"main_tabs_title_roster"="Contacts";
+"main_tabs_title_group"="Group Chat";
+"main_tabs_title_discover"="Discover";
+"main_tabs_title_wallet"="Wallet";
+//"main_tabs_title_mall"="Mall";
+"main_tabs_title_more"="Me";
+
+"fabbar_glass_debug_copy_all"="Copy All";
+"fabbar_glass_debug_copied"="Copied";
+
+

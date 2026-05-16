@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotosCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="122.5" height="122.5"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="122.5" height="122.5"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbW-F5-E62" userLabel="layout-img">
+                        <rect key="frame" x="0.0" y="0.0" width="122.5" height="122.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_default_img_no_border_120dp" translatesAutoresizingMaskIntoConstraints="NO" id="hUO-TZ-pff" userLabel="img_content">
+                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="122.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hUO-TZ-pff" secondAttribute="bottom" id="0ga-zU-24M"/>
+                            <constraint firstItem="hUO-TZ-pff" firstAttribute="leading" secondItem="xbW-F5-E62" secondAttribute="leading" id="RYM-qJ-YqX"/>
+                            <constraint firstItem="hUO-TZ-pff" firstAttribute="top" secondItem="xbW-F5-E62" secondAttribute="top" id="bT9-ES-DFr"/>
+                            <constraint firstAttribute="trailing" secondItem="hUO-TZ-pff" secondAttribute="trailing" id="e1Q-c7-Gh6"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0V-cy-KLn" userLabel="layout-info">
+                        <rect key="frame" x="0.0" y="106.5" width="122.5" height="16"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_more_profile_photo_view_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y7G-OW-9Tm">
+                                <rect key="frame" x="10" y="4.5" width="10" height="7"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="7FT-iU-dmH"/>
+                                    <constraint firstAttribute="height" constant="7" id="WW4-BR-cnh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0KB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Il-pM-SDR">
+                                <rect key="frame" x="92.5" y="2" width="20" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="9Z8-ar-GTH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YN7-LZ-QVJ">
+                                <rect key="frame" x="23" y="2" width="6.5" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="XX7-1m-11f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.63" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y7G-OW-9Tm" firstAttribute="leading" secondItem="W0V-cy-KLn" secondAttribute="leading" constant="10" id="4uX-To-vHv"/>
+                            <constraint firstItem="Y7G-OW-9Tm" firstAttribute="top" secondItem="W0V-cy-KLn" secondAttribute="top" constant="4.5" id="Nu5-of-ZGT"/>
+                            <constraint firstAttribute="height" constant="16" id="UrF-M9-00T"/>
+                            <constraint firstItem="9Il-pM-SDR" firstAttribute="top" secondItem="W0V-cy-KLn" secondAttribute="top" constant="2" id="WGm-nV-lAP"/>
+                            <constraint firstItem="YN7-LZ-QVJ" firstAttribute="top" secondItem="W0V-cy-KLn" secondAttribute="top" constant="2" id="fHI-G0-Fcg"/>
+                            <constraint firstItem="YN7-LZ-QVJ" firstAttribute="leading" secondItem="Y7G-OW-9Tm" secondAttribute="trailing" constant="3" id="rj4-n9-I7S"/>
+                            <constraint firstAttribute="trailing" secondItem="9Il-pM-SDR" secondAttribute="trailing" constant="10" id="yfE-Mf-z5b"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eS-E7-7Um" userLabel="delete_btn">
+                        <rect key="frame" x="100" y="0.0" width="22.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22.5" id="GnR-lH-3ag"/>
+                            <constraint firstAttribute="height" constant="21" id="cxa-vR-IcL"/>
+                        </constraints>
+                        <state key="normal" image="main_more_profile_photos_delete_icon.png"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="W0V-cy-KLn" secondAttribute="trailing" id="0cq-Lc-TbH"/>
+                <constraint firstAttribute="trailing" secondItem="xbW-F5-E62" secondAttribute="trailing" id="0pU-HE-WBi"/>
+                <constraint firstItem="xbW-F5-E62" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4oQ-KS-Yu2"/>
+                <constraint firstAttribute="bottom" secondItem="W0V-cy-KLn" secondAttribute="bottom" id="Dhx-n9-EQe"/>
+                <constraint firstItem="xbW-F5-E62" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JtA-rK-t3u"/>
+                <constraint firstAttribute="bottom" secondItem="xbW-F5-E62" secondAttribute="bottom" id="ZK9-dA-dgE"/>
+                <constraint firstItem="W0V-cy-KLn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="d5P-QC-mmx"/>
+                <constraint firstAttribute="trailing" secondItem="4eS-E7-7Um" secondAttribute="trailing" id="hGc-Yi-PUH"/>
+                <constraint firstItem="4eS-E7-7Um" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iuR-qj-gPj"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="btnDel" destination="4eS-E7-7Um" id="liZ-fb-Zt6"/>
+                <outlet property="viewCount" destination="YN7-LZ-QVJ" id="Wfg-RF-VEP"/>
+                <outlet property="viewImage" destination="hUO-TZ-pff" id="3lU-c3-Pyr"/>
+                <outlet property="viewSize" destination="9Il-pM-SDR" id="e7x-AP-qlU"/>
+            </connections>
+            <point key="canvasLocation" x="-12" y="43"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="common_default_img_no_border_120dp" width="120" height="120"/>
+        <image name="main_more_profile_photo_view_icon.png" width="10" height="7.5"/>
+        <image name="main_more_profile_photos_delete_icon.png" width="22.5" height="21"/>
+    </resources>
+</document>
